@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: c4aecd8200560744c85367e4c60ebd98
+timeCreated: 1500652491
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Typo_SogonSogon
+  fontNames:
+  - Typo_SogonSogon
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 336ced8e27141eb41af61ef9a0485ead, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
