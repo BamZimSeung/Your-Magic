@@ -137,6 +137,10 @@
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel_DS.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Premultiplied_UVscroll_Fresnel_DS.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Premultiplied_UVscroll_ST.shader" />
+    <None Include="Assets\Joo\Shaders\FireBall\FT_Additive.shader" />
+    <None Include="Assets\Joo\Shaders\FireBall\GlowAdditiveTwoColor.shader" />
+    <None Include="Assets\Joo\Shaders\FireBall\ParticleAdd.shader" />
+    <None Include="Assets\Joo\Shaders\FireBall\ZFS_3D_Pro.shader" />
     <None Include="Assets\Joo\Shaders\HandShield\FT_Premultiplied_UVscroll_ST_DS.shader" />
     <None Include="Assets\Marab\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
     <None Include="Assets\Marab\OVR\Plugins\placeholder.txt" />
