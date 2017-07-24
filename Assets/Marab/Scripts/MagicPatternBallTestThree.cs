@@ -4,17 +4,9 @@ using UnityEngine;
 
 public class MagicPatternBallTestThree : MonoBehaviour {
     public int id;
-    Vector3 lScale;
+    Vector3 lScale=new Vector3(0.025f,0.025f,0.025f);
     float scalSpeed = 10;
-
-    private void OnEnable()
-    {
-        lScale = transform.localScale;
-
-    }
-    private void Start()
-    {
-    }
+        
 
     public void TouchHand()
     {
@@ -32,7 +24,6 @@ public class MagicPatternBallTestThree : MonoBehaviour {
             {
                 break;
             }
-            Debug.Log(id + "COROUTINE");
             yield return null;
         }
         yield return null;
@@ -40,7 +31,6 @@ public class MagicPatternBallTestThree : MonoBehaviour {
 
     public void Init()
     {
-        Debug.Log(id + "Init");
         StopCoroutine("TouchByHand");
         transform.localScale = lScale;
     }
