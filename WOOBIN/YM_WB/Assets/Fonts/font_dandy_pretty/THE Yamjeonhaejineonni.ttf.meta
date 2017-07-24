@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 23ddd0d3c68249b4282f2ae6e8bffe9d
+timeCreated: 1500652424
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: THECoyly
+  fontNames:
+  - THECoyly
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: a442246345eed224b81824a21db0e254
+timeCreated: 1500652463
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: 210 Blahblah
+  fontNames:
+  - 210 Blahblah
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
