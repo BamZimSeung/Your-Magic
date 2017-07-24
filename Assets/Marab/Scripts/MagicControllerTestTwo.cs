@@ -40,7 +40,6 @@ public class MagicControllerTestTwo : MonoBehaviour
     //생성된 마법 패드
     GameObject magicPad;
 
-    protected Vector3 magicLScale;
     public float bigScale = 2.0f;
     public float scaleSpeed = 5.0f;
 
@@ -56,20 +55,25 @@ public class MagicControllerTestTwo : MonoBehaviour
         //나중에 보여주기만 한다.
         magicPad = Instantiate(magicPadPrefab);
         magicArray = new GameObject[4];
-
         //위치 설정 후 부모 설정
         magicPad.transform.position = transform.position + Vector3.right * 0.1f;
         magicPad.transform.up = transform.right;
         magicPad.transform.parent = transform;
 
+        ReMakeMagic();
 
+    }
 
+    void ReMakeMagic()
+    {
         //매직 패드에 들어갈 마법 설정
         for (int i = 0; i < 4; i++)
         {
+            Destroy(magicArray[i]);
             GameObject magic = Instantiate(magicPrefab[i]);
             magic.transform.parent = magicPad.transform;
-            magicArray[i] = magic;
+            magic.transform.up = magicPad.transform.up;
+            magic.transform.localScale = Vector3.one * 0.05f;
             if (i == 0)
             {
                 magic.transform.localPosition = new Vector3(0, 0, magicTerm);
@@ -77,6 +81,7 @@ public class MagicControllerTestTwo : MonoBehaviour
             else if (i == 1)
             {
                 magic.transform.localPosition = new Vector3(magicTerm, 0, 0);
+                magic.transform.localScale = Vector3.one;
             }
             else if (i == 2)
             {
@@ -85,16 +90,18 @@ public class MagicControllerTestTwo : MonoBehaviour
             else if (i == 3)
             {
                 magic.transform.localPosition = new Vector3(-magicTerm, 0, 0);
-                magicLScale = magic.transform.localScale;
             }
             else
             {
                 Debug.Log("MagicPadInit Error");
             }
+            magicArray[i] = magic;
         }
 
         magicPad.SetActive(false);
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -115,7 +122,7 @@ public class MagicControllerTestTwo : MonoBehaviour
 
     void MagicShowCheck()
     {
-        if(transform.localRotation.eulerAngles.z>=70 && transform.localRotation.eulerAngles.z <= 110)
+        if(transform.localRotation.eulerAngles.z>=60 && transform.localRotation.eulerAngles.z <= 120)
         {
             if(OVRInput.GetDown(magicButton, handController)||true)
             {
@@ -128,9 +135,10 @@ public class MagicControllerTestTwo : MonoBehaviour
 
     void MagicUnShowCheck()
     {
-        if(!(transform.localRotation.eulerAngles.z >= 70 && transform.localRotation.eulerAngles.z <= 110))
+        if(!(transform.localRotation.eulerAngles.z >= 50 && transform.localRotation.eulerAngles.z <= 130))
         {
             magicPad.SetActive(false);
+            ReMakeMagic();
             _state = Magic_State.IDLE;
         }
     }

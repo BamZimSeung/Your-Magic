@@ -139,6 +139,7 @@
     <Compile Include="Assets\Marab\Scripts\HandControllerTest.cs" />
     <Compile Include="Assets\Marab\Scripts\HandControllerTestTwo.cs" />
     <Compile Include="Assets\Marab\Scripts\MagicControllerTestOne.cs" />
+    <Compile Include="Assets\Marab\Scripts\MagicControllerTestOneOther.cs" />
     <Compile Include="Assets\Marab\Scripts\MagicControllerTestThree.cs" />
     <Compile Include="Assets\Marab\Scripts\MagicControllerTestTwo.cs" />
     <Compile Include="Assets\Marab\Scripts\MagicLeftControllerTestOne.cs" />

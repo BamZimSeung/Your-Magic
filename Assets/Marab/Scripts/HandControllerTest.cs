@@ -73,7 +73,6 @@ public class HandControllerTest : MonoBehaviour
             //4. 가능하면 회전까지
             grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(handController)*power;
             grabbedObject.GetComponent<Rigidbody>().angularVelocity = OVRInput.GetLocalControllerAngularVelocity(handController);
-            Debug.Log(grabbedObject.GetComponent<Rigidbody>().angularVelocity);
 
             //잡은 물체 초기화
             grabbedObject = null;
@@ -98,16 +97,22 @@ public class HandControllerTest : MonoBehaviour
             int closest = 0;
             for (int i = 0; i < hits.Length; i++)
             {
+                Debug.Log(hits[i].collider.name);
                 if (hits[i].distance <= hits[closest].distance)
                 {
                     closest = i;
                 }
             }
 
+
             grabbedObject = hits[closest].transform.gameObject;
             //부모자식 관계로 만들어준다.
             grabbedObject.transform.parent = transform;
             grabbedObject.transform.position = transform.position;
+
+            grabbedObject.transform.localScale = Vector3.one * 0.1f;
+
+
 
             grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
             grabbedObject.GetComponent<Rigidbody>().useGravity = false;

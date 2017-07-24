@@ -43,15 +43,16 @@ public class HandControllerTestTwo : MonoBehaviour
             //물체잡는 동작
             GrabObject();
         }
-        if(isGrabbing==true && grabbedObject != null)
-        {
-            ControllObject();
-        }
         //Grab기능이 활성화 되어있고, up 이벤트 발생하면?
         else if (isGrabbing == true && OVRInput.GetUp(grabButton, touch))
         {
             //물체를 떨어트리는 동작
             DropObject();
+        }
+
+        if (isGrabbing==true && grabbedObject != null)
+        {
+            ControllObject();
         }
 
     }
@@ -68,11 +69,15 @@ public class HandControllerTestTwo : MonoBehaviour
             grabbedObject = null;
         }
     }
-    
+
+    float moveSpeed = 5.0f;
 
     void ControllObject()
     {
-
+        Vector3 euler = grabbedObject.transform.eulerAngles;
+        Vector3 vel = OVRInput.GetLocalControllerVelocity(handController);
+        euler.y += (vel.x + vel.z) * moveSpeed ;
+        grabbedObject.transform.eulerAngles = euler;
     }
 
 
@@ -88,7 +93,6 @@ public class HandControllerTestTwo : MonoBehaviour
         RaycastHit[] hits = Physics.SphereCastAll(ray, grabRange, 0.0f);
         if (hits.Length > 0)
         {
-            int closest = 0;
             for (int i = 0; i < hits.Length; i++)
             {
                 if (hits[i].transform.name.Contains("MagicPadTwo"))

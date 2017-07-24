@@ -14,8 +14,8 @@ public class MagicControllerTestThree : MonoBehaviour
     }
     
 
-    int[,] patternArray =new int[1, 9] { { 2, 5, 8, 0, 0, 0, 0, 0, 0 } } ;
-    int patternsNum = 1;
+    int[,] patternArray =new int[2, 9] { { 2, 5, 8, 0, 0, 0, 0, 0, 0 }, { 4, 5, 6, 0, 0, 0, 0, 0, 0 } };
+    int patternsNum = 2;
 
     int[] touchPattern = new int[9];
     int touchIndex = 0;
