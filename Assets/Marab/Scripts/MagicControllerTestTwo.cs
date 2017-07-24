@@ -115,7 +115,6 @@ public class MagicControllerTestTwo : MonoBehaviour
 
     void MagicShowCheck()
     {
-        Debug.Log(transform.localRotation.eulerAngles.z);
         if(transform.localRotation.eulerAngles.z>=70 && transform.localRotation.eulerAngles.z <= 110)
         {
             if(OVRInput.GetDown(magicButton, handController)||true)
