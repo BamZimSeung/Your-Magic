@@ -152,6 +152,7 @@
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShader.shader" />
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
+    <None Include="Assets\YM_WB\Fonts\NotoSans\theeluwin-NotoSansKR-Hestia-e2c6f1f\ksx1001.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

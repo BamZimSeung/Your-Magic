@@ -20,6 +20,7 @@ public class MagicControllerTestThree : MonoBehaviour
     int[] touchPattern = new int[9];
     int touchIndex = 0;
 
+    public GameObject[] magicPrefab;
 
 
     //어떤 손과 어떤 버튼을 기준으로 할지
@@ -143,12 +144,15 @@ public class MagicControllerTestThree : MonoBehaviour
                 index = i;
             }
         }
+        Debug.Log(index);
         if (index == -1)
         {
             return false;
         }
         else
         {
+            GameObject magic = Instantiate(magicPrefab[index]);
+            magic.transform.position = transform.position + transform.forward * 0.1f;
             return true;
         }
     }

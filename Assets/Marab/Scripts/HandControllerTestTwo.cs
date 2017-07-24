@@ -43,6 +43,10 @@ public class HandControllerTestTwo : MonoBehaviour
             //물체잡는 동작
             GrabObject();
         }
+        if(isGrabbing==true && grabbedObject != null)
+        {
+            ControllObject();
+        }
         //Grab기능이 활성화 되어있고, up 이벤트 발생하면?
         else if (isGrabbing == true && OVRInput.GetUp(grabButton, touch))
         {
@@ -61,26 +65,15 @@ public class HandControllerTestTwo : MonoBehaviour
 
         if (grabbedObject != null)
         {
-            //1. 루트 복귀
-            grabbedObject.transform.parent = null;
-            //2. 물리 속성 활성화
-            grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
-            grabbedObject.GetComponent<Rigidbody>().useGravity = true;
-
-            //3. 던지기
-            grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(handController);
-
-            //4. 가능하면 회전까지
-            grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(handController)*power;
-            grabbedObject.GetComponent<Rigidbody>().angularVelocity = OVRInput.GetLocalControllerAngularVelocity(handController);
-            Debug.Log(grabbedObject.GetComponent<Rigidbody>().angularVelocity);
-
-            //잡은 물체 초기화
             grabbedObject = null;
         }
     }
     
 
+    void ControllObject()
+    {
+
+    }
 
 
     //물체 잡기
@@ -92,26 +85,18 @@ public class HandControllerTestTwo : MonoBehaviour
         //3. 만약에, 많은 물체가 있으면 제일 가까운 물체를 우선적으로 잡는다.
         // 영역에서 범위 충돌 검사.
         Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit[] hits = Physics.SphereCastAll(ray, grabRange, 0.0f, grabLayer);
+        RaycastHit[] hits = Physics.SphereCastAll(ray, grabRange, 0.0f);
         if (hits.Length > 0)
         {
             int closest = 0;
             for (int i = 0; i < hits.Length; i++)
             {
-                if (hits[i].distance <= hits[closest].distance)
+                if (hits[i].transform.name.Contains("MagicPadTwo"))
                 {
-                    closest = i;
+                    grabbedObject = hits[i].transform.gameObject;
+                    break;
                 }
             }
-
-            grabbedObject = hits[closest].transform.gameObject;
-            //부모자식 관계로 만들어준다.
-            grabbedObject.transform.parent = transform;
-            grabbedObject.transform.position = transform.position;
-
-            grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
-            grabbedObject.GetComponent<Rigidbody>().useGravity = false;
-
         }
         else
         {
