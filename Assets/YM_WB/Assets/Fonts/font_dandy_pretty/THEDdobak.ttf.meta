@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: cf685a8cbeccd0d4b9547cdc014a58cb
+timeCreated: 1500652491
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: THEDdobak
+  fontNames:
+  - THEDdobak
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
