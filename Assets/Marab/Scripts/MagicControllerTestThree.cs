@@ -77,6 +77,9 @@ public class MagicControllerTestThree : MonoBehaviour
         if (OVRInput.GetDown(magicButton, handController))
         {
             magicPad.SetActive(true);
+            magicPad.GetComponent<MagicPatternPadThree>().BallsInit();
+            magicPad.transform.forward = transform.forward;
+            magicPad.transform.position = transform.position + Vector3.forward * 0.1f;
             magicPad.transform.parent = null;
             touchIndex = 0;
             _state = Magic_State.CHOICE;            
@@ -87,13 +90,23 @@ public class MagicControllerTestThree : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
-        if(Physics.Raycast(ray, out hit, 1))
+        GetComponent<LineRenderer>().SetPosition(0, transform.position);
+        GetComponent<LineRenderer>().SetPosition(1, transform.position + transform.forward*0.05f);
+        if(Physics.Raycast(ray, out hit, 0.05f))
         {
             if (hit.transform.name.Contains("Ball"))
             {
                 MagicPatternBallTestThree mp = hit.transform.gameObject.GetComponent<MagicPatternBallTestThree>();
-                mp.TouchByHand();
+                if (touchIndex!=0)
+                {
+                    if (touchPattern[touchIndex - 1] == mp.id)
+                    {
+                        return;
+                    }
+                }
+                mp.TouchHand();
                 touchPattern[touchIndex] = mp.id;
+                touchIndex++;
                 if (PatternCheck())
                 {
                     magicPad.SetActive(false);
@@ -113,8 +126,16 @@ public class MagicControllerTestThree : MonoBehaviour
             bool isCheck = false;
             for(int j = 0; j < touchIndex; j++)
             {
-                isCheck = patternArray[i,j] == touchPattern[j];
-                if (!isCheck)
+                Debug.Log(patternArray[i, j] + "+" + touchPattern[j]+"+"+touchIndex);
+                if (patternArray[i,j] == touchPattern[j])
+                {
+                    if (patternArray[i, j + 1] == 0)
+                    {
+                        isCheck = true;
+                    }
+
+                }
+                else
                 { break; }
             }
             if (isCheck)
@@ -122,7 +143,6 @@ public class MagicControllerTestThree : MonoBehaviour
                 index = i;
             }
         }
-        Debug.Log(index);
         if (index == -1)
         {
             return false;
@@ -136,11 +156,9 @@ public class MagicControllerTestThree : MonoBehaviour
 
     void MagicUnShowCheck()
     {
-        if((magicPad.transform.position - transform.position).magnitude > 10)
+        if((magicPad.transform.position - transform.position).magnitude > 0.5f)
         {
             magicPad.SetActive(false);
-            magicPad.GetComponent<MagicPatternPadThree>().BallsInit();
-            magicPad.transform.position = transform.position + Vector3.forward * 0.1f;
             magicPad.transform.parent = transform;
             _state = Magic_State.IDLE;
         }
