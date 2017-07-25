@@ -146,6 +146,9 @@
     <Compile Include="Assets\Marab\Scripts\MagicPatternBallTestThree.cs" />
     <Compile Include="Assets\Marab\Scripts\MagicPatternPadThree.cs" />
     <Compile Include="Assets\Marab\Scripts\MagicRightControllerTestOne.cs" />
+    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_CamRotate.cs" />
+    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_Move.cs" />
+    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_PlayFire.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Arrow_Ctrl.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Arrow_Destroy.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_DisplayCanvas.cs" />

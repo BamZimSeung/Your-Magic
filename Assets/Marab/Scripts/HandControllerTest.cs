@@ -74,6 +74,8 @@ public class HandControllerTest : MonoBehaviour
             grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(handController)*power;
             grabbedObject.GetComponent<Rigidbody>().angularVelocity = OVRInput.GetLocalControllerAngularVelocity(handController);
 
+            Debug.Log(grabbedObject.GetComponent<Rigidbody>().velocity);
+
             //잡은 물체 초기화
             grabbedObject = null;
         }
