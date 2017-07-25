@@ -7,26 +7,32 @@ using UnityEngine;
 // 요정은 플레이어를 돕는역할을 합니다. -> ex 길생성, 마법사용방법 알려주기.
 public class WB_Fairy_Ctrl : MonoBehaviour {
     public GameObject Player;
-    public float moveSpeed = 2f;
     public float radius = 3f;
     public float upDown = 2f;
-    Vector3 dir;
-    bool isMove = true;
-    private void Start()
+    
+    // 원래 위치에서 (rcos셑, rsin셑) 위치로 곡선이동.\
+
+    Transform originPos;
+    Transform desPos;
+    Vector3 center;
+    public float journeyTime = 1.0f;
+    private float startTime;
+    public float setha;
+
+    void Start()
     {
-        dir = Player.transform.position + Player.transform.forward * Mathf.Sqrt(radius) + Player.transform.right * Mathf.Sqrt(radius); // 초기 위치 설정
-        transform.position = dir;
+        center = Player.transform.position; // 센터 위치 잡기..
+        originPos.position = center + Vector3.right * radius; // 시작위치 플레이어 + 반지름.
+        
+
+        transform.position = originPos.position; // 시작위치 잡아주기.
+        startTime = Time.time;
     }
     // Update is called once per frame
     void Update () {
-        // 상하운동 + 원운동.
-        // 상하운동.
-        UpDown();
+        setha = setha + 30f;
+        desPos.position = center + new Vector3(Mathf.Cos(setha), 0, Mathf.Sin(setha));
+        float fracComplete = (Time.time - startTime) / journeyTime;
+        transform.position = Vector3.Slerp(originPos.position, desPos.position, fracComplete);
 	}
-
-    void UpDown()
-    {
-        float temp = Random.Range(-1.0f, 1.0f);
-        transform.position = Vector3.Lerp(transform.position, transform.position + Vector3.up * temp, 0.1f);
-    }
 }
