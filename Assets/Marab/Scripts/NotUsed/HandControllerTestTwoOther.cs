@@ -5,7 +5,7 @@ using UnityEngine;
 
 //Touch를 이용해 물체를 잡고, 놓고, 던지는 동작처리
 
-public class HandControllerTestTwo : MonoBehaviour
+public class HandControllerTestTwoOther : MonoBehaviour
 {
 
     //어떤 손인지 기억할 변수
@@ -28,7 +28,6 @@ public class HandControllerTestTwo : MonoBehaviour
     public float power = 6.0f;
 
     int whatHand;
-    int otherHand;
 
     // Use this for initialization
     void Start()
@@ -36,12 +35,10 @@ public class HandControllerTestTwo : MonoBehaviour
         if (handController == OVRInput.Controller.LTouch)
         {
             whatHand = (int)HandState.Hand.LEFT;
-            otherHand = (int)HandState.Hand.RIGHT;
         }
         else
         {
             whatHand = (int)HandState.Hand.RIGHT;
-            otherHand = (int)HandState.Hand.LEFT;
         }
 
     }
@@ -52,25 +49,19 @@ public class HandControllerTestTwo : MonoBehaviour
         
         //Grab버튼을 누르면 Grab기능 활성화
         if (isGrabbing == false && OVRInput.GetDown(grabButton, handController) &&
-            HandState.handState[whatHand] == HandState.State.IDLE &&
-            HandState.handState[otherHand] == HandState.State.MAGIC_CONTROLL_2)
+            HandState.handState[whatHand] == HandState.State.MAGIC_CONTROLL_2)
         {
             //물체잡는 동작
             GrabObject();
         }
         //Grab기능이 활성화 되어있고, up 이벤트 발생하면?
         else if (isGrabbing == true && OVRInput.GetUp(grabButton, handController) &&
-            HandState.handState[whatHand] == HandState.State.PAD_CONTROLL)
+            HandState.handState[whatHand] == HandState.State.MAGIC_USE)
         {
             //물체를 떨어트리는 동작
             DropObject();
         }
-
-        if (isGrabbing==true && grabbedObject != null &&
-            HandState.handState[whatHand] == HandState.State.PAD_CONTROLL)
-        {
-            ControllObject();
-        }
+        
 
     }
     //물체 놓기
@@ -80,36 +71,29 @@ public class HandControllerTestTwo : MonoBehaviour
     void DropObject()
     {
         isGrabbing = false;
-        HandState.handState[whatHand] = HandState.State.IDLE;
 
         if (grabbedObject != null)
         {
+            //1. 루트 복귀
+            grabbedObject.transform.parent = null;
+            //2. 물리 속성 활성화
+            grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
+            grabbedObject.GetComponent<Rigidbody>().useGravity = true;
+
+            //3. 던지기
+            grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(handController);
+
+            //4. 가능하면 회전까지
+            grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(handController) * power;
+            grabbedObject.GetComponent<Rigidbody>().angularVelocity = OVRInput.GetLocalControllerAngularVelocity(handController);
+
+
+            //잡은 물체 초기화
             grabbedObject = null;
+            HandState.handState[whatHand] = HandState.State.IDLE;
         }
     }
-
-    float moveSpeed = 5.0f;
-
-    void ControllObject()
-    {
-        Vector3 euler = grabbedObject.transform.eulerAngles;
-        Vector3 vel = OVRInput.GetLocalControllerVelocity(handController);
-        Vector3 trans = new Vector3(0, 0, 0);
-        if (whatHand == (int)HandState.Hand.LEFT)
-        {
-            trans.y = (vel.x - vel.z) * moveSpeed;
-            grabbedObject.transform.Rotate(grabbedObject.transform.TransformDirection(trans),Space.Self);
-            //euler.y -= (vel.x - vel.z) * moveSpeed;
-        }
-        if (whatHand == (int)HandState.Hand.RIGHT)
-        {
-            trans.y = (vel.x + vel.z) * moveSpeed;
-            grabbedObject.transform.Rotate(grabbedObject.transform.TransformDirection(trans), Space.Self);
-            //euler.y -= (vel.x + vel.z) * moveSpeed;
-        }
-        Debug.Log(trans);
-        //grabbedObject.transform.eulerAngles = euler;
-    }
+    
 
 
     //물체 잡기
@@ -121,18 +105,39 @@ public class HandControllerTestTwo : MonoBehaviour
         //3. 만약에, 많은 물체가 있으면 제일 가까운 물체를 우선적으로 잡는다.
         // 영역에서 범위 충돌 검사.
         Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit[] hits = Physics.SphereCastAll(ray, grabRange, 0.0f);
+        RaycastHit[] hits = Physics.SphereCastAll(ray, grabRange, 0.0f, grabLayer);
         if (hits.Length > 0)
         {
+            int closest = 0;
             for (int i = 0; i < hits.Length; i++)
             {
-                if (hits[i].transform.name.Contains("MagicPadTwo"))
+                if (hits[i].distance <= hits[closest].distance)
                 {
-                    grabbedObject = hits[i].transform.gameObject;
-                    break;
+                    closest = i;
                 }
             }
-            HandState.handState[whatHand] = HandState.State.PAD_CONTROLL;
+
+            Debug.Log(hits[closest].collider.transform.parent);
+            if (hits[closest].transform.parent.name.Contains("MagicPadTwo"))
+            {
+                grabbedObject = Instantiate(hits[closest].transform.gameObject);
+            }
+            else
+            {
+                return;
+            }
+            //부모자식 관계로 만들어준다.
+            grabbedObject.transform.parent = transform;
+            grabbedObject.transform.position = transform.position;
+
+            grabbedObject.transform.localScale = Vector3.one * 0.1f;
+
+
+
+            grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
+            grabbedObject.GetComponent<Rigidbody>().useGravity = false;
+            HandState.handState[whatHand] = HandState.State.MAGIC_USE;
+
         }
         else
         {

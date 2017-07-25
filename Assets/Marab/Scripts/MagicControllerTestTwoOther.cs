@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class MagicControllerTestTwo : MonoBehaviour
+public class MagicControllerTestTwoOther : MonoBehaviour
 {
     enum Magic_State
     {
@@ -33,6 +33,8 @@ public class MagicControllerTestTwo : MonoBehaviour
     //생성된 마법을 저장하는 배열
     public GameObject[] magicArray;
 
+    public Transform playerPos;
+
     //마법들을 보여줄 기본 위치
     public GameObject magicPadPrefab;
 
@@ -45,7 +47,7 @@ public class MagicControllerTestTwo : MonoBehaviour
     Magic_State _state = Magic_State.IDLE;
 
     //매직 패드에 중심과의 거리
-    public float magicTerm = 0.075f;
+    float magicTerm = 0.2f;
 
     int whatHand;
 
@@ -67,16 +69,15 @@ public class MagicControllerTestTwo : MonoBehaviour
             magic.transform.localScale = Vector3.one * 0.03f;
             if (i == 0)
             {
-                magic.transform.localPosition = new Vector3(0, 0, magicTerm);
+                magic.transform.localPosition = new Vector3(0, magicTerm, 0);
             }
             else if (i == 1)
             {
                 magic.transform.localPosition = new Vector3(magicTerm, 0, 0);
-                magic.transform.localScale = Vector3.one;
             }
             else if (i == 2)
             {
-                magic.transform.localPosition = new Vector3(0, 0, -magicTerm);
+                magic.transform.localPosition = new Vector3(0, -magicTerm,0);
             }
             else if (i == 3)
             {
@@ -94,14 +95,10 @@ public class MagicControllerTestTwo : MonoBehaviour
         if (handController == OVRInput.Controller.LTouch)
         {
             whatHand = (int)HandState.Hand.LEFT;
-            magicPad.transform.position = transform.position + Vector3.right * 0.1f;
-            magicPad.transform.up = transform.right;
         }
         else
         {
             whatHand = (int)HandState.Hand.RIGHT;
-            magicPad.transform.position = transform.position - Vector3.right * 0.1f;
-            magicPad.transform.up = transform.right * -1;
         }
         magicPad.transform.parent = transform;
 
@@ -112,13 +109,27 @@ public class MagicControllerTestTwo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (OVRInput.GetDown(magicButton, handController))
+        {
+            Debug.Log(whatHand + ":" + transform.localEulerAngles);
+        }
         switch (HandState.handState[whatHand])
         {
             case HandState.State.IDLE:
                 MagicShowCheck();
+                if (magicPad.activeSelf == true)
+                {
+                    MagicUnShowCheck();
+                }
                 break;
             case HandState.State.MAGIC_CONTROLL_2:
                 MagicUnShowCheck();
+                break;
+            default:
+                if (magicPad.activeSelf == true)
+                {
+                    MagicUnShowCheck();
+                }
                 break;
         }
     }
@@ -126,19 +137,25 @@ public class MagicControllerTestTwo : MonoBehaviour
 
     void MagicShowCheck()
     {
-        if((transform.localRotation.eulerAngles.z>=60 && transform.localRotation.eulerAngles.z <= 120) && whatHand==(int)HandState.Hand.LEFT)
+      if((transform.localRotation.eulerAngles.z>=85 && transform.localRotation.eulerAngles.z <=95) && whatHand==(int)HandState.Hand.LEFT)
         {
-            if(OVRInput.GetDown(magicButton, handController)||true)
+            if ((transform.localRotation.eulerAngles.x >= 350 || transform.localRotation.eulerAngles.x <= 10))
             {
                 magicPad.SetActive(true);
+                magicPad.transform.position = transform.position;// + Vector3.up*0.1f;
+                magicPad.transform.forward = playerPos.forward;
+                magicPad.transform.parent = null;
                 HandState.handState[whatHand] = HandState.State.MAGIC_CONTROLL_2;
             }
         }
-        if ((transform.localRotation.eulerAngles.z <= 300 && transform.localRotation.eulerAngles.z >= 240) && whatHand == (int)HandState.Hand.RIGHT)
+        if ((transform.localRotation.eulerAngles.z >= 265 && transform.localRotation.eulerAngles.z <= 275) && whatHand == (int)HandState.Hand.RIGHT)
         {
-            if (OVRInput.GetDown(magicButton, handController) || true)
+            if ((transform.localRotation.eulerAngles.x >= 350 || transform.localRotation.eulerAngles.x <= 10))
             {
                 magicPad.SetActive(true);
+                magicPad.transform.position = transform.position;// + Vector3.up * 0.1f;
+                magicPad.transform.forward = playerPos.forward;
+                magicPad.transform.parent = null;
                 HandState.handState[whatHand] = HandState.State.MAGIC_CONTROLL_2;
             }
         }
@@ -147,21 +164,16 @@ public class MagicControllerTestTwo : MonoBehaviour
 
     void MagicUnShowCheck()
     {
-        if (!(transform.localRotation.eulerAngles.z >= 40 && transform.localRotation.eulerAngles.z <= 140) && whatHand == (int)HandState.Hand.LEFT)
+        if ((magicPad.transform.position - transform.position).magnitude > 0.3f)
         {
-            if (OVRInput.GetDown(magicButton, handController) || true)
-            {
-                magicPad.SetActive(false);
-                HandState.handState[whatHand] = HandState.State.IDLE;
-            }
+            magicPad.SetActive(false);
+            magicPad.transform.parent = transform;
+            HandState.handState[whatHand] = HandState.State.IDLE;
         }
-        if (!(transform.localRotation.eulerAngles.z <= 320 && transform.localRotation.eulerAngles.z >= 220) && whatHand == (int)HandState.Hand.RIGHT)
+        if (HandState.handState[whatHand]!=HandState.State.MAGIC_CONTROLL_2)
         {
-            if (OVRInput.GetDown(magicButton, handController) || true)
-            {
-                magicPad.SetActive(false);
-                HandState.handState[whatHand] = HandState.State.IDLE;
-            }
+            magicPad.SetActive(false);
+            magicPad.transform.parent = transform;
         }
     }
 

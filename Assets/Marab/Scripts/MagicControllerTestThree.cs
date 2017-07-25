@@ -5,15 +5,6 @@ using UnityEngine;
 
 public class MagicControllerTestThree : MonoBehaviour
 {
-    enum Magic_State
-    {
-        IDLE,
-        SHOW,
-        CHOICE,
-        GRAB
-    }
-    
-
     int[,] patternArray =new int[2, 9] { { 2, 5, 8, 0, 0, 0, 0, 0, 0 }, { 4, 5, 6, 0, 0, 0, 0, 0, 0 } };
     int patternsNum = 2;
 
@@ -25,7 +16,6 @@ public class MagicControllerTestThree : MonoBehaviour
 
     //어떤 손과 어떤 버튼을 기준으로 할지
     public OVRInput.Controller handController;
-    public OVRInput.Controller touch;
     public OVRInput.Button magicButton;
 
     //마법 패드를 나타낼 프리팹
@@ -34,10 +24,10 @@ public class MagicControllerTestThree : MonoBehaviour
     //생성된 마법 패드
     GameObject magicPad;
 
-    Magic_State _state = Magic_State.IDLE;
-
     //매직 패드에 중심과의 거리
     public float magicTerm = 0.075f;
+
+    int whatHand;
 
     // Use this for initialization
     void Start()
@@ -52,23 +42,30 @@ public class MagicControllerTestThree : MonoBehaviour
 
         magicPad.SetActive(false);
 
+        if (handController == OVRInput.Controller.LTouch)
+        {
+            whatHand = (int)HandState.Hand.LEFT;
+        }
+        else
+        {
+            whatHand = (int)HandState.Hand.RIGHT;
+        }
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (_state)
+        switch (HandState.handState[whatHand])
         {
-            case Magic_State.IDLE:
+            case HandState.State.IDLE:
                 MagicShowCheck();
                 break;
-            case Magic_State.CHOICE:
+            case HandState.State.MAGIC_CONTROLL_3:
                 MagicChoice();
                 MagicUnShowCheck();
                 break;
-        }
-
+        }       
 
     }
 
@@ -83,7 +80,7 @@ public class MagicControllerTestThree : MonoBehaviour
             magicPad.transform.position = transform.position + Vector3.forward * 0.1f;
             magicPad.transform.parent = null;
             touchIndex = 0;
-            _state = Magic_State.CHOICE;            
+            HandState.handState[whatHand] = HandState.State.MAGIC_CONTROLL_3;
         }        
     }
 
@@ -97,6 +94,10 @@ public class MagicControllerTestThree : MonoBehaviour
         {
             if (hit.transform.name.Contains("Ball"))
             {
+                if (hit.transform.name.Contains("Fire"))
+                {
+                    return;
+                }
                 MagicPatternBallTestThree mp = hit.transform.gameObject.GetComponent<MagicPatternBallTestThree>();
                 if (touchIndex!=0)
                 {
@@ -113,7 +114,7 @@ public class MagicControllerTestThree : MonoBehaviour
                     magicPad.SetActive(false);
                     magicPad.transform.position = transform.position + Vector3.forward * 0.1f;
                     magicPad.transform.parent = transform;
-                    _state = Magic_State.IDLE;
+                    HandState.handState[whatHand] = HandState.State.IDLE;
                 }
             }
         }
@@ -127,7 +128,6 @@ public class MagicControllerTestThree : MonoBehaviour
             bool isCheck = false;
             for(int j = 0; j < touchIndex; j++)
             {
-                Debug.Log(patternArray[i, j] + "+" + touchPattern[j]+"+"+touchIndex);
                 if (patternArray[i,j] == touchPattern[j])
                 {
                     if (patternArray[i, j + 1] == 0)
@@ -144,7 +144,6 @@ public class MagicControllerTestThree : MonoBehaviour
                 index = i;
             }
         }
-        Debug.Log(index);
         if (index == -1)
         {
             return false;
@@ -160,11 +159,17 @@ public class MagicControllerTestThree : MonoBehaviour
 
     void MagicUnShowCheck()
     {
-        if((magicPad.transform.position - transform.position).magnitude > 0.5f)
+        if (OVRInput.GetDown(magicButton, handController))
         {
             magicPad.SetActive(false);
             magicPad.transform.parent = transform;
-            _state = Magic_State.IDLE;
+            HandState.handState[whatHand] = HandState.State.IDLE;
+        }
+        if((magicPad.transform.position - transform.position).magnitude > 0.3f)
+        {
+            magicPad.SetActive(false);
+            magicPad.transform.parent = transform;
+            HandState.handState[whatHand] = HandState.State.IDLE;
         }
     }    
 

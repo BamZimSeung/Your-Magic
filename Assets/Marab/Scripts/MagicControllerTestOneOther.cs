@@ -5,15 +5,6 @@ using UnityEngine;
 
 public class MagicControllerTestOneOther : MonoBehaviour
 {
-    enum Magic_State
-    {
-        IDLE,
-        SHOW,
-        CHOICE,
-        GRAB
-    }
-
-
     public enum DIR
     {
         RIGHT,
@@ -23,7 +14,6 @@ public class MagicControllerTestOneOther : MonoBehaviour
 
     //어떤 손과 어떤 버튼을 기준으로 할지
     public OVRInput.Controller handController;
-    public OVRInput.Controller touch;
     public OVRInput.Button magicButton;
 
     //마법을 저장하는 배열
@@ -41,16 +31,23 @@ public class MagicControllerTestOneOther : MonoBehaviour
     protected Vector3[] magicLScale;
     public float bigScale = 3.0f;
     public float scaleSpeed = 20.0f;
-
-    Magic_State _state = Magic_State.IDLE;
+    
     DIR _dir = DIR.NOTHING;
 
     float delayLimit = 500;
     float delay = 0;
     bool isDelay = false;
     int index = 2;
+
     //매직 패드에 중심과의 거리
     public float magicTerm = 0.075f;
+
+
+    int whatHand;
+    
+
+    
+
 
     // Use this for initialization
     void Start()
@@ -93,42 +90,55 @@ public class MagicControllerTestOneOther : MonoBehaviour
                 Debug.Log("MagicPadInit Error");
             }
             magicLScale[i] = magic.transform.localScale;
+            magic.GetComponent<Collider>().enabled = false;
         }
 
         magicPad.SetActive(false);
+
+
+
+        if (handController == OVRInput.Controller.LTouch)
+        {
+            whatHand = (int)HandState.Hand.LEFT;
+        }
+        else
+        {
+            whatHand = (int)HandState.Hand.RIGHT;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (_state)
+        switch (HandState.handState[whatHand])
         {
-            case Magic_State.IDLE:
-                if (OVRInput.GetDown(magicButton, touch))
+            case HandState.State.IDLE:
+                if (OVRInput.GetDown(magicButton, handController))
                 {
                     MagicShow();
                 }
                 break;
-            case Magic_State.CHOICE:
+            case HandState.State.MAGIC_CONTROLL_1:
                 MagicChoice();
                 break;
         }
-
-
     }
 
 
     void MagicShow()
     {
         magicPad.SetActive(true);
-        _state = Magic_State.CHOICE;
+        //_state = Magic_State.CHOICE;
+        HandState.handState[whatHand] = HandState.State.MAGIC_CONTROLL_1;
     }
 
 
     void MagicUnShow()
     {
         magicPad.SetActive(false);
-        _state = Magic_State.IDLE;
+        //_state = Magic_State.IDLE;
+
+        HandState.handState[whatHand] = HandState.State.IDLE;
     }
 
     // 매직패드가 보여진 상태에서
@@ -137,14 +147,14 @@ public class MagicControllerTestOneOther : MonoBehaviour
     {
         if (delay == 0)
         {
-            if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft,touch))
+            if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft,handController))
             {
                 isDelay = true;
                 delay++;
                 _dir = DIR.LEFT;
             }
 
-            else if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight, touch))
+            else if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight, handController))
             {
                 isDelay = true;
                 delay++;
@@ -157,7 +167,7 @@ public class MagicControllerTestOneOther : MonoBehaviour
         }
         else
         {
-            if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft, touch))
+            if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft, handController))
             {
                 if (_dir == DIR.RIGHT)
                 {
@@ -175,7 +185,7 @@ public class MagicControllerTestOneOther : MonoBehaviour
                 }
             }
 
-            else if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight, touch))
+            else if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight, handController))
             {
                 if (_dir == DIR.LEFT)
                 {
@@ -218,7 +228,7 @@ public class MagicControllerTestOneOther : MonoBehaviour
         ScaleChanger();
 
 
-        if (OVRInput.GetDown(magicButton, touch))
+        if (OVRInput.GetDown(magicButton, handController))
         {
                 GameObject magic = Instantiate(magicPrefab[index]);
                 magic.transform.position = transform.position;
