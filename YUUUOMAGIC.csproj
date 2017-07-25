@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Joo\Scripts\JS_WarpPoint.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRBoundary.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRCameraRig.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRCommon.cs" />
