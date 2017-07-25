@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: dc543d684e2a3754f910fa9de3fd0b3e
+timeCreated: 1500652491
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: THESomething
+  fontNames:
+  - THESomething
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

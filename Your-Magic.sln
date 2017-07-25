@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Your-Magic", "Your-Magic.csproj", "{994FEA9B-5ED0-0063-CDFA-806C83B02754}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Your-Magic.Editor", "Your-Magic.Editor.csproj", "{421AEF66-74BE-D80C-ABD4-2DB6E66C1A85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{994FEA9B-5ED0-0063-CDFA-806C83B02754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{994FEA9B-5ED0-0063-CDFA-806C83B02754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{994FEA9B-5ED0-0063-CDFA-806C83B02754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{994FEA9B-5ED0-0063-CDFA-806C83B02754}.Release|Any CPU.Build.0 = Release|Any CPU
+		{421AEF66-74BE-D80C-ABD4-2DB6E66C1A85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{421AEF66-74BE-D80C-ABD4-2DB6E66C1A85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{421AEF66-74BE-D80C-ABD4-2DB6E66C1A85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{421AEF66-74BE-D80C-ABD4-2DB6E66C1A85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
