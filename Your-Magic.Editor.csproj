@@ -126,13 +126,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Marab\OVR\Editor\OVRBuild.cs" />
-    <Compile Include="Assets\Marab\OVR\Editor\OVRManifestPreprocessor.cs" />
-    <Compile Include="Assets\Marab\OVR\Editor\OVRMoonlightLoader.cs" />
-    <Compile Include="Assets\Marab\OVR\Editor\OVRPluginUpdater.cs" />
-    <Compile Include="Assets\Marab\OVR\Editor\OVRPluginUpdaterStub.cs" />
-    <Compile Include="Assets\Marab\OVR\Editor\OVRScreenshotWizard.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Editor\AvatarMaterialEditor.cs" />
     <Compile Include="Assets\YM_WB\Editor\ImageEffects\AntialiasingEditor.cs" />
     <Compile Include="Assets\YM_WB\Editor\ImageEffects\BloomAndFlaresEditor.cs" />
     <Compile Include="Assets\YM_WB\Editor\ImageEffects\BloomEditor.cs" />
@@ -159,20 +152,6 @@
     <None Include="Assets\Joo\Shaders\FireBall\ParticleAdd.shader" />
     <None Include="Assets\Joo\Shaders\FireBall\ZFS_3D_Pro.shader" />
     <None Include="Assets\Joo\Shaders\HandShield\FT_Premultiplied_UVscroll_ST_DS.shader" />
-    <None Include="Assets\Marab\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
-    <None Include="Assets\Marab\OVR\Plugins\placeholder.txt" />
-    <None Include="Assets\Marab\OVR\Resources\Alpha Premultiply.shader" />
-    <None Include="Assets\Marab\OVR\Resources\OVRMRCameraFrame.shader" />
-    <None Include="Assets\Marab\OVR\Resources\OVRMRClipPlane.shader" />
-    <None Include="Assets\Marab\OVR\Resources\Underlay Impostor.shader" />
-    <None Include="Assets\Marab\OVR\Resources\Underlay Transparent Occluder.shader" />
-    <None Include="Assets\Marab\OVR\Resources\Unlit Transparent Color.shader" />
-    <None Include="Assets\Marab\OVR\Shaders\OVRColorRampAlpha.shader" />
-    <None Include="Assets\Marab\OVR\Shaders\Unlit Crosshair.shader" />
-    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarMaterialStateShader.cginc" />
-    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShader.shader" />
-    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
-    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
     <None Include="Assets\YM_WB\Fonts\NotoSans\theeluwin-NotoSansKR-Hestia-e2c6f1f\ksx1001.txt" />
     <None Include="Assets\YM_WB\Realistic Effects Pack\Readme.txt" />
     <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\AlphaBlended.shader" />
