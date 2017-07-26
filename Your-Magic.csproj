@@ -113,8 +113,47 @@
     <Compile Include="Assets\Marab\OVR\Scripts\Util\OVRSceneSampleController.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\Util\OVRScreenFade.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\Util\OVRWaitCursor.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
     <Compile Include="Assets\WooHyun\PWH\MonsterCtrl.cs" />
+=======
+    <Compile Include="Assets\Marab\OvrAvatar\Samples\GripPoses\Scripts\PoseEditHelper.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Samples\RemoteLoopback\Scripts\RemoteLoopbackManager.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatar.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarAsset.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarAssetMesh.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarAssetTexture.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarBase.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarBody.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarComponent.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarDriver.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarHand.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarLocalDriver.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarMeshInstance.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarPacket.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarProjectorRenderComponent.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarRemoteDriver.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarRenderComponent.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSDKCAPI.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSDKManager.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSettings.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSettingsEditor.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSkinnedMeshRenderComponent.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSkinnedMeshRenderPBSComponent.cs" />
+    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarTouchController.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_HandControllerTestOther.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_HandState.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestOneOther.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestThree.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestTwoOther.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternBallTestThree.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternPadThree.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicShieldTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_TouchTest.cs" />
+    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_CamRotate.cs" />
+    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_Move.cs" />
+    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_PlayFire.cs" />
+>>>>>>> origin/Marab
     <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Demo\MyGui.cs" />
     <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Balls\AddMaterialOnHit.cs" />
     <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Balls\LazyLoad.cs" />
@@ -197,6 +236,7 @@
     <None Include="Assets\Joo\Shaders\FireBall\ParticleAdd.shader" />
     <None Include="Assets\Joo\Shaders\FireBall\ZFS_3D_Pro.shader" />
     <None Include="Assets\Joo\Shaders\HandShield\FT_Premultiplied_UVscroll_ST_DS.shader" />
+    <None Include="Assets\Marab\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
     <None Include="Assets\Marab\OVR\Plugins\placeholder.txt" />
     <None Include="Assets\Marab\OVR\Resources\Alpha Premultiply.shader" />
     <None Include="Assets\Marab\OVR\Resources\OVRMRCameraFrame.shader" />
@@ -206,6 +246,10 @@
     <None Include="Assets\Marab\OVR\Resources\Unlit Transparent Color.shader" />
     <None Include="Assets\Marab\OVR\Shaders\OVRColorRampAlpha.shader" />
     <None Include="Assets\Marab\OVR\Shaders\Unlit Crosshair.shader" />
+    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarMaterialStateShader.cginc" />
+    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShader.shader" />
+    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
+    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
     <None Include="Assets\YM_WB\Fonts\NotoSans\theeluwin-NotoSansKR-Hestia-e2c6f1f\ksx1001.txt" />
     <None Include="Assets\YM_WB\Realistic Effects Pack\Readme.txt" />
     <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\AlphaBlended.shader" />
