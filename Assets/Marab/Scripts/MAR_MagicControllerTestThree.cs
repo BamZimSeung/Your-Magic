@@ -30,7 +30,7 @@ public class MAR_MagicControllerTestThree : MonoBehaviour
     public float magicTerm = 0.075f;
 
     int whatHand;
-
+    float term;
     // Use this for initialization
     void Start()
     {
@@ -47,10 +47,12 @@ public class MAR_MagicControllerTestThree : MonoBehaviour
         if (handController == OVRInput.Controller.LTouch)
         {
             whatHand = (int)MAR_HandState.Hand.LEFT;
+            term = -0.04f;
         }
         else
         {
             whatHand = (int)MAR_HandState.Hand.RIGHT;
+            term = 0.04f;
         }
 
     }
@@ -88,35 +90,37 @@ public class MAR_MagicControllerTestThree : MonoBehaviour
 
     void MagicChoice()
     {
-        Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit hit;
-        GetComponent<LineRenderer>().SetPosition(0, transform.position);
-        GetComponent<LineRenderer>().SetPosition(1, transform.position + transform.forward*0.05f);
-        if(Physics.Raycast(ray, out hit, 0.05f))
+        Ray ray = new Ray(transform.position+transform.forward * -0.075f + transform.right*term, transform.forward+ transform.right * term);
+        RaycastHit[] hit;
+        hit = Physics.RaycastAll(ray, 0.15f);
+        if(hit.Length>0)
         {
-            if (hit.transform.name.Contains("Ball"))
+            for (int i = 0; i < hit.Length; i++)
             {
-                if (hit.transform.name.Contains("Fire"))
+                if (hit[i].transform.name.Contains("Ball"))
                 {
-                    return;
-                }
-                MAR_MagicPatternBallTestThree mp = hit.transform.gameObject.GetComponent<MAR_MagicPatternBallTestThree>();
-                if (touchIndex!=0)
-                {
-                    if (touchPattern[touchIndex - 1] == mp.id)
+                    if (hit[i].transform.name.Contains("Fire"))
                     {
                         return;
                     }
-                }
-                mp.TouchHand();
-                touchPattern[touchIndex] = mp.id;
-                touchIndex++;
-                if (PatternCheck())
-                {
-                    magicPad.SetActive(false);
-                    magicPad.transform.position = transform.position + Vector3.forward * 0.1f;
-                    magicPad.transform.parent = transform;
-                    MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
+                    MAR_MagicPatternBallTestThree mp = hit[i].transform.gameObject.GetComponent<MAR_MagicPatternBallTestThree>();
+                    if (touchIndex != 0)
+                    {
+                        if (touchPattern[touchIndex - 1] == mp.id)
+                        {
+                            return;
+                        }
+                    }
+                    mp.TouchHand();
+                    touchPattern[touchIndex] = mp.id;
+                    touchIndex++;
+                    if (PatternCheck())
+                    {
+                        magicPad.SetActive(false);
+                        magicPad.transform.position = transform.position + Vector3.forward * 0.2f;
+                        magicPad.transform.parent = transform;
+                        MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
+                    }
                 }
             }
         }

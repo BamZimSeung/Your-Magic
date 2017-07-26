@@ -90,12 +90,19 @@ public class MAR_HandControllerTestOther : MonoBehaviour
             //3. 가능하면 회전까지
             grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(handController)*power;
             grabbedObject.GetComponent<Rigidbody>().angularVelocity = OVRInput.GetLocalControllerAngularVelocity(handController)*power;
+
             
 
             //잡은 물체 초기화
             grabbedObject = null;
+            MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
+            MAR_TouchTest.instance.ShootVibration(whatHand);
         }
-        MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
+        else
+        {
+            MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
+            MAR_TouchTest.instance.ClearVibration();
+        }
     }
     
 
@@ -154,6 +161,7 @@ public class MAR_HandControllerTestOther : MonoBehaviour
         {
             isGrabbing = false;
             MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
+            MAR_TouchTest.instance.ClearVibration();
         }
     }
     void GrabMagicObject()
@@ -209,6 +217,7 @@ public class MAR_HandControllerTestOther : MonoBehaviour
         {
             isGrabbing = false;
             MAR_HandState.handState[whatHand] = MAR_HandState.State.MAGIC_CONTROLL_2;
+            MAR_TouchTest.instance.ClearVibration();
         }
     }
 }
