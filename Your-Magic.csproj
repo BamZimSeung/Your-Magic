@@ -113,6 +113,8 @@
     <Compile Include="Assets\Marab\OVR\Scripts\Util\OVRSceneSampleController.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\Util\OVRScreenFade.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\Util\OVRWaitCursor.cs" />
+    <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
+    <Compile Include="Assets\WooHyun\PWH\MonsterCtrl.cs" />
     <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Demo\MyGui.cs" />
     <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Balls\AddMaterialOnHit.cs" />
     <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Balls\LazyLoad.cs" />
