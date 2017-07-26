@@ -19,7 +19,7 @@ public class WB_Fairy_Ctrl : MonoBehaviour {
     private float startTime;
     public float setha;
     public bool isMove = true;
-
+    public bool isBack = true;
     void Start()
     {
         center = Player.transform.position; // 센터 위치 잡기..
@@ -32,18 +32,19 @@ public class WB_Fairy_Ctrl : MonoBehaviour {
     {
         center = Player.transform.position; // 센터 위치 잡기..
         desPos = center + new Vector3(radius * Mathf.Cos(setha), Mathf.Abs(radius/2 * Mathf.Cos(setha)), radius * Mathf.Sin(setha));
+        desPos = Player.transform.forward + desPos.normalized * radius;
         if (isMove)
         {
             
             float fracComplete = (Time.time - startTime) / journeyTime;
             transform.position = Vector3.Slerp(originPos, desPos, fracComplete);
-            
             if (Vector3.Distance(transform.position, desPos) < 0.1f)
             {
                 setha = setha + Random.Range(15, 45);
-                transform.position = desPos;
+                setha = setha % 180;
                 originPos = transform.position;
                 startTime = Time.time;
+
             }
         }
     }
