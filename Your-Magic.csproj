@@ -153,7 +153,10 @@
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_CamRotate.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_Move.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_PlayFire.cs" />
+<<<<<<< HEAD
 >>>>>>> origin/Marab
+=======
+>>>>>>> origin/SJ
     <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Demo\MyGui.cs" />
     <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Balls\AddMaterialOnHit.cs" />
     <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Balls\LazyLoad.cs" />
