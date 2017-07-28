@@ -138,7 +138,7 @@ public class MAR_MagicControllerTestOneOther : MonoBehaviour
         magicPad.SetActive(false);
         //_state = Magic_State.IDLE;
 
-        MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
+        //MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
     }
 
     // 매직패드가 보여진 상태에서
@@ -230,10 +230,13 @@ public class MAR_MagicControllerTestOneOther : MonoBehaviour
 
         if (OVRInput.GetDown(magicButton, handController))
         {
+            /*
                 GameObject magic = Instantiate(magicPrefab[index]);
                 magic.transform.position = transform.position;
                 magic.transform.localScale = Vector3.one * 0.1f;
                 magic.GetComponent<Collider>().enabled = true;
+                */
+                gameObject.GetComponent<MAR_MagicPickTest>().PickMagic(magicPrefab[index].name);
                 MagicInit();
                 MagicUnShow();
         }

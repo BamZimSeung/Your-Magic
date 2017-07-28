@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class MAR_MagicControllerTestThree : MonoBehaviour
+public class MAR_MagicControllerTestThreeOther : MonoBehaviour
 {
     int[,] patternArray =new int[2, 9] { { 2, 5, 8, 0, 0, 0, 0, 0, 0 }, { 4, 5, 6, 0, 0, 0, 0, 0, 0 } };
     int patternsNum = 2;
@@ -44,6 +44,7 @@ public class MAR_MagicControllerTestThree : MonoBehaviour
         //나중에 보여주기만 한다.
         magicPad = Instantiate(magicPadPrefab);
         fingerPoint = Instantiate(fingerPointPrefab);
+        fingerPoint.GetComponent<MAR_MagicFingerPointTestThree>().SetHandParent(this);
 
         //위치 설정 후 부모 설정
         magicPad.transform.position = transform.position + Vector3.forward * 0.1f;
@@ -71,10 +72,9 @@ public class MAR_MagicControllerTestThree : MonoBehaviour
         switch (MAR_HandState.handState[whatHand])
         {
             case MAR_HandState.State.IDLE:
-                MagicShowCheck();
+                MagicShowCheck(null);
                 break;
             case MAR_HandState.State.MAGIC_CONTROLL_3:
-                MagicChoice();
                 MagicUnShowCheck();
                 break;
         }       
@@ -82,67 +82,83 @@ public class MAR_MagicControllerTestThree : MonoBehaviour
     }
 
 
-    void MagicShowCheck()
+    public void MagicShowCheck(string name)
     {
-        if (OVRInput.GetDown(magicButton, handController))
+        if (name == null)
+        {
+            if (OVRInput.GetDown(magicButton, handController))
+            {
+                if (finger == null)
+                {
+                    if (whatHand == (int)MAR_HandState.Hand.LEFT)
+                    {
+                        finger = GameObject.Find("hands:b_l_index_ignore");
+                    }
+                    else
+                    {
+                        finger = GameObject.Find("hands:b_r_index_ignore");
+                    }
+                    if (finger == null)
+                    {
+                        return;
+                    }
+                    fingerPoint.transform.position = finger.transform.position;
+                    fingerPoint.transform.parent = finger.transform;
+                }
+                fingerPoint.SetActive(true);
+                magicPad.SetActive(true);
+                magicPad.GetComponent<MAR_MagicPatternPadThree>().BallsInit();
+                magicPad.transform.forward = PlayerPos.transform.forward;
+                magicPad.transform.position = transform.position + PlayerPos.forward * 0.15f;
+                magicPad.transform.parent = null;
+                touchIndex = 0;
+                MAR_HandState.handState[whatHand] = MAR_HandState.State.MAGIC_CONTROLL_3;
+
+            }
+
+        }
+        else if (name.Contains("FireBall"))
         {
             if (finger == null)
             {
-                GameObject finger = GameObject.Find("hands:b_l_index_ignore");
-                fingerPoint.transform.position = finger.transform.position;
-                fingerPoint.transform.parent = finger.transform;
-                fingerPoint.SetActive(true);
+                if (whatHand == (int)MAR_HandState.Hand.LEFT)
+                {
+                    finger = GameObject.Find("hands:b_l_index_ignore");
+                }
+                else
+                {
+                    finger = GameObject.Find("hands:b_r_index_ignore");
+                }
                 if (finger == null)
                 {
                     return;
                 }
+                fingerPoint.transform.position = finger.transform.position;
+                fingerPoint.transform.parent = finger.transform;
             }
+            fingerPoint.SetActive(true);
             magicPad.SetActive(true);
             magicPad.GetComponent<MAR_MagicPatternPadThree>().BallsInit();
             magicPad.transform.forward = PlayerPos.transform.forward;
-            magicPad.transform.position = transform.position + Vector3.forward * 0.1f;
+            magicPad.transform.position = transform.position + PlayerPos.forward * 0.15f;
             magicPad.transform.parent = null;
+            magicPad.GetComponent<MAR_MagicPatternPadThree>().SetLineRender(patternArray, 0);
             touchIndex = 0;
             MAR_HandState.handState[whatHand] = MAR_HandState.State.MAGIC_CONTROLL_3;
-            
-        }        
+        }
     }
 
-    void MagicChoice()
+    public void MagicChoice(int id)
     {
-        Ray ray = new Ray(transform.position+transform.forward * -0.075f + transform.right*term, transform.forward+ transform.right * term);
-        RaycastHit[] hit;
-        hit = Physics.RaycastAll(ray, 0.15f);
-        if(hit.Length>0)
-        {
-            for (int i = 0; i < hit.Length; i++)
-            {
-                if (hit[i].transform.name.Contains("Ball"))
-                {
-                    if (hit[i].transform.name.Contains("Fire"))
-                    {
-                        return;
-                    }
-                    MAR_MagicPatternBallTestThree mp = hit[i].transform.gameObject.GetComponent<MAR_MagicPatternBallTestThree>();
-                    if (touchIndex != 0)
-                    {
-                        if (touchPattern[touchIndex - 1] == mp.id)
-                        {
-                            return;
-                        }
-                    }
-                    mp.TouchHand();
-                    touchPattern[touchIndex] = mp.id;
-                    touchIndex++;
-                    if (PatternCheck())
-                    {
-                        magicPad.SetActive(false);
-                        magicPad.transform.position = transform.position + Vector3.forward * 0.3f;
-                        magicPad.transform.parent = transform;
-                        MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
-                    }
-                }
-            }
+         touchPattern[touchIndex] = id;
+         touchIndex++;
+         if (PatternCheck())
+         {
+            magicPad.SetActive(false);
+            magicPad.transform.position = transform.position + Vector3.forward * 0.1f;
+            magicPad.transform.parent = transform;
+            MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
+            fingerPoint.SetActive(false);
         }
     }
 
@@ -190,12 +206,14 @@ public class MAR_MagicControllerTestThree : MonoBehaviour
             magicPad.SetActive(false);
             magicPad.transform.parent = transform;
             MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
+            fingerPoint.SetActive(false);
         }
         if((magicPad.transform.position - transform.position).magnitude > 0.3f)
         {
             magicPad.SetActive(false);
             magicPad.transform.parent = transform;
             MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
+            fingerPoint.SetActive(false);
         }
     }    
 

@@ -11,7 +11,7 @@ public class MAR_HandState {
         MAGIC_CONTROLL_1,
         MAGIC_CONTROLL_2,
         MAGIC_CONTROLL_3,
-        PAD_CONTROLL,
+        MAGIC_SHOOT,
         MAGIC_USE,
         SHIELD
     }

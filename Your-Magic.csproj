@@ -141,46 +141,21 @@
     <Compile Include="Assets\Marab\Scripts\MAR_HandState.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestOneOther.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestThree.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestThreeOther.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestTwoOther.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicFingerPointTestThree.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternBallTestThree.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternPadThree.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicPickTest.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicShieldTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicShoot.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_TouchTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_WarpControllerTest.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_CamRotate.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_Move.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_PlayFire.cs" />
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> origin/Marab
-=======
->>>>>>> origin/SJ
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Demo\MyGui.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Balls\AddMaterialOnHit.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Balls\LazyLoad.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Balls\ProjectileCollisionBehaviour.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Buffs\ShieldCollisionBehaviour.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Buffs\WaterUvAnimation.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Buffs\WaterWaveUvAnimation.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Shots\LineRendererBehaviour.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\CollisionActiveBehaviour.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\DeadTime.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\DistortionMobile.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\EffectSettings.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\FadeInOutLight.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\FadeInOutParticles.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\FadeInOutScale.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\FadeInOutShaderColor.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\FadeInOutShaderFloat.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\FadeInOutStatus.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\FixShaderQueue.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\OnStartSendCollision.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\QueueUvAnimation.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\RandomRotate.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\UVTextureAnimator.cs" />
-=======
     <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
     <Compile Include="Assets\WooHyun\PWH\MonsterCtrl.cs" />
->>>>>>> Marab
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
