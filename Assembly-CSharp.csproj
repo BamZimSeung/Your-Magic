@@ -202,9 +202,11 @@
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\Joo\Monster\Mon1\AlphaBlendedNoSmooth.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
      <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
      <None Include="Assets\Joo\Shaders\FireBall\ZFS_3D_Pro.shader" />
+     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout.shader" />
      <None Include="Assets\Marab\OVR\Shaders\Unlit Crosshair.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
      <None Include="Assets\Joo\Shaders\HitEffect\FireBall_Hit\ExplosionsGlowAdditive.shader" />
@@ -265,6 +267,7 @@
      <None Include="Assets\YM_WB\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
+     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout 1.shader" />
      <None Include="Assets\Marab\OVR\Resources\Underlay Impostor.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
