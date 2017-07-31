@@ -17,6 +17,14 @@ public class WB_Arrow_Destroy : MonoBehaviour {
         ac = GameObject.Find("Find_Destination").GetComponent<WB_Arrow_Ctrl>();
     }
     void Update () {
+        if(ac.stageSelect == false)
+        {
+            Destroy(this.gameObject);
+        }
+        if(ac.isPlayerMoving == true)
+        {
+            Destroy(this.gameObject);
+        }
         currentTime += Time.deltaTime;
         if(currentTime >  ac.des_time - destroyDelay)
         {

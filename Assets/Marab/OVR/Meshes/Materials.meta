@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: b424042f51f721c488a85c10fae0623e
 folderAsset: yes
 timeCreated: 1501051021
@@ -8,6 +9,11 @@ guid: 578059949609a014cb85e3dea63700c5
 folderAsset: yes
 timeCreated: 1501153739
 >>>>>>> origin/Joo
+=======
+guid: 4161d301891fc0d459f6d919fe52001c
+folderAsset: yes
+timeCreated: 1501213372
+>>>>>>> origin/dev_BN
 licenseType: Free
 DefaultImporter:
   userData: 
