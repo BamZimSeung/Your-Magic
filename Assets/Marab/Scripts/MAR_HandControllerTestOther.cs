@@ -86,8 +86,9 @@ public class MAR_HandControllerTestOther : MonoBehaviour
             //2. 물리 속성 활성화
             grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
             grabbedObject.GetComponent<Rigidbody>().useGravity = true;
-            
+
             //3. 가능하면 회전까지
+            grabbedObject.GetComponent<Collider>().isTrigger = false;
             grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(handController)*power;
             grabbedObject.GetComponent<Rigidbody>().angularVelocity = OVRInput.GetLocalControllerAngularVelocity(handController)*power;
 
