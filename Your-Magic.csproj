@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Joo\Scripts\ExplosionsShaderQueue.cs" />
+    <Compile Include="Assets\Joo\Scripts\JS_CorpseExplosion.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_EffectDestroy.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_EnergyBoltHit.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_FireBallExplosion.cs" />
@@ -160,6 +161,7 @@
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_Move.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_PlayFire.cs" />
     <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
+    <Compile Include="Assets\WooHyun\PWH\Monster.cs" />
     <Compile Include="Assets\WooHyun\PWH\MonsterCtrl.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
