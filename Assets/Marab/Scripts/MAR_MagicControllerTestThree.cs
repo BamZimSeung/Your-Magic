@@ -117,7 +117,7 @@ public class MAR_MagicControllerTestThree : MonoBehaviour
                     if (PatternCheck())
                     {
                         magicPad.SetActive(false);
-                        magicPad.transform.position = transform.position + Vector3.forward * 0.2f;
+                        magicPad.transform.position = transform.position + Vector3.forward * 0.35f;
                         magicPad.transform.parent = transform;
                         MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
                     }

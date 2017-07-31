@@ -17,7 +17,7 @@ public class MonsterCtrl : MonoBehaviour {
     public float attackDist = 2.0f;
 
     bool isDie = false;
-    int hp = 90;
+    int hp = 30;
 
     void Start()
     {
@@ -107,7 +107,7 @@ public class MonsterCtrl : MonoBehaviour {
             }
 
             Destroy(coll.gameObject);
-            animator.SetTrigger("IsHit");
+            animator.SetTrigger("Hitting");
         }
     }
 

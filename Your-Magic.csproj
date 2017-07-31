@@ -113,10 +113,6 @@
     <Compile Include="Assets\Marab\OVR\Scripts\Util\OVRSceneSampleController.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\Util\OVRScreenFade.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\Util\OVRWaitCursor.cs" />
-<<<<<<< HEAD
-    <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
-    <Compile Include="Assets\WooHyun\PWH\MonsterCtrl.cs" />
-=======
     <Compile Include="Assets\Marab\OvrAvatar\Samples\GripPoses\Scripts\PoseEditHelper.cs" />
     <Compile Include="Assets\Marab\OvrAvatar\Samples\RemoteLoopback\Scripts\RemoteLoopbackManager.cs" />
     <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatar.cs" />
@@ -153,7 +149,11 @@
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_CamRotate.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_Move.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_PlayFire.cs" />
+<<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/Marab
+=======
+>>>>>>> origin/SJ
     <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Demo\MyGui.cs" />
     <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Balls\AddMaterialOnHit.cs" />
     <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Balls\LazyLoad.cs" />
@@ -177,6 +177,10 @@
     <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\QueueUvAnimation.cs" />
     <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\RandomRotate.cs" />
     <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\UVTextureAnimator.cs" />
+=======
+    <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
+    <Compile Include="Assets\WooHyun\PWH\MonsterCtrl.cs" />
+>>>>>>> Marab
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
@@ -210,19 +214,26 @@
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\TiltShift.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Tonemapping.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Triangles.cs" />
-    <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
-    <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Image Effects (Pro Only)\ImageEffectBase.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Image Effects (Pro Only)\ImageEffects.cs" />
+    <Compile Include="Assets\YM_WB\WB_Scripts\EffectSettings.cs" />
+    <Compile Include="Assets\YM_WB\WB_Scripts\FadeInOutLight.cs" />
+    <Compile Include="Assets\YM_WB\WB_Scripts\FadeInOutShaderColor.cs" />
+    <Compile Include="Assets\YM_WB\WB_Scripts\FixShaderQueue.cs" />
+    <Compile Include="Assets\YM_WB\WB_Scripts\QueueUvAnimation.cs" />
+    <Compile Include="Assets\YM_WB\WB_Scripts\UVTextureAnimator.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Arrow_Ctrl.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Arrow_Destroy.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_DisplayCanvas.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Fairy_Ctrl.cs" />
+    <Compile Include="Assets\YM_WB\WB_Scripts\WB_HitCtnl.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_OpenPortal.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_PlayerMove.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_PortalCtnl.cs" />
+    <Compile Include="Assets\YM_WB\WB_Scripts\WB_PortalTrigger.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Sound.cs" />
+    <Compile Include="Assets\YM_WB\WB_Scripts\WB_SpaceCtnl.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_UITriangle.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -251,33 +262,7 @@
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
     <None Include="Assets\YM_WB\Fonts\NotoSans\theeluwin-NotoSansKR-Hestia-e2c6f1f\ksx1001.txt" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Readme.txt" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\AlphaBlended.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\AlphaBlendedNoSmooth.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\DiffuseRim.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Distortion\DistortionCullBack.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Distortion\DistortionCullOff.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Distortion\DistortionParticlesCutout.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Distortion\Free\FreeDistortionCullBack.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Distortion\Free\FreeDistortionCullOff.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Distortion\Free\FreeDistortionCutOut.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Explosion.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\GlowAdditive.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\GlowAdditiveSimple.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\GlowAdditiveTwoColor.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Matrix\Additive.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Matrix\GlowAdditive.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Matrix\GlowAdditiveSimple.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Mobile\Distortion\DistortionCullBack.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Mobile\Distortion\DistortionCullOff.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Mobile\Distortion\DistortionParticlesCutout.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Mobile\Water.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\ParticleAdd.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\ParticleAddNoSmooth.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Particles.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Rim.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\Water.shader" />
-    <None Include="Assets\YM_WB\Realistic Effects Pack\Shaders\WaterFree.shader" />
+    <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Readme.txt" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
@@ -295,6 +280,7 @@
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
+    <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\DistortionCullOff.shader" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
