@@ -55,6 +55,7 @@ public class MAR_WarpControllerTest : MonoBehaviour
                 move = hitinfo.transform;
                 lr.enabled = false;
             }
+            lr.enabled = false;
         }
         /*
         else if (OVRInput.GetUp(warpButtonRight, handController))

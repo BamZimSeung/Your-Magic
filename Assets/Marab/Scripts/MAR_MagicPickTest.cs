@@ -17,10 +17,6 @@ public class MAR_MagicPickTest : MonoBehaviour {
             whatHand = (int)MAR_HandState.Hand.RIGHT;
         }
     }
-    private void Update()
-    {
-        Debug.Log(MAR_HandState.handState[0]);
-    }
     public void PickMagic(string name)
     {
         if (name.Contains("FireBall"))

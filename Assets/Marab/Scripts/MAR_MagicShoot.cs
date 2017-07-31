@@ -42,13 +42,15 @@ public class MAR_MagicShoot : MonoBehaviour {
             {
                 GameObject bolt = Instantiate(energyBolt);
                 bolt.transform.parent = null;
-                bolt.transform.position = transform.position + transform.forward *0.2f ;
+                bolt.transform.position = transform.position;
+                Debug.Log(transform.forward);
                 bolt.transform.forward = transform.forward;
                 bolt.transform.localScale = Vector3.one * 0.1f;
                 bolt.GetComponent<Collider>().enabled = true;
                 bolt.GetComponent<Rigidbody>().useGravity = true;
                 bolt.GetComponent<Rigidbody>().isKinematic = false;
                 bolt.GetComponent<Rigidbody>().velocity=transform.forward*10f;
+                MAR_TouchTest.instance.ShootVibration(whatHand);
                 count--;
             }
         }

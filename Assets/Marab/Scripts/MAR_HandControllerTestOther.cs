@@ -167,7 +167,6 @@ public class MAR_HandControllerTestOther : MonoBehaviour
     }
     void GrabMagicObject()
     {
-        Debug.Log("TEST");
         //1. Grab기능 활성화
         //2. Grab영역 안에 물체가 있으면 Grabbable을 판단하고 잡기
         //3. 만약에, 많은 물체가 있으면 제일 가까운 물체를 우선적으로 잡는다.
@@ -202,7 +201,6 @@ public class MAR_HandControllerTestOther : MonoBehaviour
                 return;
             }
             grabbedObject = hits[closest].transform.gameObject;
-            Debug.Log(grabbedObject);
             gameObject.GetComponent<MAR_MagicPickTest>().PickMagic(grabbedObject.name);
             /*
             grabbedObject = Instantiate(hits[closest].transform.gameObject);

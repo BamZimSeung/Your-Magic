@@ -5,7 +5,7 @@ using UnityEngine;
 public class MAR_MagicPatternBallTestThree : MonoBehaviour {
     public int id;
     Vector3 lScale=new Vector3(0.075f,0.075f,0.075f);
-    float scalSpeed = 10;
+    float scalSpeed = 20;
         
 
     public void TouchHand()
@@ -22,6 +22,7 @@ public class MAR_MagicPatternBallTestThree : MonoBehaviour {
             transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, 0.5f * scalSpeed * Time.deltaTime);
             if((transform.localScale-Vector3.zero).magnitude <= 0.01f)
             {
+                transform.localScale = Vector3.zero;
                 break;
             }
             yield return null;
