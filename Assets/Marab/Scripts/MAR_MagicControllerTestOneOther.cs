@@ -44,8 +44,8 @@ public class MAR_MagicControllerTestOneOther : MonoBehaviour
 
 
     int whatHand;
-    
 
+    int maxMagic = 2;
     
 
 
@@ -64,18 +64,18 @@ public class MAR_MagicControllerTestOneOther : MonoBehaviour
 
 
         //매직 패드에 들어갈 마법 설정
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 2; i++)
         {
             GameObject magic = Instantiate(magicPrefab[i]);
             magic.transform.parent = magicPad.transform;
             magicArray[i] = magic;
             if (i == 0)
             {
-                magic.transform.localPosition = new Vector3(0, 0, magicTerm);
+                magic.transform.localPosition = new Vector3(magicTerm, 0, 0);
             }
             else if (i == 1)
             {
-                magic.transform.localPosition = new Vector3(magicTerm, 0, 0);
+                magic.transform.localPosition = new Vector3(-magicTerm, 0, 0);
             }
             else if (i == 2)
             {
@@ -138,7 +138,7 @@ public class MAR_MagicControllerTestOneOther : MonoBehaviour
         magicPad.SetActive(false);
         //_state = Magic_State.IDLE;
 
-        MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
+        //MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
     }
 
     // 매직패드가 보여진 상태에서
@@ -230,10 +230,13 @@ public class MAR_MagicControllerTestOneOther : MonoBehaviour
 
         if (OVRInput.GetDown(magicButton, handController))
         {
+            /*
                 GameObject magic = Instantiate(magicPrefab[index]);
                 magic.transform.position = transform.position;
                 magic.transform.localScale = Vector3.one * 0.1f;
                 magic.GetComponent<Collider>().enabled = true;
+                */
+                gameObject.GetComponent<MAR_MagicPickTest>().PickMagic(magicPrefab[index].name);
                 MagicInit();
                 MagicUnShow();
         }
@@ -245,20 +248,20 @@ public class MAR_MagicControllerTestOneOther : MonoBehaviour
         index--;
         if (index < 0)
         {
-            index = 3;
+            index = 1;
         }
     }
     void MagicRightRot()
     {
         index++;
-        if (index >3)
+        if (index >1)
         {
             index = 0;
         }
     }
     void ScaleChanger()
     {
-        for(int i = 0; i < 4; i++)
+        for(int i = 0; i < 2; i++)
         {
             if (i == index)
             {
@@ -277,7 +280,7 @@ public class MAR_MagicControllerTestOneOther : MonoBehaviour
 
     void MagicInit()
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 2; i++)
         {
             magicArray[i].transform.localScale = magicLScale[i];
         }

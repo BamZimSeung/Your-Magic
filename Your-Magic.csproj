@@ -141,14 +141,20 @@
     <Compile Include="Assets\Marab\Scripts\MAR_HandState.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestOneOther.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestThree.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestThreeOther.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestTwoOther.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicFingerPointTestThree.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternBallTestThree.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternPadThree.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicPickTest.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicShieldTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicShoot.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_TouchTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_WarpControllerTest.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_CamRotate.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_Move.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_PlayFire.cs" />
+<<<<<<< HEAD
 <<<<<<< HEAD
     <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
     <Compile Include="Assets\WooHyun\PWH\MonsterCtrl.cs" />
@@ -186,6 +192,10 @@
     <Compile Include="Assets\WooHyun\PWH\MonsterCtrl.cs" />
 >>>>>>> Marab
 >>>>>>> 704c9527aa3cf378a7a7c87258b63483dc0da799
+=======
+    <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
+    <Compile Include="Assets\WooHyun\PWH\MonsterCtrl.cs" />
+>>>>>>> origin/Marab
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />

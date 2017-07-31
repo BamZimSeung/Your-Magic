@@ -89,8 +89,8 @@ public class MAR_HandControllerTestOther : MonoBehaviour
 
             //3. 가능하면 회전까지
             grabbedObject.GetComponent<Collider>().isTrigger = false;
+            grabbedObject.GetComponent<Rigidbody>().angularVelocity = OVRInput.GetLocalControllerAngularVelocity(handController) * power;
             grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(handController)*power;
-            grabbedObject.GetComponent<Rigidbody>().angularVelocity = OVRInput.GetLocalControllerAngularVelocity(handController)*power;
 
             
 
@@ -168,7 +168,6 @@ public class MAR_HandControllerTestOther : MonoBehaviour
     void GrabMagicObject()
     {
         //1. Grab기능 활성화
-        isGrabbing = true;
         //2. Grab영역 안에 물체가 있으면 Grabbable을 판단하고 잡기
         //3. 만약에, 많은 물체가 있으면 제일 가까운 물체를 우선적으로 잡는다.
         // 영역에서 범위 충돌 검사.
@@ -179,7 +178,7 @@ public class MAR_HandControllerTestOther : MonoBehaviour
             int closest = -1;
             for (int i = 0; i < hits.Length; i++)
             {
-                if(hits[i].transform.parent==null)
+                if (hits[i].transform.parent==null)
                 {
                     continue;
                 }
@@ -201,6 +200,9 @@ public class MAR_HandControllerTestOther : MonoBehaviour
                 isGrabbing = false;
                 return;
             }
+            grabbedObject = hits[closest].transform.gameObject;
+            gameObject.GetComponent<MAR_MagicPickTest>().PickMagic(grabbedObject.name);
+            /*
             grabbedObject = Instantiate(hits[closest].transform.gameObject);
             //부모자식 관계로 만들어준다.
             grabbedObject.transform.parent = transform;
@@ -213,6 +215,7 @@ public class MAR_HandControllerTestOther : MonoBehaviour
             grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
             grabbedObject.GetComponent<Rigidbody>().useGravity = false;
             MAR_HandState.handState[whatHand] = MAR_HandState.State.MAGIC_USE;
+            */
         }
         else
         {

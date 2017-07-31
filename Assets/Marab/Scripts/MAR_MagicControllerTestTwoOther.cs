@@ -47,9 +47,11 @@ public class MAR_MagicControllerTestTwoOther : MonoBehaviour
     Magic_State _state = Magic_State.IDLE;
 
     //매직 패드에 중심과의 거리
-    float magicTerm = 0.2f;
+    float magicTerm = 0.1f;
 
     int whatHand;
+
+    int maxMagic = 2;
 
     // Use this for initialization
     void Start()
@@ -61,7 +63,7 @@ public class MAR_MagicControllerTestTwoOther : MonoBehaviour
         //위치 설정 후 부모 설정
 
         //매직 패드에 들어갈 마법 설정
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < maxMagic; i++)
         {
             GameObject magic = Instantiate(magicPrefab[i]);
             magic.transform.parent = magicPad.transform;
@@ -69,11 +71,11 @@ public class MAR_MagicControllerTestTwoOther : MonoBehaviour
             magic.transform.localScale = Vector3.one * 0.03f;
             if (i == 0)
             {
-                magic.transform.localPosition = new Vector3(0, magicTerm, 0);
+                magic.transform.localPosition = new Vector3(magicTerm, 0, 0);
             }
             else if (i == 1)
             {
-                magic.transform.localPosition = new Vector3(magicTerm, 0, 0);
+                magic.transform.localPosition = new Vector3(-magicTerm, 0, 0);
             }
             else if (i == 2)
             {
