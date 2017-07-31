@@ -78,6 +78,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Joo\Scripts\ExplosionsShaderQueue.cs" />
+    <Compile Include="Assets\Joo\Scripts\JS_EffectDestroy.cs" />
+    <Compile Include="Assets\Joo\Scripts\JS_EnergyBoltHit.cs" />
+    <Compile Include="Assets\Joo\Scripts\JS_FireBallExplosion.cs" />
+    <Compile Include="Assets\Joo\Scripts\JS_MagicClash.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_WarpPoint.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRBoundary.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRCameraRig.cs" />
@@ -154,48 +159,8 @@
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_CamRotate.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_Move.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_PlayFire.cs" />
-<<<<<<< HEAD
-<<<<<<< HEAD
     <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
     <Compile Include="Assets\WooHyun\PWH\MonsterCtrl.cs" />
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> origin/Marab
-=======
->>>>>>> origin/SJ
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Demo\MyGui.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Balls\AddMaterialOnHit.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Balls\LazyLoad.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Balls\ProjectileCollisionBehaviour.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Buffs\ShieldCollisionBehaviour.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Buffs\WaterUvAnimation.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Buffs\WaterWaveUvAnimation.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Prefabs\Shots\LineRendererBehaviour.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\CollisionActiveBehaviour.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\DeadTime.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\DistortionMobile.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\EffectSettings.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\FadeInOutLight.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\FadeInOutParticles.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\FadeInOutScale.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\FadeInOutShaderColor.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\FadeInOutShaderFloat.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\FadeInOutStatus.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\FixShaderQueue.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\OnStartSendCollision.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\QueueUvAnimation.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\RandomRotate.cs" />
-    <Compile Include="Assets\YM_WB\Realistic Effects Pack\Scripts\Share\UVTextureAnimator.cs" />
-=======
-    <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
-    <Compile Include="Assets\WooHyun\PWH\MonsterCtrl.cs" />
->>>>>>> Marab
->>>>>>> 704c9527aa3cf378a7a7c87258b63483dc0da799
-=======
-    <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
-    <Compile Include="Assets\WooHyun\PWH\MonsterCtrl.cs" />
->>>>>>> origin/Marab
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
@@ -252,6 +217,9 @@
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_UITriangle.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Joo\Monster\Mon1\AlphaBlendedNoSmooth.shader" />
+    <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout 1.shader" />
+    <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel_DS.shader" />
@@ -262,6 +230,10 @@
     <None Include="Assets\Joo\Shaders\FireBall\ParticleAdd.shader" />
     <None Include="Assets\Joo\Shaders\FireBall\ZFS_3D_Pro.shader" />
     <None Include="Assets\Joo\Shaders\HandShield\FT_Premultiplied_UVscroll_ST_DS.shader" />
+    <None Include="Assets\Joo\Shaders\HitEffect\EnergyBolt_Hit\FT_Premultiplied_DS.shader" />
+    <None Include="Assets\Joo\Shaders\HitEffect\FireBall_Hit\ExplosionsDistortionParticlesCutout.shader" />
+    <None Include="Assets\Joo\Shaders\HitEffect\FireBall_Hit\ExplosionsGlowAdditive.shader" />
+    <None Include="Assets\Joo\Shaders\HitEffect\FireBall_Hit\ExplosionsParticleBlendLight.shader" />
     <None Include="Assets\Marab\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
     <None Include="Assets\Marab\OVR\Plugins\placeholder.txt" />
     <None Include="Assets\Marab\OVR\Resources\Alpha Premultiply.shader" />
