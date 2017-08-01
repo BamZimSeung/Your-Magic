@@ -146,6 +146,7 @@
     <Compile Include="Assets\YM_WB\Editor\Scripts\EffectSettingsEditor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\City skyline\Shader\CitySkyline.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel_DS.shader" />
