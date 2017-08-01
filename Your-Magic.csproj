@@ -204,6 +204,7 @@
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Arrow_Destroy.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_DisplayCanvas.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Fairy_Ctrl.cs" />
+    <Compile Include="Assets\YM_WB\WB_Scripts\WB_Fairy_Word.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_HitCtnl.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_OpenPortal.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_PlayerMove.cs" />
