@@ -146,6 +146,9 @@
     <Compile Include="Assets\YM_WB\Editor\Scripts\EffectSettingsEditor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Joo\Monster\Mon1\AlphaBlendedNoSmooth.shader" />
+    <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout 1.shader" />
+    <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel_DS.shader" />
@@ -156,6 +159,10 @@
     <None Include="Assets\Joo\Shaders\FireBall\ParticleAdd.shader" />
     <None Include="Assets\Joo\Shaders\FireBall\ZFS_3D_Pro.shader" />
     <None Include="Assets\Joo\Shaders\HandShield\FT_Premultiplied_UVscroll_ST_DS.shader" />
+    <None Include="Assets\Joo\Shaders\HitEffect\EnergyBolt_Hit\FT_Premultiplied_DS.shader" />
+    <None Include="Assets\Joo\Shaders\HitEffect\FireBall_Hit\ExplosionsDistortionParticlesCutout.shader" />
+    <None Include="Assets\Joo\Shaders\HitEffect\FireBall_Hit\ExplosionsGlowAdditive.shader" />
+    <None Include="Assets\Joo\Shaders\HitEffect\FireBall_Hit\ExplosionsParticleBlendLight.shader" />
     <None Include="Assets\Marab\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
     <None Include="Assets\Marab\OVR\Plugins\placeholder.txt" />
     <None Include="Assets\Marab\OVR\Resources\Alpha Premultiply.shader" />

@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Joo\Scripts\ExplosionsShaderQueue.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_WarpPoint.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRBoundary.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRCameraRig.cs" />
@@ -141,11 +142,16 @@
     <Compile Include="Assets\Marab\Scripts\MAR_HandState.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestOneOther.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestThree.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestThreeOther.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestTwoOther.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicFingerPointTestThree.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternBallTestThree.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternPadThree.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicPickTest.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicShieldTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicShoot.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_TouchTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_WarpControllerTest.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_CamRotate.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_Move.cs" />
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_PlayFire.cs" />
@@ -197,6 +203,7 @@
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Arrow_Destroy.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_DisplayCanvas.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Fairy_Ctrl.cs" />
+    <Compile Include="Assets\YM_WB\WB_Scripts\WB_Fairy_Word.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_HitCtnl.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_OpenPortal.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_PlayerMove.cs" />
@@ -207,6 +214,9 @@
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_UITriangle.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Joo\Monster\Mon1\AlphaBlendedNoSmooth.shader" />
+    <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout 1.shader" />
+    <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel_DS.shader" />
@@ -217,6 +227,10 @@
     <None Include="Assets\Joo\Shaders\FireBall\ParticleAdd.shader" />
     <None Include="Assets\Joo\Shaders\FireBall\ZFS_3D_Pro.shader" />
     <None Include="Assets\Joo\Shaders\HandShield\FT_Premultiplied_UVscroll_ST_DS.shader" />
+    <None Include="Assets\Joo\Shaders\HitEffect\EnergyBolt_Hit\FT_Premultiplied_DS.shader" />
+    <None Include="Assets\Joo\Shaders\HitEffect\FireBall_Hit\ExplosionsDistortionParticlesCutout.shader" />
+    <None Include="Assets\Joo\Shaders\HitEffect\FireBall_Hit\ExplosionsGlowAdditive.shader" />
+    <None Include="Assets\Joo\Shaders\HitEffect\FireBall_Hit\ExplosionsParticleBlendLight.shader" />
     <None Include="Assets\Marab\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
     <None Include="Assets\Marab\OVR\Plugins\placeholder.txt" />
     <None Include="Assets\Marab\OVR\Resources\Alpha Premultiply.shader" />
