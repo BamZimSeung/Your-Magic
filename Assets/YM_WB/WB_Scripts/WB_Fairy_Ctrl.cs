@@ -8,6 +8,7 @@ using UnityEngine;
 public class WB_Fairy_Ctrl : MonoBehaviour {
     public GameObject Player;
     public GameObject fairy_position;
+    public GameObject Word_Ballon;
     public float radius = 3f;
     public float upDown = 2f;
     
@@ -68,6 +69,7 @@ public class WB_Fairy_Ctrl : MonoBehaviour {
             originPos = desPos; // 원래 위치도 고정
         }
         startTime = Time.time;
+        Word_Ballon.SetActive(true);
     }
 
     void Fairy_Move()
@@ -90,5 +92,6 @@ public class WB_Fairy_Ctrl : MonoBehaviour {
                 startTime = Time.time; // 시작시간 셋팅.
             }
         }
+        Word_Ballon.SetActive(false);
     }
 }
