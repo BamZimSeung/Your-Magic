@@ -3,36 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MAR_MagicPatternBallTestThree : MonoBehaviour {
-    public int id;
-    Vector3 lScale=new Vector3(0.075f,0.075f,0.075f);
-    float scalSpeed = 20;
-        
+    public int id;    
 
-    public void TouchHand()
+    private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine("TouchByHand");
-    }
-
-
-
-    IEnumerator TouchByHand()
-    {
-        while (true)
+        if (GetComponent<Collider>().isTrigger==false)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, 0.5f * scalSpeed * Time.deltaTime);
-            if((transform.localScale-Vector3.zero).magnitude <= 0.01f)
-            {
-                transform.localScale = Vector3.zero;
-                break;
-            }
-            yield return null;
+            return;
         }
-        yield return null;
-    }
-
-    public void Init()
-    {
-        StopCoroutine("TouchByHand");
-        transform.localScale = lScale;
+        if (other.name.Contains("MagicBall"))
+        {
+            if((transform.parent.name.Contains("Left") && other.transform.parent.name.Contains("left")))
+            {
+                GetComponent<MeshRenderer>().material = other.GetComponent<MeshRenderer>().material;
+                GetComponent<Collider>().enabled = false;
+                transform.parent.GetComponent<MAR_MagicPatternPadThree>().parentScript.MagicChoice(id);
+            }
+            else if(transform.parent.name.Contains("Right") && other.transform.parent.name.Contains("right"))
+            {
+                GetComponent<MeshRenderer>().material = other.GetComponent<MeshRenderer>().material;
+                GetComponent<Collider>().enabled = false;
+                transform.parent.GetComponent<MAR_MagicPatternPadThree>().parentScript.MagicChoice(id);
+            }
+        }
     }
 }

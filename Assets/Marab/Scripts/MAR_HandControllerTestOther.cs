@@ -22,7 +22,7 @@ public class MAR_HandControllerTestOther : MonoBehaviour
 
     //잡을 개체 Layer지정
     public LayerMask grabLayer;
-    
+
     //던지는 힘
     public float power = 6.0f;
 
@@ -46,7 +46,16 @@ public class MAR_HandControllerTestOther : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        switch (MAR_HandState.handState[whatHand])
+        {
+            case MAR_HandState.State.SHIELD:
+                if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, handController))
+                {
+                    Destroy(GameObject.Find("HandShield"));
+                    MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
+                }
+                break;
+        }
         
         //Grab버튼을 누르면 Grab기능 활성화
         if (isGrabbing == false && OVRInput.GetDown(grabButton, handController) &&
@@ -54,13 +63,6 @@ public class MAR_HandControllerTestOther : MonoBehaviour
         {
             //물체잡는 동작
             GrabObject();
-        }
-        //Grab버튼을 누르면 Grab기능 활성화
-        if (isGrabbing == false && OVRInput.GetDown(grabButton, handController) &&
-            MAR_HandState.handState[whatHand] == MAR_HandState.State.MAGIC_CONTROLL_2)
-        {
-            //물체잡는 동작
-            GrabMagicObject();
         }
         //Grab기능이 활성화 되어있고, up 이벤트 발생하면?
         else if (isGrabbing == true && OVRInput.GetUp(grabButton, handController) &&
@@ -105,9 +107,18 @@ public class MAR_HandControllerTestOther : MonoBehaviour
             MAR_TouchTest.instance.ClearVibration();
         }
     }
+
+    public void SetGrabObject(GameObject magic)
+    {
+        isGrabbing = true;
+        grabbedObject = Instantiate(magic);
+        grabbedObject.transform.parent = transform;
+        grabbedObject.transform.position = transform.position;
+        grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
+        grabbedObject.GetComponent<Rigidbody>().useGravity = false;
+        MAR_HandState.handState[whatHand] = MAR_HandState.State.MAGIC_USE;
+    }
     
-
-
 
     //물체 잡기
     void GrabObject()
@@ -148,11 +159,7 @@ public class MAR_HandControllerTestOther : MonoBehaviour
 
             grabbedObject.transform.parent = transform;
             grabbedObject.transform.position = transform.position;
-
-            grabbedObject.transform.localScale = Vector3.one * 0.1f;
-
-
-
+                        
             grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
             grabbedObject.GetComponent<Rigidbody>().useGravity = false;
             MAR_HandState.handState[whatHand] = MAR_HandState.State.MAGIC_USE;
@@ -162,65 +169,6 @@ public class MAR_HandControllerTestOther : MonoBehaviour
         {
             isGrabbing = false;
             MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
-            MAR_TouchTest.instance.ClearVibration();
-        }
-    }
-    void GrabMagicObject()
-    {
-        //1. Grab기능 활성화
-        //2. Grab영역 안에 물체가 있으면 Grabbable을 판단하고 잡기
-        //3. 만약에, 많은 물체가 있으면 제일 가까운 물체를 우선적으로 잡는다.
-        // 영역에서 범위 충돌 검사.
-        Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit[] hits = Physics.SphereCastAll(ray, grabRange, 0.0f, grabLayer);
-        if (hits.Length > 0)
-        {
-            int closest = -1;
-            for (int i = 0; i < hits.Length; i++)
-            {
-                if (hits[i].transform.parent==null)
-                {
-                    continue;
-                }
-                if (hits[i].transform.parent.name.Contains("MagicPadTwo"))
-                {
-                    if (closest < 0)
-                    {
-                        closest = i;
-                    }
-                    else if (hits[i].distance <= hits[closest].distance)
-                    {
-                        closest = i;
-                    }
-                }
-            }
-            
-            if (closest<0)
-            {
-                isGrabbing = false;
-                return;
-            }
-            grabbedObject = hits[closest].transform.gameObject;
-            gameObject.GetComponent<MAR_MagicPickTest>().PickMagic(grabbedObject.name);
-            /*
-            grabbedObject = Instantiate(hits[closest].transform.gameObject);
-            //부모자식 관계로 만들어준다.
-            grabbedObject.transform.parent = transform;
-            grabbedObject.transform.position = transform.position;
-
-            grabbedObject.transform.localScale = Vector3.one * 0.1f;
-
-
-
-            grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
-            grabbedObject.GetComponent<Rigidbody>().useGravity = false;
-            MAR_HandState.handState[whatHand] = MAR_HandState.State.MAGIC_USE;
-            */
-        }
-        else
-        {
-            isGrabbing = false;
-            MAR_HandState.handState[whatHand] = MAR_HandState.State.MAGIC_CONTROLL_2;
             MAR_TouchTest.instance.ClearVibration();
         }
     }

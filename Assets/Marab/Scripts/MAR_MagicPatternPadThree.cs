@@ -3,37 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MAR_MagicPatternPadThree : MonoBehaviour {
-
-    LineRenderer lr;
-
-
-    private void OnEnable()
-    {
-        lr = GetComponent<LineRenderer>();
-    }
+    
+    [HideInInspector]
+    public MAR_MagicControllerTestThreeOther parentScript;
     public MAR_MagicPatternBallTestThree[] balls;
-
-    public void BallsInit()
+    Material[] ballMats=new Material[9];
+    
+    public void SettingPad()
     {
-        lr.enabled = false;
         for(int i = 0; i < 9; i++)
         {
-            balls[i].Init();
-            balls[i].GetComponent<Collider>().enabled = true;
+            ballMats[i]=balls[i].GetComponent<MeshRenderer>().material;
         }
     }
     
-    public void SetLineRender(int[,] array,int choice)
+
+    public void SetParentScript(MAR_MagicControllerTestThreeOther script)
     {
-        for(int i = 0; i < 9; i++)
+        parentScript = script;
+    }
+
+
+    public void BallsInit()
+    {
+        for (int i = 0; i < 9; i++)
+        {
+            balls[i].GetComponent<MeshRenderer>().material=ballMats[i];
+            balls[i].GetComponent<Collider>().enabled = true;
+            balls[i].gameObject.SetActive(true);
+        }
+    }
+    
+    public void SetLineRender(int[,] array,int choice, LineRenderer lr)
+    {
+        lr.positionCount = 0;
+        for(int i = 8; i >= 0; i--)
         {
             if (array[choice,i] == 0)
             {
-                break;
+                continue;
             }
-            lr.positionCount = i + 1;
-            lr.SetPosition(i,balls[array[choice, i] - 1].transform.position);
-
+            lr.positionCount = lr.positionCount+1;
+            lr.SetPosition(lr.positionCount-1,balls[array[choice, i]-1].transform.position);
         }
         lr.enabled = true;
     }
