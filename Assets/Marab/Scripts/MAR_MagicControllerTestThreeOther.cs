@@ -5,13 +5,19 @@ using UnityEngine;
 
 public class MAR_MagicControllerTestThreeOther : MonoBehaviour
 {
-    int[,] patternArray =new int[2, 9] { { 1, 4, 7, 8, 9, 0, 0, 0, 0 }, { 5, 6, 0, 0, 0, 0, 0, 0, 0 } };
-    int patternsNum = 2;
+    int[,] patternArray =new int[3, 9] { 
+        //파이어볼
+        { 1, 4, 7, 8, 9, 0, 0, 0, 0 },
+        //에너지 볼트
+        { 5, 6, 0, 0, 0, 0, 0, 0, 0 },
+        //쉴드
+        { 3, 5, 7, 0, 0, 0, 0, 0, 0 }
+
+    };
+    int patternsNum = 3;
 
     int[] touchPattern = new int[9];
     int touchIndex = 0;
-
-    public GameObject[] magicPrefab;
     
     //어떤 손과 어떤 버튼을 기준으로 할지
     public OVRInput.Controller handController;
@@ -36,7 +42,7 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
 
     LineRenderer lr;
     bool isLineRender = false;
-    
+    bool isOneClickTerm = false;
 
     // Use this for initialization
     void Start()
@@ -54,7 +60,7 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
         magicPattern.transform.parent = transform;
 
         magicPattern.SetActive(false);
-
+        
         if (handController == OVRInput.Controller.LTouch)
         {
             whatHand = (int)MAR_HandState.Hand.LEFT;
@@ -86,21 +92,29 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
                 MagicUnShowCheck();
                 break;
         }
+        if(OVRInput.GetUp(magicButton, handController))
+        {
+            isOneClickTerm = false;
+        }
         if (isLineRender)
         {
             if (lr.positionCount <= 1)
             {
                 lr.enabled = false;
-                return;
+                isLineRender = false;
             }
-            lr.SetPosition(lr.positionCount - 1, transform.position);
+            else
+            {
+                lr.SetPosition(lr.positionCount - 1, transform.position);
+            }
         }
+
     }
 
 
     public void MagicShowCheck()
     {
-        if (OVRInput.GetDown(magicButton, handController))
+        if (OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, handController) > 0.95f && isOneClickTerm == false)
         {
                 magicPattern.SetActive(true);
                 magicPattern.GetComponent<MAR_MagicPatternPadThree>().BallsInit();
@@ -109,11 +123,10 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
                 rot.x = 0;
                 rot.z = 0;
                 magicPattern.transform.eulerAngles = rot;
-            Debug.Log(transform.localRotation.eulerAngles + "," + rot);
-            magicPattern.transform.position = transform.position + PlayerPos.forward * 0.1f;
+                magicPattern.transform.position = transform.position + PlayerPos.forward * 0.1f;
                 touchIndex = 0;
                 MAR_HandState.handState[whatHand] = MAR_HandState.State.MAGIC_CONTROLL_3;
-
+                isOneClickTerm = true;
         }
     }
 
@@ -128,8 +141,18 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
             magicPattern.transform.position = transform.position + Vector3.forward * 0.1f;
             magicPattern.transform.parent = transform;
             isGrabbing = false;
-         }
-        lr.positionCount--;
+            lr.enabled = false;
+            isLineRender = false;
+        }
+        if (lr.positionCount <= 1)
+        {
+            lr.enabled = false;
+            isLineRender = false;
+        }
+        else
+        {
+            lr.positionCount--;
+        }
     }
 
     bool PatternCheck()
@@ -174,18 +197,17 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
         }
         else
         {
-            if (magicPrefab[index].name.Contains("Bolt"))
-            {
-                GetComponent<MAR_MagicShoot>().SetMagic();
-            }
-            else
-            {
-                GetComponent<MAR_HandControllerTestOther>().SetGrabObject(magicPrefab[index]);
-                GetComponent<MAR_MagicControllerTestTwoOther>().SetLastMagic(magicPrefab[index]);
-            }
+            GetComponent<MAR_MagicPickTest>().CastingMagic(index);
             return true;
         }
     }
+
+
+
+    
+
+
+
 
     void GrabMagicObject()
     {
@@ -238,7 +260,7 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
 
     void MagicUnShowCheck()
     {
-        if (OVRInput.GetDown(magicButton, handController))
+        if (OVRInput.GetDown(magicButton, handController) && isOneClickTerm ==false)
         {
             magicPattern.SetActive(false);
             magicPattern.transform.parent = transform;
@@ -249,6 +271,7 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
             }
             isGrabbing = false;
             lr.positionCount = 0;
+            isOneClickTerm = true;
         }
         if(OVRInput.GetUp(grabButton,handController) && isGrabbing == true && grabbedObject != null)
         {

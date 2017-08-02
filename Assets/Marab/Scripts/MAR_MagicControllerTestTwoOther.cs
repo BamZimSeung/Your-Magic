@@ -16,7 +16,7 @@ public class MAR_MagicControllerTestTwoOther : MonoBehaviour
     public Transform playerPos;
     
     //매직 패드에 중심과의 거리
-    float magicTerm = 10f;
+    float magicTerm = 18f;
 
     int whatHand;
 
@@ -77,19 +77,22 @@ public class MAR_MagicControllerTestTwoOther : MonoBehaviour
                 lastMagic.transform.up = Vector3.up;
                 lastMagic.transform.parent = null;
                 isMaked = true;
+                Destroy(lastMagic, 2f);
             }
         }
         if ((transform.localRotation.eulerAngles.z >= 270 - magicTerm && transform.localRotation.eulerAngles.z <= 270 + magicTerm) && whatHand == (int)MAR_HandState.Hand.RIGHT)
         {
-            if ((transform.localRotation.eulerAngles.x >= 360 - magicTerm || transform.localRotation.eulerAngles.x <= magicTerm))
+            if ((transform.localRotation.eulerAngles.x >= 360 - magicTerm  || transform.localRotation.eulerAngles.x <= magicTerm))
             {
                 lastMagic = Instantiate(magicPrefab);
                 lastMagic.transform.position = transform.position - transform.right*0.1f;// + Vector3.up*0.1f;
                 lastMagic.transform.up = Vector3.up;
                 lastMagic.transform.parent = null;
                 isMaked = true;
+                Destroy(lastMagic, 2f);
             }
         }
     }
+
     
 }
