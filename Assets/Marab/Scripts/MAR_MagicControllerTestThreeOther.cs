@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MAR_MagicControllerTestThreeOther : MonoBehaviour
 {
+<<<<<<< HEAD
     int[,] patternArray =new int[3, 9] { 
         //파이어볼
         { 1, 4, 7, 8, 9, 0, 0, 0, 0 },
@@ -15,6 +16,10 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
 
     };
     int patternsNum = 3;
+=======
+    int[,] patternArray =new int[2, 9] { { 1, 4, 7, 8, 9, 0, 0, 0, 0 }, { 5, 6, 0, 0, 0, 0, 0, 0, 0 } };
+    int patternsNum = 2;
+>>>>>>> origin/master
 
     int[] touchPattern = new int[9];
     int touchIndex = 0;
@@ -31,7 +36,10 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
 
     //생성된 마법 패드
     GameObject magicPattern;
+<<<<<<< HEAD
     GameObject shield;
+=======
+>>>>>>> origin/master
 
     public Transform PlayerPos;
     
@@ -71,16 +79,22 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
         {
             whatHand = (int)MAR_HandState.Hand.LEFT;
             magicPattern.name = magicPattern.name + "Left";
+<<<<<<< HEAD
             shield.transform.position = transform.position + transform.right * -0.1f;
             shield.transform.forward = transform.right;
+=======
+>>>>>>> origin/master
         }
         else
         {
             whatHand = (int)MAR_HandState.Hand.RIGHT;
             magicPattern.name.Insert(0, "Right");
             magicPattern.name = magicPattern.name + "Right";
+<<<<<<< HEAD
             shield.transform.position = transform.position + transform.right * 0.1f;
             shield.transform.forward = -transform.right;
+=======
+>>>>>>> origin/master
         }
 
     }
@@ -132,6 +146,10 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
                 rot.x = 0;
                 rot.z = 0;
                 magicPattern.transform.eulerAngles = rot;
+<<<<<<< HEAD
+=======
+            Debug.Log(transform.localRotation.eulerAngles + "," + rot);
+>>>>>>> origin/master
             magicPattern.transform.position = transform.position + PlayerPos.forward * 0.1f;
                 touchIndex = 0;
                 MAR_HandState.handState[whatHand] = MAR_HandState.State.MAGIC_CONTROLL_3;
@@ -196,11 +214,71 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
         }
         else
         {
+<<<<<<< HEAD
             CastingMagic(magicPrefab[index]);
+=======
+            if (magicPrefab[index].name.Contains("Bolt"))
+            {
+                GetComponent<MAR_MagicShoot>().SetMagic();
+            }
+            else
+            {
+                GetComponent<MAR_HandControllerTestOther>().SetGrabObject(magicPrefab[index]);
+                GetComponent<MAR_MagicControllerTestTwoOther>().SetLastMagic(magicPrefab[index]);
+            }
+>>>>>>> origin/master
             return true;
         }
     }
 
+    void GrabMagicObject()
+    {
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit[] hits = Physics.SphereCastAll(ray, grabRange, 0.0f, magicBallLayer);
+        touchIndex = 0;
+        if (hits.Length > 0)
+        {
+            int closest = -1;
+            for (int i = 0; i < hits.Length; i++)
+            {
+                if (whatHand == 0 && hits[i].transform.parent.name.Contains("Right"))
+                {
+                    continue;
+                }
+                else if(whatHand == 1 && hits[i].transform.parent.name.Contains("Left"))
+                {
+                    continue;
+                }
+                    if (closest < 0)
+                    {
+                        closest = i;
+                    }
+                    else if (hits[i].distance <= hits[closest].distance)
+                    {
+                        closest = i;
+                    }
+            }
+
+            if (closest < 0)
+            {
+                isGrabbing = false;
+                return;
+            }
+            
+            grabbedObject =Instantiate(hits[closest].transform.gameObject);
+            hits[closest].transform.gameObject.SetActive(false);
+            grabbedObject.transform.parent = transform;
+            grabbedObject.transform.position = transform.position;
+            grabbedObject.AddComponent<Rigidbody>();
+            grabbedObject.GetComponent<Collider>().isTrigger = false;
+            grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
+            grabbedObject.GetComponent<Rigidbody>().useGravity = false;
+            touchPattern[touchIndex]=hits[closest].transform.GetComponent<MAR_MagicPatternBallTestThree>().id;
+            touchIndex++;
+            PatternCheck();
+            isGrabbing = true;
+        }
+    }
 
 
 
