@@ -7,56 +7,77 @@ public class Monster : MonoBehaviour
 {
     public GameObject corpsePrefab;
 
-    public enum MonsterState { idle, trace, attack, die ,hit};
+    public enum MonsterState { Idle, Trace, Attack, Die , Damage};
 
-    public MonsterState monsterState = MonsterState.idle;
+    public MonsterState monsterState = MonsterState.Idle;
 
     Transform monsterTr;
     Transform playerTr;
+    Rigidbody monsterRB;
     NavMeshAgent nvAgent;
     Animator animator;
 
     public float traceDist = 10.0f;
     public float attackDist = 2.0f;
 
+    public float damageDelayTime = 0.2f;
+
     bool isDie = false;
-    int hp = 90;
+    public int hp = 90;
+
+    void Awake()
+    {
+        monsterTr = gameObject.GetComponent<Transform>();
+
+        monsterRB = gameObject.GetComponent<Rigidbody>();
+
+        nvAgent = gameObject.GetComponent<NavMeshAgent>();
+
+        animator = gameObject.GetComponent<Animator>();
+    }
 
     void Start()
     {
-        monsterTr = this.gameObject.GetComponent<Transform>();
+        playerTr = GameObject.Find("Player").GetComponent<Transform>();
 
-        playerTr = GameObject.FindWithTag("Player").GetComponent<Transform>();
-
-        nvAgent = this.gameObject.GetComponent<NavMeshAgent>();
-
-        animator = this.gameObject.GetComponent<Animator>();
-
-
-        StartCoroutine(this.CheckMonsterState());
-        StartCoroutine(this.MonsterAction());
+        StartCoroutine(CheckMonsterState());
+        StartCoroutine(MonsterAction());
     }
 
     IEnumerator CheckMonsterState()
     {
+        float damageTime = 0f;
+
         while (!isDie)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return null;
 
-            float dist = Vector3.Distance(playerTr.position, monsterTr.position);
+            if (monsterState != MonsterState.Damage)
+            {
+                float dist = Vector3.Distance(playerTr.position, monsterTr.position);
 
-            if (dist <= attackDist)
-            {
-                monsterState = MonsterState.attack;
-            }
-            else if (dist <= traceDist)
-            {
-                monsterState = MonsterState.trace;
+                if (dist <= attackDist)
+                {
+                    monsterState = MonsterState.Attack;
+                }
+                else if (dist <= traceDist)
+                {
+                    monsterState = MonsterState.Trace;
+                }
+                else
+                {
+                    monsterState = MonsterState.Idle;
+                }
             }
             else
             {
-                monsterState = MonsterState.idle;
-                
+                damageTime += Time.deltaTime;
+                if(damageTime > damageDelayTime)
+                {
+                    monsterState = MonsterState.Idle;
+                    monsterRB.velocity = Vector3.zero;
+                    damageTime = 0f;
+                }
             }
         }
     }
@@ -67,47 +88,61 @@ public class Monster : MonoBehaviour
         {
             switch (monsterState)
             {
-                case MonsterState.idle:
+                case MonsterState.Idle:
                     nvAgent.ResetPath();
-
                     animator.SetBool("IsTrace", false);
+                    animator.SetBool("IsAttack", false);
                     break;
 
-                case MonsterState.trace:
+                case MonsterState.Trace:
                     nvAgent.destination = playerTr.position;
-                    nvAgent.Resume();
+                    nvAgent.isStopped = false;
 
                     animator.SetBool("IsAttack", false);
                     animator.SetBool("IsTrace", true);
                     break;
 
-                case MonsterState.attack:
-
+                case MonsterState.Attack:
                     nvAgent.ResetPath();
                     animator.SetBool("IsAttack", true);
-                    break;    
+                    animator.SetBool("IsTrace", false);
+                    break;
+
+                case MonsterState.Damage:
+                    nvAgent.isStopped = true;
+                    animator.SetBool("IsTrace", false);
+                    animator.SetBool("IsAttack", false);
+                    break;
             }
             yield return null;
         }
     }
 
-    void OnTriggerEnter(Collider coll)
+    public void MonsterDamage(int damage)
     {
-        if (coll.gameObject.tag == "Bullet")
+        hp -= damage;
+
+        if (DieCheck())
         {
-            hp -= 90;
-            if (hp <= 0)
-            {
-                // MonsterDie();
-                Instantiate(corpsePrefab, transform.position, Quaternion.identity);
-                Destroy(coll.gameObject);
-            }
-            else
-            {             
-                animator.SetTrigger("Hitting");
-                monsterState = MonsterState.idle;            
-            }
-            
+            MonsterDie();
+        }
+        else
+        {
+            animator.SetTrigger("Damage");
+            monsterState = MonsterState.Damage;
+        }
+    }
+
+    bool DieCheck()
+    {
+        if(hp <= 0)
+        {
+            // 죽음
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
@@ -116,9 +151,9 @@ public class Monster : MonoBehaviour
         StopAllCoroutines();
 
         isDie = true;
-        monsterState = MonsterState.die;
-        nvAgent.Stop();
-        animator.SetTrigger("IsDie");
+        monsterState = MonsterState.Die;
+        nvAgent.isStopped = true;
+        Instantiate(corpsePrefab, transform.position, Quaternion.identity);
        
         Destroy(gameObject);
     }

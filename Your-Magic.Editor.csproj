@@ -149,6 +149,7 @@
     <Compile Include="Assets\YM_WB\Editor\Scripts\EffectSettingsEditor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\City skyline\Shader\CitySkyline.shader" />
     <None Include="Assets\Joo\Monster\Mon1\AlphaBlendedNoSmooth.shader" />
     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout 1.shader" />
     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout.shader" />

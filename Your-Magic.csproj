@@ -84,6 +84,7 @@
     <Compile Include="Assets\Joo\Scripts\JS_EnergyBoltHit.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_FireBallExplosion.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_MagicClash.cs" />
+    <Compile Include="Assets\Joo\Scripts\JS_RuneStateCtrl.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_WarpPoint.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRBoundary.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRCameraRig.cs" />
@@ -161,7 +162,6 @@
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_PlayFire.cs" />
     <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
     <Compile Include="Assets\WooHyun\PWH\Monster.cs" />
-    <Compile Include="Assets\WooHyun\PWH\MonsterCtrl.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
@@ -219,6 +219,7 @@
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_UITriangle.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\City skyline\Shader\CitySkyline.shader" />
     <None Include="Assets\Joo\Monster\Mon1\AlphaBlendedNoSmooth.shader" />
     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout 1.shader" />
     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout.shader" />

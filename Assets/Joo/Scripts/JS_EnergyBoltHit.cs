@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class JS_EnergyBoltHit : MonoBehaviour {
 
-    public float power;
+    public int power;
 
     void OnTriggerEnter(Collider col)
     {
@@ -19,6 +19,6 @@ public class JS_EnergyBoltHit : MonoBehaviour {
     void Attack(GameObject enemy)
     {
         // 적을 공격
-        Debug.Log("적 공격! " + power + " 만큼 데미지 입힘!");
+        enemy.GetComponent<Monster>().MonsterDamage(power);
     }	
 }
