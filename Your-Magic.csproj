@@ -146,14 +146,13 @@
     <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarTouchController.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_HandControllerTestOther.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_HandState.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestOneOther.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestThree.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestThreeOther.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestTwoOther.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_MagicFingerPointTestThree.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicList.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternBallTestThree.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternPadThree.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicPickTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicShieldCast.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicShieldTest.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicShoot.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_TouchTest.cs" />
@@ -163,7 +162,6 @@
     <Compile Include="Assets\Marab\TestVersion\Scripts\Test_PlayFire.cs" />
     <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
     <Compile Include="Assets\WooHyun\PWH\Monster.cs" />
-    <Compile Include="Assets\WooHyun\PWH\MonsterCtrl.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
@@ -210,6 +208,7 @@
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Arrow_Destroy.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_DisplayCanvas.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Fairy_Ctrl.cs" />
+    <Compile Include="Assets\YM_WB\WB_Scripts\WB_Fairy_Word.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_HitCtnl.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_OpenPortal.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_PlayerMove.cs" />
@@ -220,6 +219,7 @@
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_UITriangle.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\City skyline\Shader\CitySkyline.shader" />
     <None Include="Assets\Joo\Monster\Mon1\AlphaBlendedNoSmooth.shader" />
     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout 1.shader" />
     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout.shader" />

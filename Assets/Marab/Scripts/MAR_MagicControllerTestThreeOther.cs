@@ -5,63 +5,72 @@ using UnityEngine;
 
 public class MAR_MagicControllerTestThreeOther : MonoBehaviour
 {
-    int[,] patternArray =new int[2, 9] { { 2, 5, 8, 0, 0, 0, 0, 0, 0 }, { 4, 5, 6, 0, 0, 0, 0, 0, 0 } };
-    int patternsNum = 2;
+    int[,] patternArray =new int[3, 9] { 
+        //파이어볼
+        { 1, 4, 7, 8, 9, 0, 0, 0, 0 },
+        //에너지 볼트
+        { 5, 6, 0, 0, 0, 0, 0, 0, 0 },
+        //쉴드
+        { 3, 5, 7, 0, 0, 0, 0, 0, 0 }
+
+    };
+    int patternsNum = 3;
 
     int[] touchPattern = new int[9];
     int touchIndex = 0;
-
-    public GameObject[] magicPrefab;
-
-
+    
     //어떤 손과 어떤 버튼을 기준으로 할지
     public OVRInput.Controller handController;
     public OVRInput.Button magicButton;
+    public OVRInput.Button grabButton;
 
     //마법 패드를 나타낼 프리팹
-    public GameObject magicPadPrefab;
+    public GameObject magicPatternPrefab;
 
     //생성된 마법 패드
-    GameObject magicPad;
+    GameObject magicPattern;
 
     public Transform PlayerPos;
-
-    //매직 패드에 중심과의 거리
-    public float magicTerm = 0.075f;
-
-
-    GameObject finger;
-    public GameObject fingerPointPrefab;
-    GameObject fingerPoint;
-
-
+    
     int whatHand;
-    float term;
+
+
+    bool isGrabbing = false;
+    public float grabRange=0.1f;
+    public LayerMask magicBallLayer;
+    GameObject grabbedObject;
+
+    LineRenderer lr;
+    bool isLineRender = false;
+    bool isOneClickTerm = false;
+
     // Use this for initialization
     void Start()
     {
         //매직패드를 미리 생성시켜 놓아서
         //나중에 보여주기만 한다.
-        magicPad = Instantiate(magicPadPrefab);
-        fingerPoint = Instantiate(fingerPointPrefab);
-        fingerPoint.GetComponent<MAR_MagicFingerPointTestThree>().SetHandParent(this);
+        magicPattern = Instantiate(magicPatternPrefab);
+        magicPattern.GetComponent<MAR_MagicPatternPadThree>().SetParentScript(this);
+        magicPattern.GetComponent<MAR_MagicPatternPadThree>().SettingPad();
+        lr=GetComponent<LineRenderer>();
+
 
         //위치 설정 후 부모 설정
-        magicPad.transform.position = transform.position + Vector3.forward * 0.1f;
-        magicPad.transform.parent = transform;
+        magicPattern.transform.position = transform.position + Vector3.forward * 0.1f;
+        magicPattern.transform.parent = transform;
 
-        magicPad.SetActive(false);
-        fingerPoint.SetActive(false);
-
+        magicPattern.SetActive(false);
+        
         if (handController == OVRInput.Controller.LTouch)
         {
             whatHand = (int)MAR_HandState.Hand.LEFT;
-            term = -0.04f;
+            magicPattern.name = magicPattern.name + "Left";
         }
         else
         {
             whatHand = (int)MAR_HandState.Hand.RIGHT;
-            term = 0.04f;
+            magicPattern.name.Insert(0, "Right");
+            magicPattern.name = magicPattern.name + "Right";
         }
 
     }
@@ -72,79 +81,52 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
         switch (MAR_HandState.handState[whatHand])
         {
             case MAR_HandState.State.IDLE:
-                MagicShowCheck(null);
+                MagicShowCheck();
                 break;
             case MAR_HandState.State.MAGIC_CONTROLL_3:
+                if (isGrabbing == false && OVRInput.GetDown(grabButton, handController))
+                {
+                    //물체잡는 동작
+                    GrabMagicObject();
+                }
                 MagicUnShowCheck();
                 break;
-        }       
+        }
+        if(OVRInput.GetUp(magicButton, handController))
+        {
+            isOneClickTerm = false;
+        }
+        if (isLineRender)
+        {
+            if (lr.positionCount <= 1)
+            {
+                lr.enabled = false;
+                isLineRender = false;
+            }
+            else
+            {
+                lr.SetPosition(lr.positionCount - 1, transform.position);
+            }
+        }
 
     }
 
 
-    public void MagicShowCheck(string name)
+    public void MagicShowCheck()
     {
-        if (name == null)
+        if (OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, handController) > 0.95f && isOneClickTerm == false)
         {
-            if (OVRInput.GetDown(magicButton, handController))
-            {
-                if (finger == null)
-                {
-                    if (whatHand == (int)MAR_HandState.Hand.LEFT)
-                    {
-                        finger = GameObject.Find("hands:b_l_index_ignore");
-                    }
-                    else
-                    {
-                        finger = GameObject.Find("hands:b_r_index_ignore");
-                    }
-                    if (finger == null)
-                    {
-                        return;
-                    }
-                    fingerPoint.transform.position = finger.transform.position;
-                    fingerPoint.transform.parent = finger.transform;
-                }
-                fingerPoint.SetActive(true);
-                magicPad.SetActive(true);
-                magicPad.GetComponent<MAR_MagicPatternPadThree>().BallsInit();
-                magicPad.transform.forward = PlayerPos.transform.forward;
-                magicPad.transform.position = transform.position + PlayerPos.forward * 0.15f;
-                magicPad.transform.parent = null;
+                magicPattern.SetActive(true);
+                magicPattern.GetComponent<MAR_MagicPatternPadThree>().BallsInit();
+                magicPattern.transform.parent = null;
+                Vector3 rot = transform.transform.localRotation.eulerAngles;
+                rot.x = 0;
+                rot.z = 0;
+                magicPattern.transform.eulerAngles = rot;
+                magicPattern.transform.position = transform.position + PlayerPos.forward * 0.1f;
                 touchIndex = 0;
                 MAR_HandState.handState[whatHand] = MAR_HandState.State.MAGIC_CONTROLL_3;
-
-            }
-
-        }
-        else if (name.Contains("FireBall"))
-        {
-            if (finger == null)
-            {
-                if (whatHand == (int)MAR_HandState.Hand.LEFT)
-                {
-                    finger = GameObject.Find("hands:b_l_index_ignore");
-                }
-                else
-                {
-                    finger = GameObject.Find("hands:b_r_index_ignore");
-                }
-                if (finger == null)
-                {
-                    return;
-                }
-                fingerPoint.transform.position = finger.transform.position;
-                fingerPoint.transform.parent = finger.transform;
-            }
-            fingerPoint.SetActive(true);
-            magicPad.SetActive(true);
-            magicPad.GetComponent<MAR_MagicPatternPadThree>().BallsInit();
-            magicPad.transform.forward = PlayerPos.transform.forward;
-            magicPad.transform.position = transform.position + PlayerPos.forward * 0.15f;
-            magicPad.transform.parent = null;
-            magicPad.GetComponent<MAR_MagicPatternPadThree>().SetLineRender(patternArray, 0);
-            touchIndex = 0;
-            MAR_HandState.handState[whatHand] = MAR_HandState.State.MAGIC_CONTROLL_3;
+                isOneClickTerm = true;
         }
     }
 
@@ -154,16 +136,39 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
          touchIndex++;
          if (PatternCheck())
          {
-            magicPad.SetActive(false);
-            magicPad.transform.position = transform.position + Vector3.forward * 0.1f;
-            magicPad.transform.parent = transform;
-            MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
-            fingerPoint.SetActive(false);
+            magicPattern.SetActive(false);
+            Destroy(grabbedObject);
+            magicPattern.transform.position = transform.position + Vector3.forward * 0.1f;
+            magicPattern.transform.parent = transform;
+            isGrabbing = false;
+            lr.enabled = false;
+            isLineRender = false;
+        }
+        if (lr.positionCount <= 1)
+        {
+            lr.enabled = false;
+            isLineRender = false;
+        }
+        else
+        {
+            lr.positionCount--;
         }
     }
 
     bool PatternCheck()
     {
+        if (touchIndex == 1)
+        {
+            for (int i = 0; i < patternsNum; i++)
+            {
+                if (touchPattern[0] == patternArray[i, 0])
+                {
+                    magicPattern.GetComponent<MAR_MagicPatternPadThree>().SetLineRender(patternArray, i, lr);
+                    isLineRender = true;
+                }
+            }
+            return false;
+        }
         int index = -1;
         for(int i = 0; i < patternsNum; i++)
         {
@@ -192,28 +197,90 @@ public class MAR_MagicControllerTestThreeOther : MonoBehaviour
         }
         else
         {
-            GameObject magic = Instantiate(magicPrefab[index]);
-            magic.transform.position = transform.position + transform.forward * 0.1f;
+            GetComponent<MAR_MagicPickTest>().CastingMagic(index);
             return true;
         }
     }
 
 
+
+    
+
+
+
+
+    void GrabMagicObject()
+    {
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit[] hits = Physics.SphereCastAll(ray, grabRange, 0.0f, magicBallLayer);
+        touchIndex = 0;
+        if (hits.Length > 0)
+        {
+            int closest = -1;
+            for (int i = 0; i < hits.Length; i++)
+            {
+                if (whatHand == 0 && hits[i].transform.parent.name.Contains("Right"))
+                {
+                    continue;
+                }
+                else if(whatHand == 1 && hits[i].transform.parent.name.Contains("Left"))
+                {
+                    continue;
+                }
+                    if (closest < 0)
+                    {
+                        closest = i;
+                    }
+                    else if (hits[i].distance <= hits[closest].distance)
+                    {
+                        closest = i;
+                    }
+            }
+
+            if (closest < 0)
+            {
+                isGrabbing = false;
+                return;
+            }
+            
+            grabbedObject =Instantiate(hits[closest].transform.gameObject);
+            hits[closest].transform.gameObject.SetActive(false);
+            grabbedObject.transform.parent = transform;
+            grabbedObject.transform.position = transform.position;
+            grabbedObject.AddComponent<Rigidbody>();
+            grabbedObject.GetComponent<Collider>().isTrigger = false;
+            grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
+            grabbedObject.GetComponent<Rigidbody>().useGravity = false;
+            touchPattern[touchIndex]=hits[closest].transform.GetComponent<MAR_MagicPatternBallTestThree>().id;
+            touchIndex++;
+            PatternCheck();
+            isGrabbing = true;
+        }
+    }
+
     void MagicUnShowCheck()
     {
-        if (OVRInput.GetDown(magicButton, handController))
+        if (OVRInput.GetDown(magicButton, handController) && isOneClickTerm ==false)
         {
-            magicPad.SetActive(false);
-            magicPad.transform.parent = transform;
+            magicPattern.SetActive(false);
+            magicPattern.transform.parent = transform;
             MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
-            fingerPoint.SetActive(false);
+            if (grabbedObject != null)
+            {
+                Destroy(grabbedObject);
+            }
+            isGrabbing = false;
+            lr.positionCount = 0;
+            isOneClickTerm = true;
         }
-        if((magicPad.transform.position - transform.position).magnitude > 0.3f)
+        if(OVRInput.GetUp(grabButton,handController) && isGrabbing == true && grabbedObject != null)
         {
-            magicPad.SetActive(false);
-            magicPad.transform.parent = transform;
+            magicPattern.SetActive(false);
+            magicPattern.transform.parent = transform;
+            Destroy(grabbedObject);
             MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
-            fingerPoint.SetActive(false);
+            isGrabbing = false;
+            lr.positionCount = 0;
         }
     }    
 

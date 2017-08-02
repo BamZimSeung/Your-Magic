@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: d465eb77c66c1914d8721defba74e0c4
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: DECAL_DOWN_Stroller001
+    100002: DECAL_TOP_Stroller003
+    100004: Down_Stairs001
+    100006: Escalator_Center
+    100008: Escalator_Center_Group
+    100010: Escalator_Down
+    100012: Escalator_Down_Group
+    100014: Escalator_Top
+    100016: Escalator_Top_Group
+    100018: Escalators001
+    100020: //RootNode
+    100022: Platform_Down002
+    100024: Platform_Top004
+    100026: scala_mobile:DECA_T_S004
+    100028: scala_mobile:L_C_S004
+    100030: scala_mobile:L_C_S005
+    100032: scala_mobile:L_D_S002
+    100034: scala_mobile:L_D_S003
+    100036: scala_mobile:L_D_S005
+    100038: scala_mobile:L_T_S008
+    100040: scala_mobile:L_T_S009
+    100042: scala_mobile:L_T_S010
+    100044: scala_mobile:Stairs001
+    100046: scala_mobile:Stairs002
+    100048: scala_mobile:Stairs003
+    100050: Stair_Middle002
+    100052: Step_Down_005
+    100054: Step_Top_010
+    100056: Top_Stairs003
+    400000: DECAL_DOWN_Stroller001
+    400002: DECAL_TOP_Stroller003
+    400004: Down_Stairs001
+    400006: Escalator_Center
+    400008: Escalator_Center_Group
+    400010: Escalator_Down
+    400012: Escalator_Down_Group
+    400014: Escalator_Top
+    400016: Escalator_Top_Group
+    400018: Escalators001
+    400020: //RootNode
+    400022: Platform_Down002
+    400024: Platform_Top004
+    400026: scala_mobile:DECA_T_S004
+    400028: scala_mobile:L_C_S004
+    400030: scala_mobile:L_C_S005
+    400032: scala_mobile:L_D_S002
+    400034: scala_mobile:L_D_S003
+    400036: scala_mobile:L_D_S005
+    400038: scala_mobile:L_T_S008
+    400040: scala_mobile:L_T_S009
+    400042: scala_mobile:L_T_S010
+    400044: scala_mobile:Stairs001
+    400046: scala_mobile:Stairs002
+    400048: scala_mobile:Stairs003
+    400050: Stair_Middle002
+    400052: Step_Down_005
+    400054: Step_Top_010
+    400056: Top_Stairs003
+    2300000: DECAL_DOWN_Stroller001
+    2300002: DECAL_TOP_Stroller003
+    2300004: Down_Stairs001
+    2300006: Escalator_Center
+    2300008: Escalator_Down
+    2300010: Escalator_Top
+    2300012: Platform_Down002
+    2300014: Platform_Top004
+    2300016: Stair_Middle002
+    2300018: Step_Down_005
+    2300020: Step_Top_010
+    2300022: Top_Stairs003
+    3300000: DECAL_DOWN_Stroller001
+    3300002: DECAL_TOP_Stroller003
+    3300004: Down_Stairs001
+    3300006: Escalator_Center
+    3300008: Escalator_Down
+    3300010: Escalator_Top
+    3300012: Platform_Down002
+    3300014: Platform_Top004
+    3300016: Stair_Middle002
+    3300018: Step_Down_005
+    3300020: Step_Top_010
+    3300022: Top_Stairs003
+    4300000: DECAL_DOWN_Stroller001
+    4300002: Down_Stairs001
+    4300004: Escalator_Down
+    4300006: Platform_Down002
+    4300008: Step_Down_005
+    4300010: Stair_Middle002
+    4300012: Escalator_Center
+    4300014: Top_Stairs003
+    4300016: DECAL_TOP_Stroller003
+    4300018: Escalator_Top
+    4300020: Platform_Top004
+    4300022: Step_Top_010
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
