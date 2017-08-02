@@ -6,7 +6,7 @@ public class JS_FireBallExplosion : MonoBehaviour {
 
     public float damageRange;
 
-    public float power;
+    public int power;
 
     public float rigidPower;
 
@@ -38,6 +38,7 @@ public class JS_FireBallExplosion : MonoBehaviour {
                 if (hitInfos[i].transform.CompareTag("Enemy"))
                 {
                     // 데미지 주기
+                    hitInfos[i].transform.gameObject.GetComponent<Monster>().MonsterDamage(power);
                 }
             }
         }
