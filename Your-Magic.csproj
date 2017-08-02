@@ -146,15 +146,10 @@
     <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarTouchController.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_HandControllerTestOther.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_HandState.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestOneOther.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestThree.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestThreeOther.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestTwoOther.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_MagicFingerPointTestThree.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternBallTestThree.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternPadThree.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_MagicPickTest.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_MagicShieldTest.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_MagicShoot.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_TouchTest.cs" />
     <Compile Include="Assets\Marab\Scripts\MAR_WarpControllerTest.cs" />

@@ -10,14 +10,27 @@ public class MAR_MagicShoot : MonoBehaviour {
 
     int whatHand;
 
-    public int magicCount = 10;
+    public int magicCount = 30;
     int count = 0;
 
     public GameObject energyBolt;
+    GameObject showMagic;
     bool isShoot = false;
 
     public void SetMagic()
     {
+        showMagic = Instantiate(energyBolt);
+        if (whatHand == 0)
+        {
+            showMagic.transform.position = transform.position - transform.right * 0.1f;
+            showMagic.transform.parent = transform;
+        }
+        else
+        {
+            showMagic.transform.position = transform.position + transform.right * 0.1f;
+            showMagic.transform.parent = transform;
+        }
+        MAR_HandState.handState[whatHand] = MAR_HandState.State.MAGIC_SHOOT;
         count = magicCount;
         isShoot = true;
     }
@@ -43,7 +56,6 @@ public class MAR_MagicShoot : MonoBehaviour {
                 GameObject bolt = Instantiate(energyBolt);
                 bolt.transform.parent = null;
                 bolt.transform.position = transform.position;
-                Debug.Log(transform.forward);
                 bolt.transform.forward = transform.forward;
                 bolt.transform.localScale = Vector3.one * 0.1f;
                 bolt.GetComponent<Collider>().enabled = true;
@@ -57,6 +69,7 @@ public class MAR_MagicShoot : MonoBehaviour {
         else if(isShoot&&count<=0)
         {
             MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
+            Destroy(showMagic);
             isShoot = false;
         }
 	}
