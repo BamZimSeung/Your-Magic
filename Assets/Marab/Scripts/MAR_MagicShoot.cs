@@ -85,7 +85,7 @@ public class MAR_MagicShoot : MonoBehaviour {
                 bolt.GetComponent<Collider>().enabled = true;
                 bolt.GetComponent<Rigidbody>().useGravity = false;
                 bolt.GetComponent<Rigidbody>().isKinematic = false;
-                bolt.GetComponent<Rigidbody>().velocity=transform.forward*10f;
+                bolt.GetComponent<Rigidbody>().velocity=transform.forward*15f;
                 count--;
             }
         }
