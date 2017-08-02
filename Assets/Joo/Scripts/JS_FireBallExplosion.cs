@@ -27,7 +27,7 @@ public class JS_FireBallExplosion : MonoBehaviour {
             for (int i = 0; i < hitInfos.Length; i++)
             {
                 // Enemy 나 Object 일 경우
-                if (hitInfos[i].transform.CompareTag("Enemy") || hitInfos[i].transform.CompareTag("Object"))
+                if (hitInfos[i].transform.CompareTag("Enemy") || hitInfos[i].transform.CompareTag("Object") || hitInfos[i].transform.CompareTag("Corpse"))
                 {
                     Rigidbody rb = hitInfos[i].transform.GetComponent<Rigidbody>();
                     Vector3 dist = transform.position - hitInfos[i].transform.position;

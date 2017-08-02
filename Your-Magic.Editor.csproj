@@ -149,13 +149,10 @@
     <Compile Include="Assets\YM_WB\Editor\Scripts\EffectSettingsEditor.cs" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
+    <None Include="Assets\City skyline\Shader\CitySkyline.shader" />
     <None Include="Assets\Joo\Monster\Mon1\AlphaBlendedNoSmooth.shader" />
     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout 1.shader" />
     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout.shader" />
-=======
-    <None Include="Assets\City skyline\Shader\CitySkyline.shader" />
->>>>>>> origin/SJ
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel_DS.shader" />
