@@ -16,7 +16,7 @@ public class JS_CorpseExplosion : MonoBehaviour {
 
         for(int i = 0; i < rbs.Length; i++)
         {
-            rbs[i].AddExplosionForce(power, transform.position, 1f, 5f);
+            rbs[i].AddExplosionForce(power + Random.Range(-100f,0f), transform.position, 1f, 5f);
         }
     }	
 }
