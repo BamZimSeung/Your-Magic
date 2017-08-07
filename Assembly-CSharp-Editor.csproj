@@ -71,6 +71,7 @@
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarMaterialStateShader.cginc" />
+     <None Include="Assets\City skyline\Shader\CitySkyline.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
@@ -102,6 +103,7 @@
      <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout.shader" />
      <None Include="Assets\Marab\OVR\Shaders\Unlit Crosshair.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
+     <None Include="Assets\Joo\DeathEffect\Shaders\FT_Additive.shader" />
      <None Include="Assets\Joo\Shaders\HitEffect\FireBall_Hit\ExplosionsGlowAdditive.shader" />
      <None Include="Assets\Marab\OVR\Resources\Unlit Transparent Color.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
@@ -117,6 +119,7 @@
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
+     <None Include="Assets\Joo\DeathEffect\Shaders\FT_Premultiplied.shader" />
      <None Include="Assets\Marab\OVR\Resources\Underlay Transparent Occluder.shader" />
      <None Include="Assets\Joo\Shaders\FireBall\GlowAdditiveTwoColor.shader" />
      <None Include="Assets\Marab\OVR\Resources\Alpha Premultiply.shader" />
@@ -163,6 +166,7 @@
      <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout 1.shader" />
      <None Include="Assets\Marab\OVR\Resources\Underlay Impostor.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
+     <None Include="Assets\Joo\Shaders\EnergyBolt\ParticleAddHDR.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
