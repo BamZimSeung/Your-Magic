@@ -5,6 +5,7 @@ using UnityEngine;
 public class JS_RuneStateCtrl : MonoBehaviour {
 
     public Material activeMat;
+    public Material inactiveMat;
 
     public MeshRenderer runeMR;
 
@@ -19,6 +20,16 @@ public class JS_RuneStateCtrl : MonoBehaviour {
             isActive = true;
             runeMR.material = activeMat;
             effects.SetActive(true);
+        }
+    }
+
+    public void SetRuneInactive()
+    {
+        if (isActive)
+        {
+            isActive = false;
+            runeMR.material = activeMat;
+            effects.SetActive(false);
         }
     }
 }
