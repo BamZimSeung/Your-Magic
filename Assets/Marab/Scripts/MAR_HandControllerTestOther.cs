@@ -94,7 +94,7 @@ public class MAR_HandControllerTestOther : MonoBehaviour
         else
         {
             MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
-            MAR_TouchTest.instance.ClearVibration();
+            MAR_TouchTest.instance.ClearVibration(whatHand);
         }
     }
 
@@ -161,7 +161,7 @@ public class MAR_HandControllerTestOther : MonoBehaviour
         {
             isGrabbing = false;
             MAR_HandState.handState[whatHand] = MAR_HandState.State.IDLE;
-            MAR_TouchTest.instance.ClearVibration();
+            MAR_TouchTest.instance.ClearVibration(whatHand);
         }
     }
 }
