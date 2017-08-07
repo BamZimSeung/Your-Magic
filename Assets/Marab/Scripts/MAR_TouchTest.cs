@@ -12,8 +12,9 @@ public class MAR_TouchTest : MonoBehaviour
 
 
     const int channel = 1;
-
-    OVRHapticsClip HapticClip;
+    
+    OVRHapticsClip shootClip;
+    OVRHapticsClip magicClip;
 
     // Use this for initialization
 
@@ -23,23 +24,23 @@ public class MAR_TouchTest : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            shootClip = new OVRHapticsClip(shootMagicAudio);
+            magicClip = new OVRHapticsClip(useMagicAudio);
         }
     }
     
 
     private void Update()
     {
-
         // Make Haptic Clip:
 
-
-        HapticClip = new OVRHapticsClip(useMagicAudio);
+        
 
         // Play Haptic Clip:
         switch (MAR_HandState.handState[(int)MAR_HandState.Hand.LEFT])
         {
             case MAR_HandState.State.MAGIC_USE:
-                OVRHaptics.LeftChannel.Queue(HapticClip);
+                OVRHaptics.LeftChannel.Queue(magicClip);
                 break;
         }
 
@@ -47,32 +48,36 @@ public class MAR_TouchTest : MonoBehaviour
         switch (MAR_HandState.handState[(int)MAR_HandState.Hand.RIGHT])
         {
             case MAR_HandState.State.MAGIC_USE:
-                OVRHaptics.RightChannel.Queue(HapticClip);
+                OVRHaptics.RightChannel.Queue(magicClip);
                 break;
         }
 
 
     }
 
-    public void ClearVibration()
+    public void ClearVibration(int whatHand)
     {
-        OVRHaptics.LeftChannel.Clear();
-        OVRHaptics.RightChannel.Clear();
+        if (whatHand == (int)MAR_HandState.Hand.LEFT)
+        {
+            OVRHaptics.LeftChannel.Clear();
+        }
+        else
+        {
+            OVRHaptics.RightChannel.Clear();
+        }
     }
 
     public void ShootVibration(int whatHand)
     {
-        HapticClip = new OVRHapticsClip(shootMagicAudio);
         if (whatHand == (int)MAR_HandState.Hand.LEFT)
         {
-            OVRHaptics.LeftChannel.Preempt(HapticClip);
+            OVRHaptics.LeftChannel.Preempt(shootClip);
         }
         else
         {
-            OVRHaptics.RightChannel.Preempt(HapticClip);
+            OVRHaptics.RightChannel.Preempt(shootClip);
         }
     }
-
 }
 
  
