@@ -144,18 +144,6 @@
     <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSkinnedMeshRenderComponent.cs" />
     <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSkinnedMeshRenderPBSComponent.cs" />
     <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarTouchController.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_HandControllerTestOther.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_HandState.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestThreeOther.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestTwoOther.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternBallTestThree.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternPadThree.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_MagicShoot.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_TouchTest.cs" />
-    <Compile Include="Assets\Marab\Scripts\MAR_WarpControllerTest.cs" />
-    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_CamRotate.cs" />
-    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_Move.cs" />
-    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_PlayFire.cs" />
     <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
     <Compile Include="Assets\WooHyun\PWH\Monster.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
@@ -202,6 +190,7 @@
     <Compile Include="Assets\YM_WB\WB_Scripts\UVTextureAnimator.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Arrow_Ctrl.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Arrow_Destroy.cs" />
+    <Compile Include="Assets\YM_WB\WB_Scripts\WB_BossCtnl.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_DisplayCanvas.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Fairy_Ctrl.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Fairy_Word.cs" />
@@ -216,6 +205,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\City skyline\Shader\CitySkyline.shader" />
+    <None Include="Assets\Joo\DeathEffect\Shaders\FT_Additive.shader" />
+    <None Include="Assets\Joo\DeathEffect\Shaders\FT_Premultiplied.shader" />
     <None Include="Assets\Joo\Monster\Mon1\AlphaBlendedNoSmooth.shader" />
     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout 1.shader" />
     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout.shader" />
@@ -224,6 +215,7 @@
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel_DS.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Premultiplied_UVscroll_Fresnel_DS.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Premultiplied_UVscroll_ST.shader" />
+    <None Include="Assets\Joo\Shaders\EnergyBolt\ParticleAddHDR.shader" />
     <None Include="Assets\Joo\Shaders\FireBall\FT_Additive.shader" />
     <None Include="Assets\Joo\Shaders\FireBall\GlowAdditiveTwoColor.shader" />
     <None Include="Assets\Joo\Shaders\FireBall\ParticleAdd.shader" />
@@ -316,6 +308,7 @@
     <None Include="Assets\YM_WB\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
     <None Include="Assets\YM_WB\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
     <None Include="Assets\YM_WB\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+    <None Include="Assets\YM_WB\demonLord.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
