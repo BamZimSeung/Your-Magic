@@ -72,6 +72,7 @@
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarMaterialStateShader.cginc" />
      <None Include="Assets\City skyline\Shader\CitySkyline.shader" />
+     <None Include="Assets\YM_WB\demonLord.txt" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
@@ -83,6 +84,7 @@
      <None Include="Assets\Marab\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\MotionBlur.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
+     <None Include="Assets\Joo\IceSpear\Shaders\ZFS_3D_Free.shader" />
      <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
@@ -160,11 +162,13 @@
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
      <None Include="Assets\Joo\Shaders\FireBall\ParticleAdd.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
+     <None Include="Assets\Joo\IceSpear\Shaders\FT_Premultiplied_UVscroll_Fresnel_DS.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
      <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout 1.shader" />
      <None Include="Assets\Marab\OVR\Resources\Underlay Impostor.shader" />
+     <None Include="Assets\Joo\IceSpear\Shaders\ParticleCook-Transparent-Additive-Diffuse.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
      <None Include="Assets\Joo\Shaders\EnergyBolt\ParticleAddHDR.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
