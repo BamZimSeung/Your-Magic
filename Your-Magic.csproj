@@ -87,6 +87,7 @@
     <Compile Include="Assets\Joo\Scripts\JS_IceSpear.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_MagicClash.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_RuneStateCtrl.cs" />
+    <Compile Include="Assets\Joo\Scripts\JS_Storm.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_WarpPoint.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRBoundary.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRCameraRig.cs" />

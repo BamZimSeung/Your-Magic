@@ -34,7 +34,7 @@ public class JS_IceSpear : MonoBehaviour {
     // 발사됐는지 여부
     public bool isShot = false;
 
-    public List<Transform> enemysTrans;
+    public List<Transform> enemiesTrans;
 
 	void Start () {
         isHit = false;
@@ -63,11 +63,13 @@ public class JS_IceSpear : MonoBehaviour {
                 Ray ray = new Ray(transform.position, transform.position);
                 RaycastHit[] hitInfos = Physics.SphereCastAll(ray, searchRange, 0f, 1 << LayerMask.NameToLayer("Enemy"));
 
+                Debug.Log(hitInfos.Length);
+
                 int min = hitInfos.Length < 4 ? hitInfos.Length : 4;
 
                 for (int i = 0; i < min; i++)
                 {
-                    enemysTrans.Add(hitInfos[i].transform);
+                    enemiesTrans.Add(hitInfos[i].transform);
                 }
 
                 StartCoroutine("FollowEnemies");
@@ -84,14 +86,14 @@ public class JS_IceSpear : MonoBehaviour {
 
         int i = 0;
 
-        while(i < enemysTrans.Count)
+        while(i < enemiesTrans.Count)
         {
             yield return wfs;
             // 적에게 부딪혔다고 판단되는 거리가 되지 않았다면
-            while (enemysTrans[i]!=null && Vector3.Distance(transform.position, enemysTrans[i].position) > hitJudgeRange)
+            while (enemiesTrans[i]!=null && Vector3.Distance(transform.position, enemiesTrans[i].position) > hitJudgeRange)
             {
                 // 적을 향해 회전
-                transform.forward = Vector3.Lerp(transform.forward, enemysTrans[i].position - transform.position, rotateValue);
+                transform.forward = Vector3.Lerp(transform.forward, enemiesTrans[i].position - transform.position, rotateValue);
                 yield return wfs;
             }
 
