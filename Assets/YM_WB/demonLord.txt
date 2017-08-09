@@ -1,13 +1,17 @@
-위에서 지정된 위치까지 날아 온다(fly) -> flyLeft로 건물 주변 1회 배회후
+위에서 지정된 위치까지 날아 온다(fly) -> 건물 주변 배회후
 fly 하면서 idle로 position으로 위치시킨다.
 
 -> Idle, swordAttack1, 2 반복한다.(기본상태)
 
-fly -> 기본적 이동시 계속 play. -> flyLeft로 주변 배회. idle로 건물뒤에 위치.
+fly -> 기본적 이동시 계속 play. -> 주변 배회. -> 도착지점에 놓고 -> summonSword&Whip -> Idle.
 
-idle, swordAttack1, 2 -> 칼없애고 반복.
+idle -> AttackIdle(딜레이) -> 2 or 3 or roar -> idle
 
-3Combo재생후 -> 장판생성 패턴.
+any-> damage -> death.
+
+2Combo -> 몹 소환
+
+3Combo재생후 ->  몹 소환 + 장판생성 패턴.
 
 roar -> 날개, 입에서 미사일 발사.
 
