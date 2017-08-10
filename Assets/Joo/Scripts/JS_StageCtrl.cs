@@ -35,10 +35,17 @@ public class JS_StageCtrl : MonoBehaviour {
 
     // 몬스터 생성 시간
     public float genGapTime;
+    float airMonGenGap;
+    float groundMonGenGap;
 
     // 몬스터 생성 현재 시간
-    float airMonGenTempTime;
-    float groundMonGenTempTime;
+    float airMonGencurrentTime;
+    float groundMonGencurrentTime;
+
+    public enum MonType{
+        Air,
+        Ground
+    };
 
     void Start () {
         if(Instance == null)
@@ -57,8 +64,10 @@ public class JS_StageCtrl : MonoBehaviour {
 
     void Update()
     {
+        // 스테이지 시작되었다면
         if (isStart)
         {
+            // 대기 시간동안 기다린 후
             if(currentTime < waitTime)
             {
                 currentTime += Time.deltaTime;
@@ -67,42 +76,95 @@ public class JS_StageCtrl : MonoBehaviour {
             {
                 // 웨이브 시작
                 // 몬스터 수와 제한 수 체크해가며 몬스터 젠
-
-                // 지상 몬스터 생성
-                if(stageInfos[stageIndex].groundMonCount > totalGroundMon)
-                {
-                    if(stageInfos[stageIndex].limitGroundMon > tempGroundMon)
-                    {
-
-                    }
-                }
-
-                // 공중 몬스터 생성
-                if (stageInfos[stageIndex].groundMonCount > totalGroundMon)
-                {
-                    if (stageInfos[stageIndex].limitGroundMon > tempGroundMon)
-                    {
-
-                    }
-                }
-
-                if(stageInfos[stageIndex].groundMonCount > totalGroundMon && stageInfos[stageIndex].groundMonCount > totalGroundMon)
-                {
-
-                }
+                GenMonster();
             }
         }
     }
 
+    void GenMonster()
+    {
+        int ranMonIndex = 0;
+        int ranPointIndex = 0;
+
+        // 지상 몬스터 생성
+        // 총 몬스터 생성 수와 비교
+        if (stageInfos[stageIndex].groundMonCount > totalGroundMon)
+        {
+            groundMonGencurrentTime += Time.deltaTime;
+
+            // 몬스터 생성 제한 수와 비교
+            if (stageInfos[stageIndex].limitGroundMon > tempGroundMon)
+            {
+                if (groundMonGencurrentTime > groundMonGenGap)
+                {
+                    // 소환할 몬스터 인덱스 결정
+                    ranMonIndex = Random.Range(0, stageInfos[stageIndex].groundMonPrefabs.Length);
+                    // 소환 위치 인덱스 결정
+                    ranPointIndex = Random.Range(0, stageInfos[stageIndex].groundMonGenPoints.Length);
+
+                    // 몬스터 소환
+                    Instantiate(stageInfos[stageIndex].groundMonPrefabs[ranMonIndex], stageInfos[stageIndex].groundMonGenPoints[ranPointIndex].position, Quaternion.identity);
+
+                    // 현재 소환된 몬스터 수 값 증가
+                    tempGroundMon++;
+
+                    // 시간 초기화
+                    groundMonGenGap = Random.Range(genGapTime - 0.5f, genGapTime + 0.5f);
+                    groundMonGencurrentTime = 0;
+                }
+            }
+        }
+
+        // 공중 몬스터 생성
+        // 총 몬스터 생성 수와 비교
+        if (stageInfos[stageIndex].airMonCount > totalAirMon)
+        {
+            airMonGencurrentTime += Time.deltaTime;
+
+            // 몬스터 생성 제한 수와 비교
+            if (stageInfos[stageIndex].limitAirMon > tempAirMon)
+            {
+                if (airMonGencurrentTime > airMonGenGap)
+                {
+                    // 소환할 몬스터 인덱스 결정
+                    ranMonIndex = Random.Range(0, stageInfos[stageIndex].airMonPrefabs.Length);
+                    // 소환 위치 인덱스 결정
+                    ranPointIndex = Random.Range(0, stageInfos[stageIndex].airMonGenPoints.Length);
+
+                    // 몬스터 소환
+                    Instantiate(stageInfos[stageIndex].airMonPrefabs[ranMonIndex], stageInfos[stageIndex].airMonGenPoints[ranPointIndex].position, Quaternion.identity);
+
+                    // 현재 소환된 몬스터 수 값 증가
+                    tempAirMon++;
+
+                    // 시간 초기화
+                    airMonGenGap = Random.Range(genGapTime - 0.5f, genGapTime + 0.5f);
+                    airMonGencurrentTime = 0;
+                }
+            }
+        }
+
+        // 설정한 몬스터 수를 모두 소환했고
+        // 현재 소환된 몬스터가 없다면 웨이브 종료
+        if (stageInfos[stageIndex].groundMonCount > totalGroundMon && stageInfos[stageIndex].airMonCount > totalAirMon && ((tempAirMon + tempGroundMon) == 0))
+        {
+            SetStartFalse();
+        }
+    }
+
+    // 웨이브 시작
     public void SetStartTrue()
     {
         if (!isStart)
         {
             isStart = true;
-            currentTime = 0;
+
+            // 스테이지 인덱스 변경
+            stageIndex = stageInfos[stageIndex].nextIndex;
         }
     }
 
+    // 웨이브 종료
     public void SetStartFalse()
     {
         if (isStart)
@@ -113,15 +175,36 @@ public class JS_StageCtrl : MonoBehaviour {
         }
     }
 
+    // 현재 생성된 몬스터 수 감소
+    public void DecreaseMonTempCount(MonType monType)
+    {
+        switch (monType)
+        {
+            case MonType.Ground:
+                tempGroundMon--;
+                break;
+            case MonType.Air:
+                tempAirMon--;
+                break;
+            default:
+                break;
+        }
+    }
+
+    // 수치 초기화
     void InitValue()
     {
         currentTime = 0;
 
-        airMonGenTempTime = 0;
-        groundMonGenTempTime = 0;
+        airMonGenGap = Random.Range(genGapTime - 0.5f, genGapTime + 0.5f);
+        groundMonGenGap = Random.Range(genGapTime - 0.5f, genGapTime + 0.5f);
+
+        airMonGencurrentTime = 0;
+        groundMonGencurrentTime = 0;
 
         tempGroundMon = 0;
         tempAirMon = 0;
+
         totalAirMon = 0;
         totalGroundMon = 0;
     }
