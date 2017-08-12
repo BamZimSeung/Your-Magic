@@ -113,6 +113,7 @@
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
      <None Include="Assets\Joo\Shaders\HitEffect\FireBall_Hit\ExplosionsDistortionParticlesCutout.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\DistortionCullOff.shader" />
+     <None Include="Assets\Joo\FailEffect\ExplosionsParticleBlendLight.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
      <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Premultiplied_UVscroll_ST.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
