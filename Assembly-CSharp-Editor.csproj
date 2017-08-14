@@ -113,9 +113,11 @@
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
      <None Include="Assets\Joo\Shaders\HitEffect\FireBall_Hit\ExplosionsDistortionParticlesCutout.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\DistortionCullOff.shader" />
+     <None Include="Assets\Joo\FailEffect\ExplosionsParticleBlendLight.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
      <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Premultiplied_UVscroll_ST.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
+     <None Include="Assets\Joo\PushMagic\Shaders\FT_Premultiplied_UVscroll_ST_DS.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
      <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Premultiplied_UVscroll_Fresnel_DS.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
@@ -162,6 +164,7 @@
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
      <None Include="Assets\Joo\Shaders\FireBall\ParticleAdd.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
+     <None Include="Assets\Joo\PushMagic\Shaders\SF_VFX_ParticleAddHDR.shader" />
      <None Include="Assets\Joo\IceSpear\Shaders\FT_Premultiplied_UVscroll_Fresnel_DS.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
