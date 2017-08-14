@@ -11,13 +11,18 @@ using UnityEngine;
 public class WB_AirMonster : MonoBehaviour {
 
     public GameObject Player;
-    public GameObject node, node1, node2;
+    //public GameObject node, node1, node2;
     public GameObject bulletPrefab;
 
     public float moveSpeed = 2f;
     public float fireDelay = 5f;
     public float currentTime;
-    public enum moveState
+
+
+    public List<GameObject> nodes;
+    public int cur_node = 0;
+
+    /*public enum moveState
     {
         first,
         second,
@@ -25,13 +30,13 @@ public class WB_AirMonster : MonoBehaviour {
         fourth,
     }
 
-    public moveState my_move;
+    public moveState my_move;*/
 
 	// Use this for initialization
 	void Start () {
-        transform.position = node.transform.position; // 시작위치 = 처음노드.
+        transform.position = nodes[0].transform.position; // 시작위치 = 처음노드.
         currentTime = 0;
-        my_move = moveState.first;
+        //my_move = moveState.first;
 	}
 	
 	// Update is called once per frame
@@ -45,7 +50,24 @@ public class WB_AirMonster : MonoBehaviour {
             currentTime = 0;
         }
 
-        switch(my_move)
+        if (cur_node + 1 == nodes.Count) // 끝까지도달.
+        {
+            cur_node = 0; // 처음부터 돌기
+            nodes.Reverse(); // 노드뒤집기.
+        }
+
+        if (Vector3.Distance(transform.position, nodes[cur_node + 1].transform.position) > 0.5f)
+        {
+            ListMove(nodes[cur_node], nodes[cur_node + 1]); // 1회 움직임
+        }
+        else
+        {
+            cur_node++; // 1 증가.
+        }
+        
+       
+        
+       /* switch(my_move)
         {
             case moveState.first:
                 if (Vector3.Distance(transform.position, node1.transform.position) > 0.5f)
@@ -87,10 +109,16 @@ public class WB_AirMonster : MonoBehaviour {
                     my_move = moveState.first;
                 }
                 break;
-        }
+        }*/
 	}
 
     void Move(GameObject origin, GameObject next) // 움직이는 함수.
+    {
+        Vector3 dir = next.transform.position - origin.transform.position;
+        transform.Translate(dir * moveSpeed * Time.deltaTime, Space.World);
+    }
+
+    void ListMove(GameObject origin, GameObject next) // 움직이는 함수.
     {
         Vector3 dir = next.transform.position - origin.transform.position;
         transform.Translate(dir * moveSpeed * Time.deltaTime, Space.World);
