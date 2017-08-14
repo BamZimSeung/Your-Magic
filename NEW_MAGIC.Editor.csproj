@@ -146,15 +146,23 @@
     <Compile Include="Assets\YM_WB\Editor\Scripts\EffectSettingsEditor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\City skyline\Shader\CitySkyline.shader" />
+    <None Include="Assets\Joo\DeathEffect\Shaders\FT_Additive.shader" />
+    <None Include="Assets\Joo\DeathEffect\Shaders\FT_Premultiplied.shader" />
+    <None Include="Assets\Joo\FailEffect\ExplosionsParticleBlendLight.shader" />
+    <None Include="Assets\Joo\IceSpear\Shaders\FT_Premultiplied_UVscroll_Fresnel_DS.shader" />
+    <None Include="Assets\Joo\IceSpear\Shaders\ParticleCook-Transparent-Additive-Diffuse.shader" />
+    <None Include="Assets\Joo\IceSpear\Shaders\ZFS_3D_Free.shader" />
     <None Include="Assets\Joo\Monster\Mon1\AlphaBlendedNoSmooth.shader" />
     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout 1.shader" />
     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout.shader" />
+    <None Include="Assets\Joo\PushMagic\Shaders\FT_Premultiplied_UVscroll_ST_DS.shader" />
+    <None Include="Assets\Joo\PushMagic\Shaders\SF_VFX_ParticleAddHDR.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel_DS.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Premultiplied_UVscroll_Fresnel_DS.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Premultiplied_UVscroll_ST.shader" />
+    <None Include="Assets\Joo\Shaders\EnergyBolt\ParticleAddHDR.shader" />
     <None Include="Assets\Joo\Shaders\FireBall\FT_Additive.shader" />
     <None Include="Assets\Joo\Shaders\FireBall\GlowAdditiveTwoColor.shader" />
     <None Include="Assets\Joo\Shaders\FireBall\ParticleAdd.shader" />
@@ -178,6 +186,7 @@
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShader.shader" />
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
+    <None Include="Assets\SeongJun\City skyline\Shader\CitySkyline.shader" />
     <None Include="Assets\YM_WB\Fonts\NotoSans\theeluwin-NotoSansKR-Hestia-e2c6f1f\ksx1001.txt" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Readme.txt" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />

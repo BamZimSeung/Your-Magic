@@ -40,7 +40,7 @@ public class WB_RainShield : MonoBehaviour {
         RaycastHit hitInfo;
 
         // 마법이 존나 회전에서 날아온다면? 원형으로 ray 방출.좁은범위, 첫번째 닿는 지점에 생성ㅎ.
-        if(other.CompareTag("Monster"))
+        if(other.gameObject.layer == LayerMask.NameToLayer("Grabble"))
         {
             cur_HP--; // 쉴드 체력 1씩달음.
             Debug.Log("ComapreTag");
