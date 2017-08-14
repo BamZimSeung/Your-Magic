@@ -87,8 +87,11 @@
     <Compile Include="Assets\Joo\Scripts\JS_IceSpear.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_MagicClash.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_RuneStateCtrl.cs" />
+    <Compile Include="Assets\Joo\Scripts\JS_StageCtrl.cs" />
+    <Compile Include="Assets\Joo\Scripts\JS_StageInfo.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_Storm.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_WarpPoint.cs" />
+    <Compile Include="Assets\Joo\Scripts\JS_WeakPoint.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRBoundary.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRCameraRig.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRCommon.cs" />
@@ -201,6 +204,7 @@
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Fairy_Word.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_HartAnimCtnl.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_HitCtnl.cs" />
+    <Compile Include="Assets\YM_WB\WB_Scripts\WB_MagicBaordCtnl.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_OpenPortal.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_PlayerMove.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_PortalCtnl.cs" />
@@ -212,15 +216,17 @@
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_UITriangle.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\City skyline\Shader\CitySkyline.shader" />
     <None Include="Assets\Joo\DeathEffect\Shaders\FT_Additive.shader" />
     <None Include="Assets\Joo\DeathEffect\Shaders\FT_Premultiplied.shader" />
+    <None Include="Assets\Joo\FailEffect\ExplosionsParticleBlendLight.shader" />
     <None Include="Assets\Joo\IceSpear\Shaders\FT_Premultiplied_UVscroll_Fresnel_DS.shader" />
     <None Include="Assets\Joo\IceSpear\Shaders\ParticleCook-Transparent-Additive-Diffuse.shader" />
     <None Include="Assets\Joo\IceSpear\Shaders\ZFS_3D_Free.shader" />
     <None Include="Assets\Joo\Monster\Mon1\AlphaBlendedNoSmooth.shader" />
     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout 1.shader" />
     <None Include="Assets\Joo\Monster\Mon1\DistortionParticlesCutout.shader" />
+    <None Include="Assets\Joo\PushMagic\Shaders\FT_Premultiplied_UVscroll_ST_DS.shader" />
+    <None Include="Assets\Joo\PushMagic\Shaders\SF_VFX_ParticleAddHDR.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel.shader" />
     <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel_DS.shader" />
@@ -250,6 +256,7 @@
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShader.shader" />
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
+    <None Include="Assets\SeongJun\City skyline\Shader\CitySkyline.shader" />
     <None Include="Assets\YM_WB\Fonts\NotoSans\theeluwin-NotoSansKR-Hestia-e2c6f1f\ksx1001.txt" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Readme.txt" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
