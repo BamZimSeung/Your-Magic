@@ -20,6 +20,27 @@ public class JS_StageInfo : MonoBehaviour {
     public int limitGroundMon;
     public int limitAirMon;
 
-    // 다음 스테이지 인덱스
-    public int nextIndex;
+    // 다음 스테이지 워프포인트
+    public GameObject[] nextWarpPoints;
+
+    void Start()
+    {
+        SetWarpPointsDisable();
+    }
+
+    public void SetWarpPointsDisable()
+    {
+        for (int i = 0; i < nextWarpPoints.Length; i++)
+        {
+            nextWarpPoints[i].SetActive(false);
+        }
+    }
+
+    public void SetWarpPointsAble()
+    {
+        for (int i = 0; i < nextWarpPoints.Length; i++)
+        {
+            nextWarpPoints[i].SetActive(true);
+        }
+    }
 }

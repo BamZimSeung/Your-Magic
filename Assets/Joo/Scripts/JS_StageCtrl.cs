@@ -158,9 +158,6 @@ public class JS_StageCtrl : MonoBehaviour {
         if (!isStart)
         {
             isStart = true;
-
-            // 스테이지 인덱스 변경
-            stageIndex = stageInfos[stageIndex].nextIndex;
         }
     }
 
@@ -170,6 +167,8 @@ public class JS_StageCtrl : MonoBehaviour {
         if (isStart)
         {
             isStart = false;
+
+            stageInfos[stageIndex].SetWarpPointsAble();
 
             InitValue();
         }
