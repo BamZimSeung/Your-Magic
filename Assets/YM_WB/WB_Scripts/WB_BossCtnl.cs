@@ -59,6 +59,10 @@ public class WB_BossCtnl : MonoBehaviour {
 
     // 이제 magicboard 관련 변수
     public GameObject safeboardPrefab, attackboardPrefab;
+    public GameObject magicBoardPrefab;
+
+    public float missTime = 5f;
+
     public Transform boardPos_1st, boardPos_2nd, boardPos_3rd;
     public float boardPatternTime = 15f; // 장판 마법 패턴 시간
     public bool boardSwitch = true;
@@ -244,6 +248,7 @@ public class WB_BossCtnl : MonoBehaviour {
     void BossMagicBoard() // 장판 공격 패턴 = 소환 + 장판생성.
     {
         boss_anim.SetInteger("Boss_State", 4);
+        
         // 몹 소환
 
         if (summonSwitch && cur_summonNumber <= summonNumber) // 소환스위치 켜있고 숫자가 정해진 것보다 아래일때만 생성.
@@ -257,32 +262,38 @@ public class WB_BossCtnl : MonoBehaviour {
         {
             int safezone = Random.Range(0, 3);// 0~2번중 안전한 지역 선택.
             // 보드 생성.
-            GameObject safeboard = Instantiate(safeboardPrefab);
             GameObject attackboard_1st, attackboard_2nd;
+            GameObject safeboard = Instantiate(safeboardPrefab);
             attackboard_1st = Instantiate(attackboardPrefab);
             attackboard_2nd = Instantiate(attackboardPrefab);
+
             switch (safezone) // 소환하고
             {
+
                 case 0: //0자리에 안전배치
                     safeboard.transform.position = boardPos_1st.position;
                     attackboard_1st.transform.position = boardPos_2nd.position;
                     attackboard_2nd.transform.position = boardPos_3rd.position;
+                    StartCoroutine(SummonMagicBoard(attackboard_1st.transform, attackboard_2nd.transform));
                     break;
                 case 1: // 1자리에 안전배치
                     safeboard.transform.position = boardPos_2nd.position;
                     attackboard_1st.transform.position = boardPos_1st.position;
                     attackboard_2nd.transform.position = boardPos_3rd.position;
+                    StartCoroutine(SummonMagicBoard(attackboard_1st.transform, attackboard_2nd.transform));
                     break;
                 case 2: //2자리에 안전배치
                     safeboard.transform.position = boardPos_3rd.position;
                     attackboard_1st.transform.position = boardPos_1st.position;
                     attackboard_2nd.transform.position = boardPos_2nd.position;
+                    StartCoroutine(SummonMagicBoard(attackboard_1st.transform, attackboard_2nd.transform));
                     break;
             }
             boardSwitch = false; // 스위치 끄기.-> 더이상 장판 소환 x
         }
         currentTime += Time.deltaTime;
-        if(currentTime >= boardPatternTime) // 장판 마법 패턴이 끝나면 상태 초기화 -> 딜타임.
+       
+        if (currentTime >= boardPatternTime) // 장판 마법 패턴이 끝나면 상태 초기화 -> 딜타임.
         {
             boardSwitch = true;
             currentTime = 0f;
@@ -367,5 +378,18 @@ public class WB_BossCtnl : MonoBehaviour {
     IEnumerator Death() // 보스 사망
     {
         yield return new WaitForSeconds(3f);
+    }
+
+    IEnumerator SummonMagicBoard(Transform one, Transform two) // 1,2 지역을 받아서 장판공격을 합니다.
+    {
+        yield return new WaitForSeconds(missTime); // 회피시간가지고
+
+        GameObject boardattack_1st, boardattack_2st;
+        boardattack_1st = Instantiate(magicBoardPrefab);
+        boardattack_1st.transform.position = one.position;
+
+        boardattack_2st = Instantiate(magicBoardPrefab);
+        boardattack_2st.transform.position = two.position;
+        
     }
 }
