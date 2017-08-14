@@ -11,6 +11,9 @@ public class JS_WarpPoint : MonoBehaviour {
     public bool isSelected = false;
 
     public float stateChangeTime = 0.3f;
+
+    public int nextStageIndex = 0;
+
     float currentTime = 0;
 
 	void Start () {
@@ -36,6 +39,7 @@ public class JS_WarpPoint : MonoBehaviour {
         }
 	}
 
+    // 레이에 닿았다고 전달받는 함수
     public void WarpPointSelected()
     {
         if (!isSelected)
@@ -47,5 +51,16 @@ public class JS_WarpPoint : MonoBehaviour {
             isSelected = true;
         }
         currentTime = 0;
+    }
+
+    // 다음 스테이지로 설정
+    public void SetNextStageIndex()
+    {
+        // 다음 스테이지 인덱스 변경
+        JS_StageCtrl.Instance.stageIndex = nextStageIndex;
+        // 다음 스테이지 시작
+        JS_StageCtrl.Instance.SetStartTrue();
+        // 워프 포인트 비활성화
+        gameObject.GetComponentInParent<JS_StageInfo>().SetWarpPointsDisable();
     }
 }
