@@ -5,10 +5,15 @@ using UnityEngine.AI;
 
 public class Monster : MonoBehaviour
 {
+    // 지상 몬스터인지 여부
+    public bool isGroundMon = true;
+
+    // 시체 프리팹
     public GameObject corpsePrefab;
 
     public enum MonsterState { Idle, Trace, Attack, Die , Damage};
 
+    // 몬스터 상태
     public MonsterState monsterState = MonsterState.Idle;
 
     Transform monsterTr;
@@ -17,9 +22,12 @@ public class Monster : MonoBehaviour
     NavMeshAgent nvAgent;
     Animator animator;
 
+    // 추적 가능 범위
     public float traceDist = 10.0f;
+    // 공격 가능 범위
     public float attackDist = 2.0f;
 
+    // 데미지 입는 시간
     public float damageDelayTime = 0.2f;
 
     bool isDie = false;
@@ -154,7 +162,16 @@ public class Monster : MonoBehaviour
         monsterState = MonsterState.Die;
         nvAgent.isStopped = true;
         Instantiate(corpsePrefab, transform.position, Quaternion.identity);
-       
+
+        if (isGroundMon)
+        {
+            JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Ground);
+        }
+        else
+        {
+            JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Air);
+        }
+
         Destroy(gameObject);
     }
 }
