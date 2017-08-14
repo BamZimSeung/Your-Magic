@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class JS_RuneStateCtrl : MonoBehaviour {
 
+    // 재질
     public Material activeMat;
     public Material inactiveMat;
 
     public MeshRenderer runeMR;
 
     public GameObject effects;
+
+    public GameObject successEffect;
+    public GameObject failEffect;
 
     public bool isActive = false;
 	
@@ -31,5 +35,15 @@ public class JS_RuneStateCtrl : MonoBehaviour {
             runeMR.material = activeMat;
             effects.SetActive(false);
         }
+    }
+
+    public void MagicSuccess()
+    {
+        Instantiate(successEffect, transform.position, Quaternion.identity);
+    }
+
+    public void MagicFail()
+    {
+        Instantiate(failEffect, transform.position, Quaternion.identity);
     }
 }

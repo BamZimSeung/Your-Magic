@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameMgr : MonoBehaviour {
 
+    
+
     public Transform[] points;
 
     public GameObject monsterPrefab;
@@ -48,11 +50,6 @@ public class GameMgr : MonoBehaviour {
                      pre= idx;
                      Instantiate(monsterPrefab, points[idx].position, points[idx].rotation);
                  }
-
-                 
-                
-
-               
             }
             else
             {
@@ -60,7 +57,4 @@ public class GameMgr : MonoBehaviour {
             }
         }
     }
-       
-    
-
 }
