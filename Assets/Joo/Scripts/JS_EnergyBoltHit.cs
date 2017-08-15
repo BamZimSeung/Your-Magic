@@ -19,6 +19,6 @@ public class JS_EnergyBoltHit : MonoBehaviour {
     void Attack(GameObject enemy)
     {
         // 적을 공격
-        enemy.GetComponent<Monster>().MonsterDamage(power);
+        enemy.GetComponent<JS_Monster>().MonsterDamage(power);
     }	
 }
