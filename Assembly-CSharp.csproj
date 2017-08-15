@@ -49,6 +49,7 @@
      <Compile Include="Assets\Joo\Scripts\ExplosionsShaderQueue.cs" />
      <Compile Include="Assets\Joo\Scripts\JS_CorpseExplosion.cs" />
      <Compile Include="Assets\Joo\Scripts\JS_EffectDestroy.cs" />
+     <Compile Include="Assets\Joo\Scripts\JS_EnemyRangeAttack.cs" />
      <Compile Include="Assets\Joo\Scripts\JS_EnergyBoltHit.cs" />
      <Compile Include="Assets\Joo\Scripts\JS_FireBallExplosion.cs" />
      <Compile Include="Assets\Joo\Scripts\JS_GravityBall.cs" />
@@ -163,17 +164,22 @@
      <Compile Include="Assets\YM_WB\WB_Scripts\FixShaderQueue.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\QueueUvAnimation.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\UVTextureAnimator.cs" />
+     <Compile Include="Assets\YM_WB\WB_Scripts\WB_AirMonster.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\WB_Arrow_Ctrl.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\WB_Arrow_Destroy.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\WB_BossCtnl.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\WB_DisplayCanvas.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\WB_Fairy_Ctrl.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\WB_Fairy_Word.cs" />
+     <Compile Include="Assets\YM_WB\WB_Scripts\WB_HartAnimCtnl.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\WB_HitCtnl.cs" />
+     <Compile Include="Assets\YM_WB\WB_Scripts\WB_MagicBaordCtnl.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\WB_OpenPortal.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\WB_PlayerMove.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\WB_PortalCtnl.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\WB_PortalTrigger.cs" />
+     <Compile Include="Assets\YM_WB\WB_Scripts\WB_RainMan.cs" />
+     <Compile Include="Assets\YM_WB\WB_Scripts\WB_RainShield.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\WB_Sound.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\WB_SpaceCtnl.cs" />
      <Compile Include="Assets\YM_WB\WB_Scripts\WB_UITriangle.cs" />
@@ -181,7 +187,7 @@
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarMaterialStateShader.cginc" />
-     <None Include="Assets\City skyline\Shader\CitySkyline.shader" />
+     <None Include="Assets\SeongJun\City skyline\Shader\CitySkyline.shader" />
      <None Include="Assets\YM_WB\demonLord.txt" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
@@ -251,6 +257,7 @@
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
      <None Include="Assets\Joo\Shaders\HandShield\FT_Premultiplied_UVscroll_ST_DS.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+     <None Include="Assets\Joo\EnemyRangeAttack\AlphaBlended.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionEffect.shader" />
