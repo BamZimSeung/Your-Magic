@@ -173,6 +173,10 @@
     <Compile Include="Assets\Marab\Scripts\MAR_WarpControllerTest.cs" />
     <Compile Include="Assets\Marab\Scripts\NotUsed\MAR_HeadAnchor.cs" />
     <Compile Include="Assets\Marab\Scripts\NotUsed\MAR_SetTerm.cs" />
+    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_CamRotate.cs" />
+    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_EnemyShoot.cs" />
+    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_Move.cs" />
+    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_PlayFire.cs" />
     <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
     <Compile Include="Assets\WooHyun\PWH\Monster.cs" />
 >>>>>>> origin/Marab
