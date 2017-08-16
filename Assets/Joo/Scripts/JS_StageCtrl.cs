@@ -146,7 +146,7 @@ public class JS_StageCtrl : MonoBehaviour {
 
         // 설정한 몬스터 수를 모두 소환했고
         // 현재 소환된 몬스터가 없다면 웨이브 종료
-        if (stageInfos[stageIndex].groundMonCount > totalGroundMon && stageInfos[stageIndex].airMonCount > totalAirMon && ((tempAirMon + tempGroundMon) == 0))
+        if (stageInfos[stageIndex].groundMonCount == totalGroundMon && stageInfos[stageIndex].airMonCount == totalAirMon && ((tempAirMon + tempGroundMon) == 0))
         {
             SetStartFalse();
         }

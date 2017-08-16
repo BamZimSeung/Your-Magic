@@ -57,7 +57,7 @@ public class JS_EnemyRangeAttack : MonoBehaviour {
         }
 
         transform.position += dir;
-        transform.position = new Vector3(transform.position.x, upPos, transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y + upPos, transform.position.z);
     }
 
     public void SetTarget(Transform player)
