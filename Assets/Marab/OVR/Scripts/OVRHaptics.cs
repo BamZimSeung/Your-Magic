@@ -266,7 +266,11 @@ public static class OVRHaptics
 		/// Enqueues the specified clip to play after any currently-playing clip finishes.
 		/// </summary>
 		public void Queue(OVRHapticsClip clip)
-		{
+        {
+            if (m_pendingClips.Count >= 10)
+            {
+                return;
+            }
 			m_pendingClips.Add(new ClipPlaybackTracker(clip));
 		}
 
