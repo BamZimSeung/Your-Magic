@@ -41,11 +41,12 @@ public class WB_AirMonster : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.LookAt(Player.transform);
+        //transform.LookAt(Player.transform);
         currentTime += Time.deltaTime;
         if(currentTime > fireDelay)
         {
             GameObject bullet = Instantiate(bulletPrefab);
+            bullet.GetComponent<JS_EnemyRangeAttack>().SetTarget(Player.transform);
             bullet.transform.position = transform.position;
             currentTime = 0;
         }
