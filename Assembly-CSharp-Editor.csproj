@@ -71,7 +71,6 @@
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarMaterialStateShader.cginc" />
-     <None Include="Assets\SeongJun\City skyline\Shader\CitySkyline.shader" />
      <None Include="Assets\YM_WB\demonLord.txt" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
@@ -129,6 +128,7 @@
      <None Include="Assets\Marab\OVR\Resources\Alpha Premultiply.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
+     <None Include="Assets\YM_WB\WB_Sound\마법소리.txt" />
      <None Include="Assets\Joo\Shaders\FireBall\FT_Additive.shader" />
      <None Include="Assets\Joo\Shaders\EnergyBolt\FT_Additive_UVscroll_Fresnel.shader" />
      <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
