@@ -44,7 +44,7 @@ public class JS_Storm : MonoBehaviour {
         {
             for(int i = 0; i < colInfos.Length; i++)
             {
-                colInfos[i].transform.GetComponent<Monster>().MonsterDamage(power);
+                colInfos[i].transform.GetComponent<JS_Monster>().MonsterDamage(power);
             }
 
             yield return wfs;
