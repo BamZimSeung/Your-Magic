@@ -19,7 +19,6 @@ public class WB_AirMonster : MonoBehaviour {
     public float fireDelay = 5f;
     public float currentTime;
 
-
     public List<GameObject> nodes;
     public int cur_node = 0;
 

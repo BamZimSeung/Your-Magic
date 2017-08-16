@@ -152,6 +152,37 @@
     <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSkinnedMeshRenderComponent.cs" />
     <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSkinnedMeshRenderPBSComponent.cs" />
     <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarTouchController.cs" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\Marab\Scripts\MAR_HandControllerTestOther.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_HandState.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestThreeOther.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicControllerTestTwoOther.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicGravityTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicList.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicMotionTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternBallTestThree.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicPatternPadThree.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicPickTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicShieldCast.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicShieldTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicShoot.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicSlowTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_MagicSpearTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_TouchTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\MAR_WarpControllerTest.cs" />
+    <Compile Include="Assets\Marab\Scripts\NotUsed\MAR_HeadAnchor.cs" />
+    <Compile Include="Assets\Marab\Scripts\NotUsed\MAR_SetTerm.cs" />
+    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_CamRotate.cs" />
+    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_EnemyShoot.cs" />
+    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_Move.cs" />
+    <Compile Include="Assets\Marab\TestVersion\Scripts\Test_PlayFire.cs" />
+    <Compile Include="Assets\WooHyun\PWH\GameMgr.cs" />
+    <Compile Include="Assets\WooHyun\PWH\Monster.cs" />
+>>>>>>> origin/Marab
+>>>>>>> a07f0baac8b89632543bd20adfe8769d04139b98
     <Compile Include="Assets\YM_WB\DemonLord\DEMONIC CREATURES PACK\DEMON LORD\SCRIPT\ScrollingUVs.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
