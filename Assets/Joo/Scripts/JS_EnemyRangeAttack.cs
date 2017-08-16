@@ -7,8 +7,8 @@ public class JS_EnemyRangeAttack : MonoBehaviour {
     // 목표물
     public Transform target;
 
-    // 방향
-    public Vector3 dir;
+    // 히트 이펙트
+    public GameObject hitEffectPrefab;
 
     // 속도
     public float speed;
@@ -18,6 +18,9 @@ public class JS_EnemyRangeAttack : MonoBehaviour {
 
     // 포물선 최고점 높이
     public float parabolaHeight;
+
+    // 방향
+    Vector3 dir;
 
     // 처음 거리
     float firstDist;
@@ -60,5 +63,21 @@ public class JS_EnemyRangeAttack : MonoBehaviour {
     public void SetTarget(Transform player)
     {
         target = player;
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+            // 플레이어에게 데미지 주기
+
+            Destroy(gameObject);
+        }
+        else if(!col.CompareTag("Enemy"))
+        {
+            Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }

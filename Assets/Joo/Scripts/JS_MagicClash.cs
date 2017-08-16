@@ -12,7 +12,7 @@ public class JS_MagicClash : MonoBehaviour {
     void OnTriggerEnter(Collider col)
     {
         // 부딪힌게 Player가 아니라면
-        if (!col.CompareTag("Player"))
+        if (!col.CompareTag("Player")||!col.CompareTag("Bullet"))
         {
             // 터짐
             CallHitEffect();
