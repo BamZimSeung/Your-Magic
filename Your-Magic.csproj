@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Joo\Scripts\ExplosionsShaderQueue.cs" />
+    <Compile Include="Assets\Joo\Scripts\JS_BossRangeAttack.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_CorpseExplosion.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_EffectDestroy.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_EnemyRangeAttack.cs" />
@@ -258,7 +259,6 @@
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShader.shader" />
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
-    <None Include="Assets\SeongJun\City skyline\Shader\CitySkyline.shader" />
     <None Include="Assets\YM_WB\Fonts\NotoSans\theeluwin-NotoSansKR-Hestia-e2c6f1f\ksx1001.txt" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Readme.txt" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
