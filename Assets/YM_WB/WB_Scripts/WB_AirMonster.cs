@@ -41,7 +41,8 @@ public class WB_AirMonster : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //transform.LookAt(Player.transform);
+        transform.LookAt(Player.transform);
+
         currentTime += Time.deltaTime;
         if(currentTime > fireDelay)
         {
