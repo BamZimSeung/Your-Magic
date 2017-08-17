@@ -7,6 +7,9 @@ public class JS_EnemyRangeAttack : MonoBehaviour {
     // 목표물
     public Transform target;
 
+    // 처음 목표물 위치
+    Vector3 firstTargetPos;
+
     // 히트 이펙트
     public GameObject hitEffectPrefab;
 
@@ -29,7 +32,8 @@ public class JS_EnemyRangeAttack : MonoBehaviour {
     float tempDist;
 
 	void Start () {
-        firstDist = Vector3.Distance(target.position.x*Vector3.right + target.position.z*Vector3.forward, transform.position.x* Vector3.right + transform.position.z*Vector3.forward);
+        firstTargetPos = target.position;
+        firstDist = Vector3.Distance(firstTargetPos.x*Vector3.right + firstTargetPos.z*Vector3.forward, transform.position.x* Vector3.right + transform.position.z*Vector3.forward);
 	}
 	
 	void Update () {
@@ -43,11 +47,11 @@ public class JS_EnemyRangeAttack : MonoBehaviour {
         if (isParabola)
         {
             // y축이 0인 평면상의 목표물과의 거리
-            tempDist = Vector3.Distance(target.position.x * Vector3.right + target.position.z * Vector3.forward, transform.position.x * Vector3.right + transform.position.z * Vector3.forward);
+            tempDist = Vector3.Distance(firstTargetPos.x * Vector3.right + firstTargetPos.z * Vector3.forward, transform.position.x * Vector3.right + transform.position.z * Vector3.forward);
             // y = -4*H*(x - 0.5)^2 + H
             upPos = -4 * parabolaHeight *(tempDist / firstDist - 0.5f) * (tempDist / firstDist - 0.5f) + parabolaHeight;
 
-            dir = (((target.position - target.position.y * Vector3.up) - (transform.position - transform.position.y * Vector3.up)).normalized * speed) * Time.deltaTime;
+            dir = (((firstTargetPos - firstTargetPos.y * Vector3.up) - (transform.position - transform.position.y * Vector3.up)).normalized * speed) * Time.deltaTime;
         }
         else
         {
@@ -58,7 +62,7 @@ public class JS_EnemyRangeAttack : MonoBehaviour {
 
         if (isParabola)
         {
-            transform.position = new Vector3(transform.position.x, upPos, transform.position.z);
+            transform.position = new Vector3(transform.position.x, firstTargetPos.y + upPos, transform.position.z);
         }
     }
 
