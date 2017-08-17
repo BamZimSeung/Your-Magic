@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Joo\Scripts\ExplosionsShaderQueue.cs" />
+    <Compile Include="Assets\Joo\Scripts\JS_BossRangeAttack.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_CorpseExplosion.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_EffectDestroy.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_EnemyRangeAttack.cs" />
@@ -128,30 +129,6 @@
     <Compile Include="Assets\Marab\OVR\Scripts\Util\OVRSceneSampleController.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\Util\OVRScreenFade.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\Util\OVRWaitCursor.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Samples\GripPoses\Scripts\PoseEditHelper.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Samples\RemoteLoopback\Scripts\RemoteLoopbackManager.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatar.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarAsset.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarAssetMesh.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarAssetTexture.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarBase.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarBody.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarComponent.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarDriver.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarHand.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarLocalDriver.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarMeshInstance.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarPacket.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarProjectorRenderComponent.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarRemoteDriver.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarRenderComponent.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSDKCAPI.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSDKManager.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSettings.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSettingsEditor.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSkinnedMeshRenderComponent.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarSkinnedMeshRenderPBSComponent.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Scripts\OvrAvatarTouchController.cs" />
     <Compile Include="Assets\YM_WB\DemonLord\DEMONIC CREATURES PACK\DEMON LORD\SCRIPT\ScrollingUVs.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
@@ -255,10 +232,6 @@
     <None Include="Assets\Marab\OVR\Resources\Unlit Transparent Color.shader" />
     <None Include="Assets\Marab\OVR\Shaders\OVRColorRampAlpha.shader" />
     <None Include="Assets\Marab\OVR\Shaders\Unlit Crosshair.shader" />
-    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarMaterialStateShader.cginc" />
-    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShader.shader" />
-    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
-    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
     <None Include="Assets\Resources\마법소리.txt" />
     <None Include="Assets\YM_WB\Fonts\NotoSans\theeluwin-NotoSansKR-Hestia-e2c6f1f\ksx1001.txt" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Readme.txt" />

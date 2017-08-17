@@ -132,7 +132,6 @@
     <Compile Include="Assets\Marab\OVR\Editor\OVRPluginUpdater.cs" />
     <Compile Include="Assets\Marab\OVR\Editor\OVRPluginUpdaterStub.cs" />
     <Compile Include="Assets\Marab\OVR\Editor\OVRScreenshotWizard.cs" />
-    <Compile Include="Assets\Marab\OvrAvatar\Editor\AvatarMaterialEditor.cs" />
     <Compile Include="Assets\YM_WB\Editor\ImageEffects\AntialiasingEditor.cs" />
     <Compile Include="Assets\YM_WB\Editor\ImageEffects\BloomAndFlaresEditor.cs" />
     <Compile Include="Assets\YM_WB\Editor\ImageEffects\BloomEditor.cs" />
@@ -186,10 +185,6 @@
     <None Include="Assets\Marab\OVR\Resources\Unlit Transparent Color.shader" />
     <None Include="Assets\Marab\OVR\Shaders\OVRColorRampAlpha.shader" />
     <None Include="Assets\Marab\OVR\Shaders\Unlit Crosshair.shader" />
-    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarMaterialStateShader.cginc" />
-    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShader.shader" />
-    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
-    <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
     <None Include="Assets\Resources\마법소리.txt" />
     <None Include="Assets\YM_WB\Fonts\NotoSans\theeluwin-NotoSansKR-Hestia-e2c6f1f\ksx1001.txt" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Readme.txt" />
