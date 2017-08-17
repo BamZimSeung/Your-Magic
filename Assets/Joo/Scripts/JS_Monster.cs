@@ -57,8 +57,11 @@ public class JS_Monster : MonoBehaviour
     {
         playerTr = GameObject.Find("Player").GetComponent<Transform>();
 
+        
+
         if (isGroundMon)
         {
+            nvAgent.enabled = true;
             StartCoroutine(CheckMonsterState());
             StartCoroutine(MonsterAction());
         }
@@ -176,6 +179,8 @@ public class JS_Monster : MonoBehaviour
 
         if (isGroundMon)
         {
+
+            Debug.Log(nvAgent.enabled);
             nvAgent.isStopped = true;
         }
         

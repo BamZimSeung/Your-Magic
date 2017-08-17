@@ -14,6 +14,10 @@ public class JS_EnergyBoltHit : MonoBehaviour {
         {
             Attack(col.gameObject);
         }
+        else if (col.CompareTag("EnemyBullet"))
+        {
+            col.gameObject.GetComponent<JS_BossRangeAttack>().Damaged(power);
+        }
     }
 
     void Attack(GameObject enemy)
