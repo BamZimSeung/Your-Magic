@@ -173,7 +173,12 @@ public class JS_Monster : MonoBehaviour
 
         isDie = true;
         monsterState = MonsterState.Die;
-        nvAgent.isStopped = true;
+
+        if (isGroundMon)
+        {
+            nvAgent.isStopped = true;
+        }
+        
         Instantiate(corpsePrefab, transform.position, Quaternion.identity);
 
         if (isGroundMon)
