@@ -79,7 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Joo\Scripts\ExplosionsShaderQueue.cs" />
-    <Compile Include="Assets\Joo\Scripts\JS_BossRangeAttack.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_CorpseExplosion.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_EffectDestroy.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_EnemyRangeAttack.cs" />
@@ -200,6 +199,7 @@
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_AirMonster.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Arrow_Ctrl.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Arrow_Destroy.cs" />
+    <Compile Include="Assets\YM_WB\WB_Scripts\WB_Audio.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_BossCtnl.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_DisplayCanvas.cs" />
     <Compile Include="Assets\YM_WB\WB_Scripts\WB_Fairy_Ctrl.cs" />
@@ -259,6 +259,7 @@
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShader.shader" />
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\Marab\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
+    <None Include="Assets\Resources\마법소리.txt" />
     <None Include="Assets\YM_WB\Fonts\NotoSans\theeluwin-NotoSansKR-Hestia-e2c6f1f\ksx1001.txt" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Readme.txt" />
     <None Include="Assets\YM_WB\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
@@ -328,7 +329,6 @@
     <None Include="Assets\YM_WB\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
     <None Include="Assets\YM_WB\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
     <None Include="Assets\YM_WB\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
-    <None Include="Assets\YM_WB\WB_Sound\마법소리.txt" />
     <None Include="Assets\YM_WB\demonLord.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

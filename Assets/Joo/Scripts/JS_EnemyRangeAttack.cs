@@ -38,7 +38,7 @@ public class JS_EnemyRangeAttack : MonoBehaviour {
 
     void SetPos()
     {
-        float upPos;
+        float upPos = 0;
 
         if (isParabola)
         {
@@ -51,13 +51,15 @@ public class JS_EnemyRangeAttack : MonoBehaviour {
         }
         else
         {
-            upPos = 0;
-         
             dir = (target.position - transform.position).normalized * speed * Time.deltaTime;
         }
 
         transform.position += dir;
-        transform.position = new Vector3(transform.position.x, transform.position.y + upPos, transform.position.z);
+
+        if (isParabola)
+        {
+            transform.position = new Vector3(transform.position.x, upPos, transform.position.z);
+        }
     }
 
     public void SetTarget(Transform player)

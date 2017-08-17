@@ -1,4 +1,4 @@
-Library/
+﻿Library/
 Temp/
 Assets/YM_WB.meta~HEAD
 Assets/YM_WB.meta~HEAD_1
@@ -44,8 +44,6 @@ Assets/SeongJun/ArchVizPRO_Interior_Vol.3/3D MODEL/FURNITURE/VASES/Vases3/Vase3_
 Assets/SeongJun/ArchVizPRO_Interior_Vol.3/3D MODEL/FURNITURE/VASES/Vases3/Vase3_AmbientOcclusion.png.meta
 Assets/SeongJun/ArchVizPRO_Interior_Vol.3/3D MODEL/FURNITURE/VASES/Vases3/Vase3_AlbedoTransparency.png.meta
 Assets/SeongJun/2ndBuilding.fbx.meta
-Assets/Joo/Scripts/JS_BossRangeAttack.cs.meta
-Assets/Joo/Scripts/JS_BossRangeAttack.cs
 Assets/Joo/EffectsResources/BossGroundAttack/FBX/FTME04_Rock04_LOW.OBJ.meta
 Assets/Joo/EffectsResources/BossGroundAttack/FBX/FTME04_Rock03_LOW.OBJ.meta
 Assets/Joo/EffectsResources/BossGroundAttack/FBX/FTME04_Rock02_LOW.OBJ.meta

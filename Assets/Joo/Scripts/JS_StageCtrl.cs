@@ -107,6 +107,7 @@ public class JS_StageCtrl : MonoBehaviour {
 
                     // 현재 소환된 몬스터 수 값 증가
                     tempGroundMon++;
+                    totalGroundMon++;
 
                     // 시간 초기화
                     groundMonGenGap = Random.Range(genGapTime - 0.5f, genGapTime + 0.5f);
@@ -145,6 +146,7 @@ public class JS_StageCtrl : MonoBehaviour {
 
                     // 현재 소환된 몬스터 수 값 증가
                     tempAirMon++;
+                    totalAirMon++;
 
                     // 시간 초기화
                     airMonGenGap = Random.Range(genGapTime - 0.5f, genGapTime + 0.5f);
