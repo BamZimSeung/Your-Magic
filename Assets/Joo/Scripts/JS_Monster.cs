@@ -56,6 +56,7 @@ public class JS_Monster : MonoBehaviour
     void Start()
     {
         playerTr = GameObject.Find("Player").GetComponent<Transform>();
+
         if (isGroundMon)
         {
             StartCoroutine(CheckMonsterState());

@@ -132,7 +132,16 @@ public class JS_StageCtrl : MonoBehaviour {
                     ranPointIndex = Random.Range(0, stageInfos[stageIndex].airMonGenPoints.Length);
 
                     // 몬스터 소환
-                    Instantiate(stageInfos[stageIndex].airMonPrefabs[ranMonIndex], stageInfos[stageIndex].airMonGenPoints[ranPointIndex].position, Quaternion.identity);
+                    GameObject Mon = Instantiate(stageInfos[stageIndex].airMonPrefabs[ranMonIndex], stageInfos[stageIndex].airMonGenPoints[ranPointIndex].position, Quaternion.identity) as GameObject;
+
+                    WB_AirMonster airMon = Mon.GetComponent<WB_AirMonster>();
+                    airMon.Spawn = stageInfos[stageIndex].airMonGenPoints[ranPointIndex].gameObject;
+                    for (int i = 0; i < stageInfos[stageIndex].airMonGenPoints[ranPointIndex].gameObject.GetComponent<WB_AirMonSpawn>().Nodes.Length; i++)
+                    {
+                        Debug.Log(stageInfos[stageIndex].airMonGenPoints[ranPointIndex].gameObject.GetComponent<WB_AirMonSpawn>().Nodes[i]);
+                        airMon.nodes.Add(stageInfos[stageIndex].airMonGenPoints[ranPointIndex].gameObject.GetComponent<WB_AirMonSpawn>().Nodes[i]);
+                    }
+                    airMon.Player = GameObject.FindWithTag("Player");
 
                     // 현재 소환된 몬스터 수 값 증가
                     tempAirMon++;
