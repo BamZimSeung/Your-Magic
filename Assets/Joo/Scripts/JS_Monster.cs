@@ -205,21 +205,24 @@ public class JS_Monster : MonoBehaviour
     {
         StopAllCoroutines();
 
-        isDie = true;
-        monsterState = MonsterState.Die;
-
-        Instantiate(corpsePrefab, transform.position, Quaternion.identity);
-
-        if (isGroundMon)
+        if (!isDie)
         {
-            JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Ground);
-        }
-        else
-        {
-            JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Air);
-        }
+            isDie = true;
+            monsterState = MonsterState.Die;
 
-        Destroy(gameObject);
+            Instantiate(corpsePrefab, transform.position, Quaternion.identity);
+
+            if (isGroundMon)
+            {
+                JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Ground);
+            }
+            else
+            {
+                JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Air);
+            }
+
+            Destroy(gameObject);
+        }
     }
 
     // 몬스터가 공격함

@@ -170,6 +170,8 @@ public class JS_StageCtrl : MonoBehaviour {
         if (!isStart)
         {
             isStart = true;
+
+            InitValue();
         }
     }
 
