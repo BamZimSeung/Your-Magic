@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent (typeof(SphereCollider))]
+[RequireComponent (typeof(Collider))]
 public class JS_MagicClash : MonoBehaviour {
 
     // 히트 이펙트 프리팹
