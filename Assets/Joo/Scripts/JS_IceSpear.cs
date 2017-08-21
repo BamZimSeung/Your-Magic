@@ -61,9 +61,7 @@ public class JS_IceSpear : MonoBehaviour {
 
                 // 근처 적을 검출
                 Ray ray = new Ray(transform.position, transform.position);
-                RaycastHit[] hitInfos = Physics.SphereCastAll(ray, searchRange, 0f, 1 << LayerMask.NameToLayer("Enemy"));
-
-                Debug.Log(hitInfos.Length);
+                RaycastHit[] hitInfos = Physics.SphereCastAll(ray, searchRange, 0f, 1 << LayerMask.NameToLayer("Enemy") | LayerMask.NameToLayer("BossBullet"));
 
                 int min = hitInfos.Length < 4 ? hitInfos.Length : 4;
 
@@ -80,7 +78,7 @@ public class JS_IceSpear : MonoBehaviour {
 
             MAR_MagicSound.instance.IceSpearPlay(transform.position);
         }
-        if (col.CompareTag("EnemyBullet"))
+        if (col.CompareTag("BossBullet"))
         {
             col.gameObject.GetComponent<JS_BossRangeAttack>().Damaged(power);
 
