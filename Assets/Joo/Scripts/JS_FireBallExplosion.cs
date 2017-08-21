@@ -12,6 +12,10 @@ public class JS_FireBallExplosion : MonoBehaviour {
 
     public float upperPower;
 
+    private void OnEnable()
+    {
+        MAR_MagicSound.instance.FireBallExplosionPlay(transform.position);
+    }
     void Start () {
         Explosion();
     }
