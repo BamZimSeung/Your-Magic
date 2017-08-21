@@ -44,7 +44,7 @@ public class JS_FireBallExplosion : MonoBehaviour {
                     // 데미지 주기
                     hitInfos[i].transform.gameObject.GetComponent<JS_Monster>().MonsterDamage(power);
                 }
-                if (hitInfos[i].transform.CompareTag("EnemyBullet"))
+                if (hitInfos[i].transform.CompareTag("BossBullet"))
                 {
                     hitInfos[i].transform.GetComponent<JS_BossRangeAttack>().Damaged(power);
                 }
