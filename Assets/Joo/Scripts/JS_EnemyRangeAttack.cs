@@ -80,7 +80,7 @@ public class JS_EnemyRangeAttack : MonoBehaviour {
 
             Destroy(gameObject);
         }
-        else if(!col.CompareTag("Enemy")||!col.CompareTag("EnemyBullet"))
+        else if(!col.CompareTag("Enemy")&&!col.CompareTag("EnemyBullet"))
         {
             Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);

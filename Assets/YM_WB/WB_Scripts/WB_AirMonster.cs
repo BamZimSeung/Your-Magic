@@ -62,7 +62,6 @@ public class WB_AirMonster : MonoBehaviour {
             {
                 isStart = false;
             }
-
         }
         else
         {
@@ -80,8 +79,6 @@ public class WB_AirMonster : MonoBehaviour {
             {
                 cur_node++; // 1 증가.
             }
-
-
 
             /* switch(my_move)
              {

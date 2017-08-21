@@ -137,6 +137,7 @@ public class JS_StageCtrl : MonoBehaviour {
 
                     WB_AirMonster airMon = Mon.GetComponent<WB_AirMonster>();
                     airMon.Spawn = stageInfos[stageIndex].airMonGenPoints[ranPointIndex].gameObject;
+
                     for (int i = 0; i < stageInfos[stageIndex].airMonGenPoints[ranPointIndex].gameObject.GetComponent<WB_AirMonSpawn>().Nodes.Length; i++)
                     {
                         Debug.Log(stageInfos[stageIndex].airMonGenPoints[ranPointIndex].gameObject.GetComponent<WB_AirMonSpawn>().Nodes[i]);
