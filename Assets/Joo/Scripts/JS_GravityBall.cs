@@ -39,6 +39,11 @@ public class JS_GravityBall : MonoBehaviour {
                 forceDir = transform.position - targets[i].transform.position;
                 forceDir = Vector3.Normalize(forceDir) * forcePower;
                 targets[i].GetComponent<Rigidbody>().AddForce(forceDir, fM);
+
+                if (targets[i].CompareTag("Enemy"))
+                {
+                    targets[i].GetComponent<JS_Monster>().MonsterDamage(0);
+                }
             }
             yield return wfs;
         }

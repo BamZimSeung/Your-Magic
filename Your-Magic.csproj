@@ -86,6 +86,7 @@
     <Compile Include="Assets\Joo\Scripts\JS_EnergyBoltHit.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_FireBallExplosion.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_GravityBall.cs" />
+    <Compile Include="Assets\Joo\Scripts\JS_HandShield.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_IceSpear.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_MagicClash.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_Monster.cs" />

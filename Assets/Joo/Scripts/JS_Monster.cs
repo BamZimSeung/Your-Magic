@@ -39,8 +39,12 @@ public class JS_Monster : MonoBehaviour
     // 데미지 입는 시간
     public float damageDelayTime = 0.2f;
 
+    // 공격 간의 시간
+    public float attackDelay = 1f;
+
     bool isDie = false;
     public int hp = 90;
+    float currentTime = 0f;
 
     void Awake()
     {
@@ -55,9 +59,7 @@ public class JS_Monster : MonoBehaviour
 
     void Start()
     {
-        playerTr = GameObject.Find("Player").GetComponent<Transform>();
-
-        
+        playerTr = GameObject.FindWithTag("Player").GetComponent<Transform>();
 
         if (isGroundMon)
         {
@@ -127,7 +129,15 @@ public class JS_Monster : MonoBehaviour
 
                 case MonsterState.Attack:
                     nvAgent.ResetPath();
-                    animator.SetBool("IsAttack", true);
+                    nvAgent.isStopped = true;
+                    if (delayTime())
+                    {
+                        animator.SetBool("IsAttack", true);
+                    }
+                    else
+                    {
+                        animator.SetBool("IsAttack", false);
+                    }
                     animator.SetBool("IsTrace", false);
                     break;
 
@@ -138,6 +148,21 @@ public class JS_Monster : MonoBehaviour
                     break;
             }
             yield return null;
+        }
+    }
+
+    bool delayTime()
+    {
+        currentTime += Time.deltaTime;
+
+        if(currentTime < attackDelay)
+        {
+            return false;
+        }
+        else
+        {
+            currentTime = 0f;
+            return true;
         }
     }
 
@@ -154,7 +179,13 @@ public class JS_Monster : MonoBehaviour
         {
             animator.SetTrigger("Damage");
             monsterState = MonsterState.Damage;
+            Invoke("ResetRigid", damageDelayTime);
         }
+    }
+
+    void ResetRigid()
+    {
+        monsterRB.velocity = Vector3.zero;
     }
 
     bool DieCheck()
@@ -174,28 +205,24 @@ public class JS_Monster : MonoBehaviour
     {
         StopAllCoroutines();
 
-        isDie = true;
-        monsterState = MonsterState.Die;
-
-        if (isGroundMon)
+        if (!isDie)
         {
+            isDie = true;
+            monsterState = MonsterState.Die;
 
-            Debug.Log(nvAgent.enabled);
-            nvAgent.isStopped = true;
-        }
-        
-        Instantiate(corpsePrefab, transform.position, Quaternion.identity);
+            Instantiate(corpsePrefab, transform.position, Quaternion.identity);
 
-        if (isGroundMon)
-        {
-            JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Ground);
-        }
-        else
-        {
-            JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Air);
-        }
+            if (isGroundMon)
+            {
+                JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Ground);
+            }
+            else
+            {
+                JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Air);
+            }
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 
     // 몬스터가 공격함

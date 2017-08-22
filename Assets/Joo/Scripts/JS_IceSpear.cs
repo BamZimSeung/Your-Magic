@@ -34,6 +34,9 @@ public class JS_IceSpear : MonoBehaviour {
     // 발사됐는지 여부
     public bool isShot = false;
 
+    // 피격 이펙트
+    public GameObject hitEffectPrefab;
+
     public List<Transform> enemiesTrans;
 
 	void Start () {
@@ -53,7 +56,7 @@ public class JS_IceSpear : MonoBehaviour {
     void OnTriggerEnter(Collider col)
     {
         // 적과 충돌할 시
-        if (col.CompareTag("Enemy"))
+        if (col.CompareTag("Enemy")||col.CompareTag("BossBullet"))
         {
             if (!isHit)
             {
@@ -61,7 +64,7 @@ public class JS_IceSpear : MonoBehaviour {
 
                 // 근처 적을 검출
                 Ray ray = new Ray(transform.position, transform.position);
-                RaycastHit[] hitInfos = Physics.SphereCastAll(ray, searchRange, 0f, 1 << LayerMask.NameToLayer("Enemy"));
+                RaycastHit[] hitInfos = Physics.SphereCastAll(ray, searchRange, 0f, 1 << LayerMask.NameToLayer("Enemy")| LayerMask.NameToLayer("BossBullet"));
 
                 Debug.Log(hitInfos.Length);
 
@@ -75,12 +78,18 @@ public class JS_IceSpear : MonoBehaviour {
                 StartCoroutine("FollowEnemies");
             }
 
-            // 적에게 데미지를 준다.
-            col.gameObject.GetComponent<JS_Monster>().MonsterDamage(power);
-        }
-        if (col.CompareTag("EnemyBullet"))
-        {
-            col.gameObject.GetComponent<JS_BossRangeAttack>().Damaged(power);
+            if (col.CompareTag("Enemy"))
+            {
+                // 적에게 데미지를 준다.
+                col.gameObject.GetComponent<JS_Monster>().MonsterDamage(power);
+            }
+            if (col.CompareTag("BossBullet"))
+            {
+                col.gameObject.GetComponent<JS_BossRangeAttack>().Damaged(power);
+            }
+
+            Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+            MAR_MagicSound.instance.IceSpearPlay(transform.position);
         }
     }
 
