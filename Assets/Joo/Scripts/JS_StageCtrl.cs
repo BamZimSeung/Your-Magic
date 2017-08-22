@@ -26,12 +26,12 @@ public class JS_StageCtrl : MonoBehaviour {
     float currentTime;
 
     // 스테이지에서 현재 생성되어있는 몬스터 수
-    int tempGroundMon = 0;
-    int tempAirMon = 0;
+    public int tempGroundMon = 0;
+    public int tempAirMon = 0;
 
     // 스테이지에서 총 생성된 몬스터 수
-    int totalGroundMon = 0;
-    int totalAirMon = 0;
+    public int totalGroundMon = 0;
+    public int totalAirMon = 0;
 
     // 몬스터 생성 시간
     public float genGapTime;
