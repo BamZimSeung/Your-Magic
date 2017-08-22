@@ -81,8 +81,8 @@ public class JS_WeakPoint : MonoBehaviour {
 
             yield return wfs;
 
-            Debug.Log(WP_material.color.g);
-            Debug.Log(isOriginColor);
+            //Debug.Log(WP_material.color.g);
+           // Debug.Log(isOriginColor);
         }
     }
 }

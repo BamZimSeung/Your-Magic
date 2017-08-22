@@ -107,6 +107,7 @@ public class JS_StageCtrl : MonoBehaviour {
 
                     // 현재 소환된 몬스터 수 값 증가
                     tempGroundMon++;
+                    totalGroundMon++;
 
                     // 시간 초기화
                     groundMonGenGap = Random.Range(genGapTime - 0.5f, genGapTime + 0.5f);
@@ -132,10 +133,20 @@ public class JS_StageCtrl : MonoBehaviour {
                     ranPointIndex = Random.Range(0, stageInfos[stageIndex].airMonGenPoints.Length);
 
                     // 몬스터 소환
-                    Instantiate(stageInfos[stageIndex].airMonPrefabs[ranMonIndex], stageInfos[stageIndex].airMonGenPoints[ranPointIndex].position, Quaternion.identity);
+                    GameObject Mon = Instantiate(stageInfos[stageIndex].airMonPrefabs[ranMonIndex], stageInfos[stageIndex].airMonGenPoints[ranPointIndex].position, Quaternion.identity) as GameObject;
+
+                    WB_AirMonster airMon = Mon.GetComponent<WB_AirMonster>();
+                    airMon.Spawn = stageInfos[stageIndex].airMonGenPoints[ranPointIndex].gameObject;
+                    for (int i = 0; i < stageInfos[stageIndex].airMonGenPoints[ranPointIndex].gameObject.GetComponent<WB_AirMonSpawn>().Nodes.Length; i++)
+                    {
+                        Debug.Log(stageInfos[stageIndex].airMonGenPoints[ranPointIndex].gameObject.GetComponent<WB_AirMonSpawn>().Nodes[i]);
+                        airMon.nodes.Add(stageInfos[stageIndex].airMonGenPoints[ranPointIndex].gameObject.GetComponent<WB_AirMonSpawn>().Nodes[i]);
+                    }
+                    airMon.Player = GameObject.FindWithTag("Player");
 
                     // 현재 소환된 몬스터 수 값 증가
                     tempAirMon++;
+                    totalAirMon++;
 
                     // 시간 초기화
                     airMonGenGap = Random.Range(genGapTime - 0.5f, genGapTime + 0.5f);
@@ -146,7 +157,7 @@ public class JS_StageCtrl : MonoBehaviour {
 
         // 설정한 몬스터 수를 모두 소환했고
         // 현재 소환된 몬스터가 없다면 웨이브 종료
-        if (stageInfos[stageIndex].groundMonCount > totalGroundMon && stageInfos[stageIndex].airMonCount > totalAirMon && ((tempAirMon + tempGroundMon) == 0))
+        if (stageInfos[stageIndex].groundMonCount == totalGroundMon && stageInfos[stageIndex].airMonCount == totalAirMon && ((tempAirMon + tempGroundMon) == 0))
         {
             SetStartFalse();
         }

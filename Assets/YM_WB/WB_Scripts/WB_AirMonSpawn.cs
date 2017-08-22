@@ -8,10 +8,6 @@ using UnityEngine;
 
 
 public class WB_AirMonSpawn : MonoBehaviour {
-    public float spawnDelay;
-    public GameObject dronePrefab;
-    public float currentTime = 0f;
-    public WB_AirMonster airmonctnl;
     public GameObject Player;
     public GameObject[] Nodes;
 
@@ -23,21 +19,4 @@ public class WB_AirMonSpawn : MonoBehaviour {
             Nodes[i] = transform.GetChild(i).gameObject;
         }
     }
-    // Update is called once per frame
-    void Update () {
-        currentTime += Time.deltaTime;
-        if(currentTime > spawnDelay)
-        {
-            GameObject drone = Instantiate(dronePrefab);
-            drone.transform.position = transform.position;
-            airmonctnl = drone.GetComponent<WB_AirMonster>();
-            airmonctnl.Spawn = this.gameObject;
-            for(int i=0; i< transform.childCount; i++)
-            {
-                airmonctnl.nodes.Add(Nodes[i]);
-            }
-            airmonctnl.Player = Player;
-            currentTime = 0f;
-        }
-	}
 }

@@ -32,7 +32,7 @@ public class JS_RuneStateCtrl : MonoBehaviour {
         if (isActive)
         {
             isActive = false;
-            runeMR.material = activeMat;
+            runeMR.material = inactiveMat;
             effects.SetActive(false);
         }
     }

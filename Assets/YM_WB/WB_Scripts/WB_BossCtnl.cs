@@ -139,7 +139,7 @@ public class WB_BossCtnl : MonoBehaviour {
     {
         boss_anim.SetInteger("Boss_State", 1); // 스테이트 변경.
         transform.LookAt(Player.transform); // 플레이어를 노려보자.
-        if (setha > 240) // 240도면 끝
+        if (setha > 120) // 240도면 끝
         {
             transform.position = Vector3.Lerp(transform.position, desPos.position, 0.05f);
             if(Vector3.Distance(transform.position, desPos.position) < 1f) // 도착
@@ -153,7 +153,7 @@ public class WB_BossCtnl : MonoBehaviour {
         {
             // 보스가 지정된 위치에 도달한 후, 반지름을 가지고 한바퀴 회전한다.(center -> Despos, 반지름 -> Radius)
             Vector3 NextPosition = desPos.position + new Vector3(radius * Mathf.Cos(setha), transform.position.y, radius * Mathf.Sin(setha));
-            transform.position = Vector3.Lerp(transform.position, NextPosition, 0.05f);
+            transform.position = Vector3.Lerp(transform.position, NextPosition, 1.5f * Time.deltaTime);
             if (Vector3.Distance(transform.position, NextPosition) < 10f) // 일정거리 도달하면
             {
                 transform.position = NextPosition;
@@ -329,15 +329,8 @@ public class WB_BossCtnl : MonoBehaviour {
         WeakPoint.SetActive(true); // 약점활성화
         boss_anim.SetInteger("Boss_State", 8); // 딜타임!.
 
-        if(Input.GetButtonDown("Fire1")) // 맞으면?
-        {
-            boss_anim.SetTrigger("Gethit");
-            cur_bossHp -= 50;
-            if(cur_bossHp <= 0) // 죽으면?
-            {
-                my_Boss = BossState.Death;
-            }
-        }
+        
+
         currentTime += Time.deltaTime;
         if(currentTime > dealTime) // 딜타임이 끝나면
         {
@@ -347,17 +340,29 @@ public class WB_BossCtnl : MonoBehaviour {
         }
     }
 
+    public void BossDamaged() // 맞으면?
+    {
+        boss_anim.SetTrigger("Gethit");
+        cur_bossHp -= 50;
+        if (cur_bossHp <= 0) // 죽으면?
+        {
+            my_Boss = BossState.Death;
+        }
+    }
+
     void BossDeath()
     {
         boss_anim.SetInteger("Boss_State", 7); // 보스상태 죽음으로 변경.
         // 몇초후 삭제.
         StartCoroutine("Death");
     }
+
     IEnumerator Summon() // 부하 소환.
     {
         GameObject buha = Instantiate(buhaPrefab); // 생성.
         Vector3 sumPos = SummonPos.transform.position + new Vector3(Random.Range(-25,25),0,0); // 뿌리자.
         buha.transform.position = sumPos; // 생성위치 지정.
+        Debug.Log(buha.transform.position);
         cur_summonNumber++; // 소환수 증가
         yield return new WaitForSeconds(summonDelay);
         summonSwitch = true; // 딜레이후 다시 뽑자.
@@ -369,7 +374,7 @@ public class WB_BossCtnl : MonoBehaviour {
         // 총알 생성 위치 = xpos + 30 (여기서 랜덤 x,y 구해서 더해주자, 왼쪽 오른쪽 번갈아가면서 나오도록)
         fireDeltha = -fireDeltha; // 음수 양수 역전시켜주기.
         bullet.transform.position = firePos.position + new Vector3(fireDeltha, 0, 0) + new Vector3(Random.Range(-5.0f, 5.0f), Random.Range(-5.0f, 5.0f), 0);
-
+        bullet.GetComponent<JS_BossRangeAttack>().startPos = bullet.transform.position;
         cur_bulletNumber++; // 총알 수 증가
         yield return new WaitForSeconds(fireDelay);
         fireSwitch = true; // 딜레이후 다시 뽑자.

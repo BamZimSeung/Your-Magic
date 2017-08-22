@@ -14,6 +14,10 @@ public class JS_WarpPoint : MonoBehaviour {
 
     public int nextStageIndex = 0;
 
+    public bool isMove = false;
+
+    public Transform movePoint;
+
     float currentTime = 0;
 
 	void Start () {
