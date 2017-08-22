@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: b21daa2c0b2bca24980ed7ca78f014bb
 ModelImporter:
-  serializedVersion: 18
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: demon_lf_pinky_a_jnt
     100002: demon_lf_middle_b_jnt
@@ -150,6 +150,10 @@ ModelImporter:
     7400030: walk_left
     7400032: dodge_right
     7400034: dodge_left
+    7400036: taunt_start
+    7400038: taunting
+    7400040: taunt_end
+    7400042: my_death
     9500000: //RootNode
     11100000: //RootNode
     13700000: demon_spine_low_jnt
@@ -161,16 +165,241 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'all_in_one' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'demon_spine_end_jnt' has translation animation
+      that will be discarded.\n\t'demon_lf_foreArmSplit1_jnt' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_index_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_index_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_pinky_a_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_pinky_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_ring_a_jnt' has
+      translation animation that will be discarded.\n\t'demon_lf_ring_b_jnt' has translation
+      animation that will be discarded.\n\t'demon_lf_ring_c_jnt' has translation animation
+      that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_index_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_rt_index_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_rt_middle_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_rt_middle_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_rt_ring_a_jnt' has
+      translation animation that will be discarded.\n\t'demon_rt_ring_b_jnt' has translation
+      animation that will be discarded.\n\t'demon_rt_ring_c_jnt' has translation animation
+      that will be discarded.\n\t'demon_rt_pinky_b_jnt' has translation animation
+      that will be discarded.\n\t'demon_hip_jnt' has translation animation that will
+      be discarded.\n\t'demon_hip_jnt' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\nClip 'idle' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'demon_spine_end_jnt' has translation animation
+      that will be discarded.\n\t'demon_lf_foreArmSplit1_jnt' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_hip_jnt'
+      has translation animation that will be discarded.\n\t'demon_hip_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'walk' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_lf_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_index_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_index_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_pinky_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_ring_a_jnt' has
+      translation animation that will be discarded.\n\t'demon_lf_ring_b_jnt' has translation
+      animation that will be discarded.\n\t'demon_lf_ring_c_jnt' has translation animation
+      that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_hip_jnt'
+      has translation animation that will be discarded.\n\t'demon_hip_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'run' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_spine_end_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_hand_jnt' is
+      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_hip_jnt'
+      has translation animation that will be discarded.\n\t'demon_hip_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'attack01' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_spine_end_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_index_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_index_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_pinky_a_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_pinky_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_ring_a_jnt' has
+      translation animation that will be discarded.\n\t'demon_lf_ring_b_jnt' has translation
+      animation that will be discarded.\n\t'demon_lf_ring_c_jnt' has translation animation
+      that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_hip_jnt'
+      has translation animation that will be discarded.\n\t'demon_hip_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'attack02' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_lf_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_hip_jnt'
+      has translation animation that will be discarded.\n\t'demon_hip_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'attack03' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_spine_end_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_hip_jnt'
+      has translation animation that will be discarded.\n\t'demon_hip_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'attack04' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_spine_end_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_index_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_index_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_pinky_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_ring_b_jnt' has
+      translation animation that will be discarded.\n\t'demon_lf_ring_c_jnt' has translation
+      animation that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_hip_jnt'
+      has translation animation that will be discarded.\n\t'demon_hip_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'attack05' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_spine_end_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_index_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_index_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_pinky_a_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_pinky_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_ring_a_jnt' has
+      translation animation that will be discarded.\n\t'demon_lf_ring_b_jnt' has translation
+      animation that will be discarded.\n\t'demon_lf_ring_c_jnt' has translation animation
+      that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_hip_jnt'
+      has translation animation that will be discarded.\n\t'demon_hip_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'jump' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_spine_end_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_hip_jnt'
+      has translation animation that will be discarded.\n\t'demon_hip_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'hit' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_spine_end_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_index_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_index_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_pinky_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_ring_b_jnt' has
+      translation animation that will be discarded.\n\t'demon_lf_ring_c_jnt' has translation
+      animation that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_hip_jnt'
+      has translation animation that will be discarded.\n\t'demon_hip_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'death' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_spine_end_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_index_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_ring_c_jnt' has
+      translation animation that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_hip_jnt'
+      has translation animation that will be discarded.\n\t'demon_hip_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'revive' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_spine_end_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_index_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_ring_c_jnt' has
+      translation animation that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_hip_jnt'
+      has translation animation that will be discarded.\n\t'demon_hip_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'taunt' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_spine_end_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_hip_jnt'
+      has translation animation that will be discarded.\n\t'demon_hip_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'walk_right' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_lf_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'walk_left' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_lf_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'dodge_right' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_spine_end_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_index_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_index_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_middle_c_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_pinky_a_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_pinky_b_jnt'
+      has translation animation that will be discarded.\n\t'demon_lf_ring_a_jnt' has
+      translation animation that will be discarded.\n\t'demon_lf_ring_b_jnt' has translation
+      animation that will be discarded.\n\t'demon_lf_ring_c_jnt' has translation animation
+      that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_hip_jnt'
+      has translation animation that will be discarded.\n\t'demon_hip_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'dodge_left' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'demon_lf_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_lf_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_foreArmSplit1_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_rt_hand_jnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'demon_hip_jnt'
+      has translation animation that will be discarded.\n\t'demon_hip_jnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations:
@@ -184,6 +413,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -328,6 +558,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: idle
       takeName: idle
@@ -338,7 +569,8 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -482,16 +714,18 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: walk
       takeName: walk
       firstFrame: 0
-      lastFrame: 36.2499962
+      lastFrame: 36.249996
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -636,6 +870,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: run
       takeName: run
@@ -646,6 +881,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -790,6 +1026,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: attack01
       takeName: attack01
@@ -800,6 +1037,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -944,6 +1182,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: attack02
       takeName: attack02
@@ -954,6 +1193,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -1098,16 +1338,18 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: attack03
       takeName: attack03
       firstFrame: 0
-      lastFrame: 89.0000076
+      lastFrame: 89.00001
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -1252,16 +1494,18 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: attack04
       takeName: attack04
       firstFrame: 0
-      lastFrame: 89.0000076
+      lastFrame: 89.00001
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -1406,16 +1650,18 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: attack05
       takeName: attack05
       firstFrame: 0
-      lastFrame: 54.0000038
+      lastFrame: 54.000004
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -1560,6 +1806,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: jump
       takeName: jump
@@ -1570,6 +1817,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -1714,16 +1962,18 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: hit
       takeName: hit
       firstFrame: 0
-      lastFrame: 16.2499809
+      lastFrame: 16.24998
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -1868,16 +2118,18 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: death
       takeName: death
       firstFrame: 0
-      lastFrame: 62.4999619
+      lastFrame: 62.49996
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -2022,16 +2274,18 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: revive
       takeName: revive
       firstFrame: 0
-      lastFrame: 99.0000076
+      lastFrame: 99.00001
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -2176,6 +2430,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: taunt
       takeName: taunt
@@ -2186,6 +2441,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -2330,16 +2586,18 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: walk_right
       takeName: walk_right
       firstFrame: 0
-      lastFrame: 25.0000019
+      lastFrame: 25.000002
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -2484,16 +2742,18 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: walk_left
       takeName: walk_left
       firstFrame: 0
-      lastFrame: 25.0000019
+      lastFrame: 25.000002
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -2638,16 +2898,18 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: dodge_right
       takeName: dodge_right
       firstFrame: 0
-      lastFrame: 25.0000019
+      lastFrame: 25.000002
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -2792,16 +3054,18 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: dodge_left
       takeName: dodge_left
       firstFrame: 0
-      lastFrame: 25.0000019
+      lastFrame: 25.000002
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -2946,10 +3210,635 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: taunt_start
+      takeName: taunt
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: demon_Skeleton_grp
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt/demon_lf_knee_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt/demon_lf_knee_jnt/demon_lf_ankle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt/demon_lf_knee_jnt/demon_lf_ankle_jnt/demon_lf_ball_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt/demon_rt_knee_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt/demon_rt_knee_jnt/demon_rt_ankle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt/demon_rt_knee_jnt/demon_rt_ankle_jnt/demon_rt_ball_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_index_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_index_a_jnt/demon_lf_index_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_index_a_jnt/demon_lf_index_b_jnt/demon_lf_index_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_middle_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_middle_a_jnt/demon_lf_middle_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_middle_a_jnt/demon_lf_middle_b_jnt/demon_lf_middle_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_pinky_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_pinky_a_jnt/demon_lf_pinky_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_ring_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_ring_a_jnt/demon_lf_ring_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_ring_a_jnt/demon_lf_ring_b_jnt/demon_lf_ring_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_thumb_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_thumb_a_jnt/demon_lf_thumb_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_thumb_a_jnt/demon_lf_thumb_b_jnt/demon_lf_thumb_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_neck_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_neck_jnt/demon_head_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_neck_jnt/demon_head_a_jnt/demon_jaw_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_index_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_index_a_jnt/demon_rt_index_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_index_a_jnt/demon_rt_index_b_jnt/demon_rt_index_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_middle_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_middle_a_jnt/demon_rt_middle_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_middle_a_jnt/demon_rt_middle_b_jnt/demon_rt_middle_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_pinky_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_pinky_a_jnt/demon_rt_pinky_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_ring_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_ring_a_jnt/demon_rt_ring_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_ring_a_jnt/demon_rt_ring_b_jnt/demon_rt_ring_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_thumb_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_thumb_a_jnt/demon_rt_thumb_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_thumb_a_jnt/demon_rt_thumb_b_jnt/demon_rt_thumb_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_weapon_jnt
+        weight: 0
+      - path: demonmesh_low
+        weight: 0
+      - path: demonmesh_low/demonmesh_lowShape
+        weight: 0
+      - path: perspShape
+        weight: 0
+      - path: U3DMesh
+        weight: 0
+      - path: weaponmesh_low
+        weight: 0
+      - path: weaponmesh_low/weaponmesh_lowShape
+        weight: 0
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: taunting
+      takeName: taunt
+      firstFrame: 8
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: demon_Skeleton_grp
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt/demon_lf_knee_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt/demon_lf_knee_jnt/demon_lf_ankle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt/demon_lf_knee_jnt/demon_lf_ankle_jnt/demon_lf_ball_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt/demon_rt_knee_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt/demon_rt_knee_jnt/demon_rt_ankle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt/demon_rt_knee_jnt/demon_rt_ankle_jnt/demon_rt_ball_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_index_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_index_a_jnt/demon_lf_index_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_index_a_jnt/demon_lf_index_b_jnt/demon_lf_index_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_middle_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_middle_a_jnt/demon_lf_middle_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_middle_a_jnt/demon_lf_middle_b_jnt/demon_lf_middle_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_pinky_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_pinky_a_jnt/demon_lf_pinky_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_ring_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_ring_a_jnt/demon_lf_ring_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_ring_a_jnt/demon_lf_ring_b_jnt/demon_lf_ring_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_thumb_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_thumb_a_jnt/demon_lf_thumb_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_thumb_a_jnt/demon_lf_thumb_b_jnt/demon_lf_thumb_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_neck_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_neck_jnt/demon_head_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_neck_jnt/demon_head_a_jnt/demon_jaw_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_index_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_index_a_jnt/demon_rt_index_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_index_a_jnt/demon_rt_index_b_jnt/demon_rt_index_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_middle_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_middle_a_jnt/demon_rt_middle_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_middle_a_jnt/demon_rt_middle_b_jnt/demon_rt_middle_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_pinky_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_pinky_a_jnt/demon_rt_pinky_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_ring_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_ring_a_jnt/demon_rt_ring_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_ring_a_jnt/demon_rt_ring_b_jnt/demon_rt_ring_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_thumb_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_thumb_a_jnt/demon_rt_thumb_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_thumb_a_jnt/demon_rt_thumb_b_jnt/demon_rt_thumb_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_weapon_jnt
+        weight: 0
+      - path: demonmesh_low
+        weight: 0
+      - path: demonmesh_low/demonmesh_lowShape
+        weight: 0
+      - path: perspShape
+        weight: 0
+      - path: U3DMesh
+        weight: 0
+      - path: weaponmesh_low
+        weight: 0
+      - path: weaponmesh_low/weaponmesh_lowShape
+        weight: 0
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: taunt_end
+      takeName: taunt
+      firstFrame: 30
+      lastFrame: 38
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: demon_Skeleton_grp
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt/demon_lf_knee_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt/demon_lf_knee_jnt/demon_lf_ankle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt/demon_lf_knee_jnt/demon_lf_ankle_jnt/demon_lf_ball_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt/demon_rt_knee_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt/demon_rt_knee_jnt/demon_rt_ankle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt/demon_rt_knee_jnt/demon_rt_ankle_jnt/demon_rt_ball_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_index_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_index_a_jnt/demon_lf_index_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_index_a_jnt/demon_lf_index_b_jnt/demon_lf_index_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_middle_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_middle_a_jnt/demon_lf_middle_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_middle_a_jnt/demon_lf_middle_b_jnt/demon_lf_middle_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_pinky_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_pinky_a_jnt/demon_lf_pinky_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_ring_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_ring_a_jnt/demon_lf_ring_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_ring_a_jnt/demon_lf_ring_b_jnt/demon_lf_ring_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_thumb_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_thumb_a_jnt/demon_lf_thumb_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_thumb_a_jnt/demon_lf_thumb_b_jnt/demon_lf_thumb_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_neck_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_neck_jnt/demon_head_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_neck_jnt/demon_head_a_jnt/demon_jaw_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_index_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_index_a_jnt/demon_rt_index_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_index_a_jnt/demon_rt_index_b_jnt/demon_rt_index_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_middle_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_middle_a_jnt/demon_rt_middle_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_middle_a_jnt/demon_rt_middle_b_jnt/demon_rt_middle_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_pinky_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_pinky_a_jnt/demon_rt_pinky_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_ring_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_ring_a_jnt/demon_rt_ring_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_ring_a_jnt/demon_rt_ring_b_jnt/demon_rt_ring_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_thumb_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_thumb_a_jnt/demon_rt_thumb_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_thumb_a_jnt/demon_rt_thumb_b_jnt/demon_rt_thumb_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_weapon_jnt
+        weight: 0
+      - path: demonmesh_low
+        weight: 0
+      - path: demonmesh_low/demonmesh_lowShape
+        weight: 0
+      - path: perspShape
+        weight: 0
+      - path: U3DMesh
+        weight: 0
+      - path: weaponmesh_low
+        weight: 0
+      - path: weaponmesh_low/weaponmesh_lowShape
+        weight: 0
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: my_death
+      takeName: death
+      firstFrame: 0
+      lastFrame: 63
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: demon_Skeleton_grp
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt/demon_lf_knee_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt/demon_lf_knee_jnt/demon_lf_ankle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_lf_upLeg_jnt/demon_lf_knee_jnt/demon_lf_ankle_jnt/demon_lf_ball_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt/demon_rt_knee_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt/demon_rt_knee_jnt/demon_rt_ankle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_hip_jnt/demon_rt_upLeg_jnt/demon_rt_knee_jnt/demon_rt_ankle_jnt/demon_rt_ball_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_index_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_index_a_jnt/demon_lf_index_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_index_a_jnt/demon_lf_index_b_jnt/demon_lf_index_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_middle_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_middle_a_jnt/demon_lf_middle_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_middle_a_jnt/demon_lf_middle_b_jnt/demon_lf_middle_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_pinky_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_pinky_a_jnt/demon_lf_pinky_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_ring_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_ring_a_jnt/demon_lf_ring_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_ring_a_jnt/demon_lf_ring_b_jnt/demon_lf_ring_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_thumb_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_thumb_a_jnt/demon_lf_thumb_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_lf_clavicle_jnt/demon_lf_upArm_jnt/demon_lf_elbow_jnt/demon_lf_foreArmSplit1_jnt/demon_lf_foreArmSplit2_jnt/demon_lf_hand_jnt/demon_lf_thumb_a_jnt/demon_lf_thumb_b_jnt/demon_lf_thumb_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_neck_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_neck_jnt/demon_head_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_neck_jnt/demon_head_a_jnt/demon_jaw_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_index_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_index_a_jnt/demon_rt_index_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_index_a_jnt/demon_rt_index_b_jnt/demon_rt_index_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_middle_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_middle_a_jnt/demon_rt_middle_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_middle_a_jnt/demon_rt_middle_b_jnt/demon_rt_middle_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_pinky_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_pinky_a_jnt/demon_rt_pinky_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_ring_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_ring_a_jnt/demon_rt_ring_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_ring_a_jnt/demon_rt_ring_b_jnt/demon_rt_ring_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_thumb_a_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_thumb_a_jnt/demon_rt_thumb_b_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_thumb_a_jnt/demon_rt_thumb_b_jnt/demon_rt_thumb_c_jnt
+        weight: 1
+      - path: demon_Skeleton_grp/demon_spine_low_jnt/demon_spine_mid_jnt/demon_spine_end_jnt/demon_rt_clavicle_jnt/demon_rt_upArm_jnt/demon_rt_elbow_jnt/demon_rt_foreArmSplit1_jnt/demon_rt_foreArmSplit2_jnt/demon_rt_hand_jnt/demon_rt_weapon_jnt
+        weight: 0
+      - path: demonmesh_low
+        weight: 0
+      - path: demonmesh_low/demonmesh_lowShape
+        weight: 0
+      - path: perspShape
+        weight: 0
+      - path: U3DMesh
+        weight: 0
+      - path: weaponmesh_low
+        weight: 0
+      - path: weaponmesh_low/weaponmesh_lowShape
+        weight: 0
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .0199999996
+    globalScale: 0.02
     meshCompression: 0
     addColliders: 1
     importBlendShapes: 1
@@ -2966,12 +3855,12 @@ ModelImporter:
     useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
+    serializedVersion: 2
     human:
     - boneName: demon_spine_low_jnt
       humanName: Hips
@@ -3375,334 +4264,337 @@ ModelImporter:
         modified: 0
     skeleton:
     - name: demon_LOD1(Clone)
+      parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_Skeleton_grp
+      parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_spine_low_jnt
-      position: {x: 1.91052252e-33, y: 1.28707314, z: -.00200080639}
-      rotation: {x: .484244138, y: -.515274286, z: -.484244138, w: .515274346}
+      parentName: 
+      position: {x: 1.9105225e-33, y: 1.2870731, z: -0.0020008064}
+      rotation: {x: 0.48424414, y: -0.5152743, z: -0.48424414, w: 0.51527435}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_hip_jnt
-      position: {x: .0978901461, y: -.00564945163, z: 9.40822614e-19}
-      rotation: {x: 0, y: 0, z: -.0288201142, w: .999584615}
+      parentName: 
+      position: {x: 0.097890146, y: -0.0056494516, z: 9.408226e-19}
+      rotation: {x: 0, y: 0, z: -0.028820114, w: 0.9995846}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_upLeg_jnt
-      position: {x: .051209759, y: -.00169453525, z: .115332216}
-      rotation: {x: -.0188104901, y: -.498777717, z: .86604619, w: -.0288264118}
+      parentName: 
+      position: {x: 0.05120976, y: -0.0016945353, z: 0.115332216}
+      rotation: {x: -0.01881049, y: -0.49877772, z: 0.8660462, w: -0.028826412}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_knee_jnt
-      position: {x: -.468900889, y: 3.5527136e-17, z: -1.1546319e-16}
-      rotation: {x: .508073509, y: .041592624, z: -.130816072, w: .850304961}
+      parentName: 
+      position: {x: -0.4689009, y: 3.5527136e-17, z: -1.1546319e-16}
+      rotation: {x: 0.5080735, y: 0.041592624, z: -0.13081607, w: 0.85030496}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_ankle_jnt
-      position: {x: -.494018912, y: -1.06581408e-16, z: 1.59872109e-16}
-      rotation: {x: -.164034829, y: .0187359881, z: .336392015, w: .927136421}
+      parentName: 
+      position: {x: -0.4940189, y: -1.0658141e-16, z: 1.5987211e-16}
+      rotation: {x: -0.16403483, y: 0.018735988, z: 0.33639202, w: 0.9271364}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_ball_jnt
-      position: {x: -.186744362, y: -2.84217088e-16, z: 0}
-      rotation: {x: .0286109801, y: -.0434613004, z: .502103627, w: .863240719}
+      parentName: 
+      position: {x: -0.18674436, y: -2.842171e-16, z: 0}
+      rotation: {x: 0.02861098, y: -0.0434613, z: 0.5021036, w: 0.8632407}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_upLeg_jnt
-      position: {x: .051210098, y: -.00169453095, z: -.115332201}
-      rotation: {x: -.498777688, y: .0188104287, z: .0288266353, w: .86604625}
+      parentName: 
+      position: {x: 0.051210098, y: -0.001694531, z: -0.1153322}
+      rotation: {x: -0.4987777, y: 0.018810429, z: 0.028826635, w: 0.86604625}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_knee_jnt
-      position: {x: .468900293, y: 7.30398853e-09, z: 1.15321548e-08}
-      rotation: {x: .508073568, y: .0415927768, z: -.130816549, w: .850304902}
+      parentName: 
+      position: {x: 0.4689003, y: 0.0000000073039885, z: 0.000000011532155}
+      rotation: {x: 0.50807357, y: 0.041592777, z: -0.13081655, w: 0.8503049}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_ankle_jnt
-      position: {x: .49401924, y: 3.67600883e-08, z: 3.34552901e-08}
-      rotation: {x: -.164034829, y: .0187359843, z: .336392313, w: .927136302}
+      parentName: 
+      position: {x: 0.49401924, y: 0.00000003676009, z: 0.00000003345529}
+      rotation: {x: -0.16403483, y: 0.018735984, z: 0.3363923, w: 0.9271363}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_ball_jnt
-      position: {x: .186744496, y: 1.05567288e-07, z: -5.53462307e-08}
-      rotation: {x: .0286109801, y: -.0434613004, z: .502103627, w: .863240719}
+      parentName: 
+      position: {x: 0.1867445, y: 0.00000010556729, z: -0.00000005534623}
+      rotation: {x: 0.02861098, y: -0.0434613, z: 0.5021036, w: 0.8632407}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_spine_mid_jnt
-      position: {x: -.164646998, y: -8.881784e-18, z: -1.8244289e-17}
-      rotation: {x: .994514585, y: .104598224, z: -5.97907546e-09, w: -5.68487408e-08}
+      parentName: 
+      position: {x: -0.164647, y: -8.881784e-18, z: -1.8244289e-17}
+      rotation: {x: 0.9945146, y: 0.104598224, z: -0.0000000059790755, w: -0.00000005684874}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_spine_end_jnt
-      position: {x: -.144478008, y: -.0296621267, z: 2.83542029e-17}
-      rotation: {x: 0, y: 0, z: .219791397, w: .975546896}
+      parentName: 
+      position: {x: -0.14447801, y: -0.029662127, z: 2.8354203e-17}
+      rotation: {x: 0, y: 0, z: 0.2197914, w: 0.9755469}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_clavicle_jnt
-      position: {x: -.036659766, y: .00635145418, z: -.106422663}
-      rotation: {x: .0348997861, y: -.65397191, z: -.181318149, w: .733639181}
+      parentName: 
+      position: {x: -0.036659766, y: 0.006351454, z: -0.10642266}
+      rotation: {x: 0.034899786, y: -0.6539719, z: -0.18131815, w: 0.7336392}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_upArm_jnt
-      position: {x: -.157527894, y: -2.37494469e-11, z: 4.81588797e-11}
-      rotation: {x: .0333276987, y: -.0823615566, z: .150011033, w: .98468399}
+      parentName: 
+      position: {x: -0.1575279, y: -2.3749447e-11, z: 4.815888e-11}
+      rotation: {x: 0.0333277, y: -0.08236156, z: 0.15001103, w: 0.984684}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_elbow_jnt
-      position: {x: -.358907908, y: 2.52308924e-10, z: -8.29913915e-12}
-      rotation: {x: 0, y: 0, z: .0153683815, w: .999881923}
+      parentName: 
+      position: {x: -0.3589079, y: 2.5230892e-10, z: -8.299139e-12}
+      rotation: {x: 0, y: 0, z: 0.0153683815, w: 0.9998819}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_foreArmSplit1_jnt
-      position: {x: -.117367595, y: 8.25082502e-11, z: 1.7945893e-11}
+      parentName: 
+      position: {x: -0.117367595, y: 8.250825e-11, z: 1.7945893e-11}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_foreArmSplit2_jnt
-      position: {x: -.117367595, y: 8.25082849e-11, z: 1.7944899e-11}
+      parentName: 
+      position: {x: -0.117367595, y: 8.2508285e-11, z: 1.7944899e-11}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_hand_jnt
-      position: {x: -.11736761, y: 8.25084168e-11, z: 1.79447568e-11}
-      rotation: {x: .76434195, y: 0, z: -0, w: .644811153}
+      parentName: 
+      position: {x: -0.11736761, y: 8.250842e-11, z: 1.7944757e-11}
+      rotation: {x: 0.76434195, y: 0, z: -0, w: 0.64481115}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_index_a_jnt
-      position: {x: -.173252448, y: .0848419517, z: .0520084947}
-      rotation: {x: .976106465, y: -.150105178, z: -.0875023603, w: -.130491301}
+      parentName: 
+      position: {x: -0.17325245, y: 0.08484195, z: 0.052008495}
+      rotation: {x: 0.97610646, y: -0.15010518, z: -0.08750236, w: -0.1304913}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_index_b_jnt
-      position: {x: -.055419039, y: 4.89563945e-11, z: -1.93274715e-12}
-      rotation: {x: -.10528098, y: -.034932036, z: .00370138581, w: .993821919}
+      parentName: 
+      position: {x: -0.05541904, y: 4.8956394e-11, z: -1.9327471e-12}
+      rotation: {x: -0.10528098, y: -0.034932036, z: 0.0037013858, w: 0.9938219}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_index_c_jnt
-      position: {x: -.0595616847, y: 1.87671389e-11, z: 8.99320635e-12}
-      rotation: {x: 0, y: -.105798729, z: -0, w: .994387567}
+      parentName: 
+      position: {x: -0.059561685, y: 1.8767139e-11, z: 8.993206e-12}
+      rotation: {x: 0, y: -0.10579873, z: -0, w: 0.99438757}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_middle_a_jnt
-      position: {x: -.179785624, y: .0397191271, z: .0435119346}
-      rotation: {x: .982755005, y: -.0439572297, z: -.153694987, w: .0929422453}
+      parentName: 
+      position: {x: -0.17978562, y: 0.039719127, z: 0.043511935}
+      rotation: {x: 0.982755, y: -0.04395723, z: -0.15369499, w: 0.092942245}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_middle_b_jnt
-      position: {x: -.079917796, y: -1.48120724e-10, z: 2.05805143e-12}
-      rotation: {x: -.00324315066, y: -.0342922918, z: -.000572303019, w: .999406397}
+      parentName: 
+      position: {x: -0.079917796, y: -1.4812072e-10, z: 2.0580514e-12}
+      rotation: {x: -0.0032431507, y: -0.03429229, z: -0.000572303, w: 0.9994064}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_middle_c_jnt
-      position: {x: -.0478291214, y: -1.18453872e-10, z: 6.22435453e-14}
-      rotation: {x: -.00111865916, y: -.0324488431, z: -.000684211263, w: .999472558}
+      parentName: 
+      position: {x: -0.04782912, y: -1.1845387e-10, z: 6.2243545e-14}
+      rotation: {x: -0.0011186592, y: -0.032448843, z: -0.00068421126, w: 0.99947256}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_pinky_a_jnt
-      position: {x: -.145763516, y: -.0585415922, z: .0558279492}
-      rotation: {x: .986593843, y: -.043381881, z: -.147693411, w: .0541964024}
+      parentName: 
+      position: {x: -0.14576352, y: -0.058541592, z: 0.05582795}
+      rotation: {x: 0.98659384, y: -0.04338188, z: -0.14769341, w: 0.054196402}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_pinky_b_jnt
-      position: {x: -.0561584905, y: -1.00046686e-10, z: 3.5527136e-17}
-      rotation: {x: -.160633892, y: -.23188971, z: .0388580747, w: .958600044}
+      parentName: 
+      position: {x: -0.05615849, y: -1.00046686e-10, z: 3.5527136e-17}
+      rotation: {x: -0.16063389, y: -0.23188971, z: 0.038858075, w: 0.95860004}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_ring_a_jnt
-      position: {x: -.166211605, y: -.00903112441, z: .0564672649}
-      rotation: {x: .984805763, y: -.0139861284, z: -.14565438, w: .0935248137}
+      parentName: 
+      position: {x: -0.1662116, y: -0.009031124, z: 0.056467265}
+      rotation: {x: 0.98480576, y: -0.013986128, z: -0.14565438, w: 0.09352481}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_ring_b_jnt
-      position: {x: -.0711307675, y: -1.08334598e-10, z: 2.13162816e-16}
-      rotation: {x: .0197978709, y: -.0222905967, z: .000826902862, w: .999555171}
+      parentName: 
+      position: {x: -0.07113077, y: -1.083346e-10, z: 2.1316282e-16}
+      rotation: {x: 0.01979787, y: -0.022290597, z: 0.00082690286, w: 0.9995552}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_ring_c_jnt
-      position: {x: -.0533688813, y: -1.55745847e-10, z: 7.46226171e-12}
-      rotation: {x: .00517741218, y: -.0218631141, z: .00135853013, w: .99974668}
+      parentName: 
+      position: {x: -0.05336888, y: -1.5574585e-10, z: 7.462262e-12}
+      rotation: {x: 0.005177412, y: -0.021863114, z: 0.0013585301, w: 0.9997467}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_thumb_a_jnt
-      position: {x: -.0500469618, y: .0539793372, z: .0568757057}
-      rotation: {x: .850503981, y: -.274490148, z: -.42169711, w: -.153198496}
+      parentName: 
+      position: {x: -0.05004696, y: 0.053979337, z: 0.056875706}
+      rotation: {x: 0.850504, y: -0.27449015, z: -0.4216971, w: -0.1531985}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_thumb_b_jnt
-      position: {x: -.0735927746, y: 2.15143806e-11, z: 3.25762389e-10}
-      rotation: {x: -.0927806199, y: .0130576259, z: -.0284247324, w: .995195091}
+      parentName: 
+      position: {x: -0.073592775, y: 2.151438e-11, z: 3.257624e-10}
+      rotation: {x: -0.09278062, y: 0.013057626, z: -0.028424732, w: 0.9951951}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_lf_thumb_c_jnt
-      position: {x: -.0627452955, y: -4.37360356e-11, z: 2.94390179e-10}
-      rotation: {x: -.0322517976, y: -.00466674007, z: -.143129736, w: .989167273}
+      parentName: 
+      position: {x: -0.062745295, y: -4.3736036e-11, z: 2.9439018e-10}
+      rotation: {x: -0.032251798, y: -0.00466674, z: -0.14312974, w: 0.9891673}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_neck_jnt
-      position: {x: -.109739967, y: -8.75833434e-11, z: -6.39462163e-17}
-      rotation: {x: .563820899, y: -.426738799, z: .563820899, w: .426738799}
+      parentName: 
+      position: {x: -0.10973997, y: -8.758334e-11, z: -6.3946216e-17}
+      rotation: {x: 0.5638209, y: -0.4267388, z: 0.5638209, w: 0.4267388}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_head_a_jnt
-      position: {x: 1.61748981e-17, y: .159571037, z: 1.27353128e-10}
-      rotation: {x: -.116573647, y: 0, z: -0, w: .993182063}
+      parentName: 
+      position: {x: 1.6174898e-17, y: 0.15957104, z: 1.2735313e-10}
+      rotation: {x: -0.11657365, y: 0, z: -0, w: 0.99318206}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_jaw_jnt
-      position: {x: -1.91379167e-16, y: -.0102470312, z: .0165540818}
-      rotation: {x: .114247009, y: .697816372, z: .114247009, w: .697816372}
+      parentName: 
+      position: {x: -1.9137917e-16, y: -0.010247031, z: 0.016554082}
+      rotation: {x: 0.11424701, y: 0.6978164, z: 0.11424701, w: 0.6978164}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_clavicle_jnt
-      position: {x: -.0366598591, y: .00635137968, z: .106422596}
-      rotation: {x: .653971434, y: .0349003486, z: .733639538, w: .181318671}
+      parentName: 
+      position: {x: -0.03665986, y: 0.0063513797, z: 0.106422596}
+      rotation: {x: 0.65397143, y: 0.03490035, z: 0.73363954, w: 0.18131867}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_upArm_jnt
-      position: {x: .157528177, y: 1.04660018e-07, z: 4.99221187e-07}
-      rotation: {x: .0333267525, y: -.0823617503, z: .150011852, w: .984683871}
+      parentName: 
+      position: {x: 0.15752818, y: 0.00000010466002, z: 0.0000004992212}
+      rotation: {x: 0.033326752, y: -0.08236175, z: 0.15001185, w: 0.9846839}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_elbow_jnt
-      position: {x: .358908296, y: -7.88327057e-08, z: 5.48826904e-07}
-      rotation: {x: 0, y: 0, z: .0153666353, w: .999881923}
+      parentName: 
+      position: {x: 0.3589083, y: -0.000000078832706, z: 0.0000005488269}
+      rotation: {x: 0, y: 0, z: 0.015366635, w: 0.9998819}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_foreArmSplit1_jnt
-      position: {x: .117367245, y: 3.93510602e-09, z: 1.32468891e-09}
-      rotation: {x: 1.49011612e-08, y: 0, z: -0, w: 1}
+      parentName: 
+      position: {x: 0.117367245, y: 0.000000003935106, z: 0.0000000013246889}
+      rotation: {x: 0.000000014901161, y: 0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_foreArmSplit2_jnt
-      position: {x: .117367245, y: 3.93510646e-09, z: 1.3246878e-09}
+      parentName: 
+      position: {x: 0.117367245, y: 0.0000000039351065, z: 0.0000000013246878}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_hand_jnt
-      position: {x: .117367245, y: 3.93510602e-09, z: 1.32468847e-09}
-      rotation: {x: .76434195, y: 0, z: -0, w: .644811153}
+      parentName: 
+      position: {x: 0.117367245, y: 0.000000003935106, z: 0.0000000013246885}
+      rotation: {x: 0.76434195, y: 0, z: -0, w: 0.64481115}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_index_a_jnt
-      position: {x: .17325227, y: -.0848432705, z: -.0520083159}
-      rotation: {x: .976106465, y: -.150105178, z: -.0875023603, w: -.130491301}
+      parentName: 
+      position: {x: 0.17325227, y: -0.08484327, z: -0.052008316}
+      rotation: {x: 0.97610646, y: -0.15010518, z: -0.08750236, w: -0.1304913}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_index_b_jnt
-      position: {x: .0554188192, y: -1.45746765e-06, z: 6.54904795e-07}
-      rotation: {x: -.105280384, y: -.0349444076, z: .00368266436, w: .993821681}
+      parentName: 
+      position: {x: 0.05541882, y: -0.0000014574676, z: 0.0000006549048}
+      rotation: {x: -0.105280384, y: -0.034944408, z: 0.0036826644, w: 0.9938217}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_index_c_jnt
-      position: {x: .0595624372, y: 1.17910247e-06, z: -8.77157277e-07}
-      rotation: {x: 1.28323565e-08, y: -.105798729, z: 1.36530975e-09, w: .994387567}
+      parentName: 
+      position: {x: 0.059562437, y: 0.0000011791025, z: -0.0000008771573}
+      rotation: {x: 0.0000000128323565, y: -0.10579873, z: 0.0000000013653098, w: 0.99438757}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_middle_a_jnt
-      position: {x: .17978628, y: -.0397184901, z: -.0435119942}
-      rotation: {x: .982755363, y: -.0439544432, z: -.15369305, w: .0929424539}
+      parentName: 
+      position: {x: 0.17978628, y: -0.03971849, z: -0.043511994}
+      rotation: {x: 0.98275536, y: -0.043954443, z: -0.15369305, w: 0.092942454}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_middle_b_jnt
-      position: {x: .0799172297, y: 4.0931036e-07, z: 5.31570947e-07}
-      rotation: {x: -.00324413669, y: -.0343053415, z: -.000574219797, w: .99940604}
+      parentName: 
+      position: {x: 0.07991723, y: 0.00000040931036, z: 0.00000053157095}
+      rotation: {x: -0.0032441367, y: -0.03430534, z: -0.0005742198, w: 0.99940604}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_middle_c_jnt
-      position: {x: .0478295162, y: 3.93839002e-07, z: -8.28889313e-07}
-      rotation: {x: -.00111865916, y: -.0324488431, z: -.000684211263, w: .999472558}
+      parentName: 
+      position: {x: 0.047829516, y: 0.000000393839, z: -0.0000008288893}
+      rotation: {x: -0.0011186592, y: -0.032448843, z: -0.00068421126, w: 0.99947256}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_pinky_a_jnt
-      position: {x: .145764276, y: .0585411005, z: -.0558277816}
-      rotation: {x: .986595154, y: -.0433834046, z: -.147684559, w: .0541969165}
+      parentName: 
+      position: {x: 0.14576428, y: 0.0585411, z: -0.05582778}
+      rotation: {x: 0.98659515, y: -0.043383405, z: -0.14768456, w: 0.054196917}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_pinky_b_jnt
-      position: {x: .0561574064, y: -3.40219259e-07, z: 9.57982706e-07}
-      rotation: {x: -.160633892, y: -.23188971, z: .0388580747, w: .958600044}
+      parentName: 
+      position: {x: 0.056157406, y: -0.00000034021926, z: 0.0000009579827}
+      rotation: {x: -0.16063389, y: -0.23188971, z: 0.038858075, w: 0.95860004}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_ring_a_jnt
-      position: {x: .166212827, y: .00903063919, z: -.0564670712}
-      rotation: {x: .98480618, y: -.013989131, z: -.145651177, w: .093525067}
+      parentName: 
+      position: {x: 0.16621283, y: 0.009030639, z: -0.05646707}
+      rotation: {x: 0.9848062, y: -0.013989131, z: -0.14565118, w: 0.09352507}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_ring_b_jnt
-      position: {x: .0711303875, y: -6.7928039e-07, z: 2.72597049e-07}
-      rotation: {x: .0197965782, y: -.0222921669, z: .000814204162, w: .99955523}
+      parentName: 
+      position: {x: 0.07113039, y: -0.0000006792804, z: 0.00000027259705}
+      rotation: {x: 0.019796578, y: -0.022292167, z: 0.00081420416, w: 0.99955523}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_ring_c_jnt
-      position: {x: .0533687584, y: 9.54837788e-07, z: 1.5559111e-07}
-      rotation: {x: .00517741218, y: -.0218631141, z: .00135853013, w: .99974668}
+      parentName: 
+      position: {x: 0.05336876, y: 0.0000009548378, z: 0.00000015559111}
+      rotation: {x: 0.005177412, y: -0.021863114, z: 0.0013585301, w: 0.9997467}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_thumb_a_jnt
-      position: {x: .0500463173, y: -.0539802499, z: -.0568756945}
-      rotation: {x: .85049957, y: -.274495602, z: -.421703488, w: -.153195098}
+      parentName: 
+      position: {x: 0.050046317, y: -0.05398025, z: -0.056875695}
+      rotation: {x: 0.8504996, y: -0.2744956, z: -0.4217035, w: -0.1531951}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_thumb_b_jnt
-      position: {x: .0735927969, y: -1.38236248e-06, z: -9.65317327e-07}
-      rotation: {x: -.0927805081, y: .0130711598, z: -.0284386147, w: .995194554}
+      parentName: 
+      position: {x: 0.0735928, y: -0.0000013823625, z: -0.0000009653173}
+      rotation: {x: -0.09278051, y: 0.01307116, z: -0.028438615, w: 0.99519455}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_thumb_c_jnt
-      position: {x: .06274461, y: 5.79956009e-07, z: 8.53737617e-07}
-      rotation: {x: -.032251779, y: -.0046667424, z: -.143129736, w: .989167273}
+      parentName: 
+      position: {x: 0.06274461, y: 0.000000579956, z: 0.0000008537376}
+      rotation: {x: -0.03225178, y: -0.0046667424, z: -0.14312974, w: 0.9891673}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demon_rt_weapon_jnt
-      position: {x: .118271664, y: .0072964672, z: -.109098271}
-      rotation: {x: -.0910904557, y: .0304862317, z: .730439901, w: .676188409}
+      parentName: 
+      position: {x: 0.118271664, y: 0.007296467, z: -0.10909827}
+      rotation: {x: -0.091090456, y: 0.030486232, z: 0.7304399, w: 0.6761884}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demonmesh_low
+      parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: demonmesh_lowShape
+      parentName: 
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: perspShape
-      position: {x: .657386541, y: 1.93861806, z: 2.69902754}
-      rotation: {x: .986836731, y: -.0127389589, z: -.0984994024, w: -.127627909}
+      parentName: 
+      position: {x: 0.65738654, y: 1.9386181, z: 2.6990275}
+      rotation: {x: 0.98683673, y: -0.012738959, z: -0.0984994, w: -0.12762791}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: U3DMesh
+      parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: weaponmesh_low
+      parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: weaponmesh_lowShape
+      parentName: 
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 3
   humanoidOversampling: 1
