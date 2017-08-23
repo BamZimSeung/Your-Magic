@@ -94,6 +94,7 @@
     <Compile Include="Assets\Joo\Scripts\JS_StageCtrl.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_StageInfo.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_Storm.cs" />
+    <Compile Include="Assets\Joo\Scripts\JS_UIView.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_WarpPoint.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_WeakPoint.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRBoundary.cs" />
@@ -205,6 +206,7 @@
     <None Include="Assets\Joo\EffectsResources\IceSpear\Shaders\ZFS_3D_Free.shader" />
     <None Include="Assets\Joo\EffectsResources\PushMagic\Shaders\FT_Premultiplied_UVscroll_ST_DS.shader" />
     <None Include="Assets\Joo\EffectsResources\PushMagic\Shaders\SF_VFX_ParticleAddHDR.shader" />
+    <None Include="Assets\Joo\Materials\UI\crosshair.shader" />
     <None Include="Assets\Joo\Monster\Mon_Melee1\AlphaBlendedNoSmooth.shader" />
     <None Include="Assets\Joo\Monster\Mon_Melee1\DistortionParticlesCutout 1.shader" />
     <None Include="Assets\Joo\Monster\Mon_Melee1\DistortionParticlesCutout.shader" />
