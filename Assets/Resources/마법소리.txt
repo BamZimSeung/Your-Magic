@@ -7,41 +7,48 @@
  - 플레이어 피격 소리 - 퍽(일
  - 포탈 사용시 - teleport_001
  - GameOver 소리 - GameOver
-------------------마법계열----------
 
- - 마법패턴 발동소리. - wand_001
+------------------마법계열---------- 컨트롤러에 오디오 소스(양쪽 손)
+
+ - 마법패턴 발동소리. - wand_001 or pattern_make2 or pattern_make3 or pattern_make4
  - 패턴 활성화 소리 -> 촤라랑? - recovery_02_a or recovery_02_b or Menu1B
  - 에너지 볼트 생성, 발사 - chant_008 / ray_03
- - 화염구 생성, 터질때 -  flame_012 / explosion_002
+ - 화염구 생성, 터질때, 유지중일때 소리 -  flame_012 / explosion_002 / fire_maintain
  - 번개마법 - thunder_006_a 몇초간격으로 재생.
- - 아이스 스피어 생성 / 타격 - ice_002_b / ice_004
- - 중력자탄 - gravity_01
+ - 아이스 스피어 생성 / 타격 - ice_002_b / ice_004 / ice_arrow_hit
+ - 중력자탄 - gravity_01 or gravity2 or gravity3 or 웅 소리_gravity
  - 쉴드 - barrier_001
  - 막을때 - barrier_001_1
  - 마법 실패 사운드 - magicfail - 1,2,3 중 선택
 
------------------적계열---------------
- - 일반몹 생성, 사망 - spawn / 
+-----------------적계열--------------- 적마다 오디오 소스 1개.
+ - 일반몹 생성, 사망 - spawn / Air_Destroy / Mon_die
  - 근접몹 공격 소리 - swing_001
- - 공중몹 생성 소리 - 
  - 공중몹 미사일 발사 소리 - gun_sci_fi_001
- - 공중몹 터지는 소리(기계폭팔) - Air_Destroy
+ 
+
  - 라인하르트 나타나는 소리 - 몬스터 액티브
  - 라인하르트 쉴드에 마법 박히는 소리 - barrier_003_1
  - 라인하르트 쉴드 터지는 소리 - shield_break
  - 라인하르트 죽는 소리 펑. - rain_explosion
 
- - 보스 스테이지 진입할때 소리 - 배경음?
- - 보스 날아올때 소리 - 보스_wing
- - 보스 처음 무기 들때 소리 - 그르르르르_보스
- - 보스 공격1 소환 소리 -> 보스_부하소환
- - 소환된 몬스터 타격 + 사망 소리 -> 일반몹과 같이
- - 보스 공격2 마법진 소환 소리 - 보스_마법시전느낌
- - 보스 공격3 미사일 발사 패턴 - roar 소리. - 보스 roar
- - 보스 타격 소리 - special_001 or hit_boss
- - 보스 사망 소리 - 보스_사망
 
+ 보스에 오디오 소스 1개.
+
+ - 보스 스테이지 진입할때 소리 - 배경음?
+ - 보스 날아올때 소리 - boss_wing
+ - 보스 처음 무기 들때 소리 - boss_grr
+ - 보스 공격1 소환 소리 -> boss_summ
+ - 소환된 몬스터 타격 + 사망 소리 -> 일반몹과 같이
+ - 보스 공격2 마법진 소환 소리 - boss_board
+ - 보스 공격3 미사일 발사 패턴 - roar 소리. - boss_roar
+ - 보스 타격 소리 - special_001 or hit_boss
+ - 보스 사망 소리 - boss_death
 
 -----------------------------------
+물체
+ - glass_break
+ - object_대리석 부서지는 소리
+ - 책넘기는소리
 
 사용 에셋 -> MA2 magic sound.
