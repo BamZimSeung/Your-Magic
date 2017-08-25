@@ -95,6 +95,7 @@
     <Compile Include="Assets\Joo\Scripts\JS_StageInfo.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_Storm.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_UIView.cs" />
+    <Compile Include="Assets\Joo\Scripts\JS_UI_MagicCircle.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_WarpPoint.cs" />
     <Compile Include="Assets\Joo\Scripts\JS_WeakPoint.cs" />
     <Compile Include="Assets\Marab\OVR\Scripts\OVRBoundary.cs" />
