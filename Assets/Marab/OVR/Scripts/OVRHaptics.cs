@@ -267,6 +267,10 @@ public static class OVRHaptics
 		/// </summary>
 		public void Queue(OVRHapticsClip clip)
 		{
+            if (m_pendingClips.Count > 3)
+            {
+                return;
+            }
 			m_pendingClips.Add(new ClipPlaybackTracker(clip));
 		}
 

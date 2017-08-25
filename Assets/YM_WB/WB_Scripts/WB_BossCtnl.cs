@@ -32,7 +32,6 @@ public class WB_BossCtnl : MonoBehaviour {
     private void Awake()
     {
         bossAudio.Stop();
-
         bossClips[0] = Resources.Load("boss_wing", typeof(AudioClip)) as AudioClip; // 날아올때
         bossClips[1] = Resources.Load("boss_grr", typeof(AudioClip)) as AudioClip; // ㄱㄹㄹ
         bossClips[2] = Resources.Load("boss_summ", typeof(AudioClip)) as AudioClip; // 소환
@@ -40,7 +39,7 @@ public class WB_BossCtnl : MonoBehaviour {
         bossClips[4] = Resources.Load("boss_roar", typeof(AudioClip)) as AudioClip; // 미사일
         bossClips[5] = Resources.Load("hit_boss", typeof(AudioClip)) as AudioClip; // 타격
         bossClips[6] = Resources.Load("boss_death", typeof(AudioClip)) as AudioClip; // 사망
-        bossClips[7] = Resources.Load("몬스터_액티브", typeof(AudioClip)) as AudioClip; // 딜타임.
+        bossClips[7] = Resources.Load("boss_breathing", typeof(AudioClip)) as AudioClip; // 딜타임.
     }
 
     public void BossPlay(bossAudioState bossState)
@@ -119,15 +118,15 @@ public class WB_BossCtnl : MonoBehaviour {
     public Transform firePos;
     public float fireDeltha = 30f;
 
-    public float bossMaxHp = 100f;
-    public float cur_bossHp;
+  /*  public float bossMaxHp = 100f;
+    public float cur_bossHp;*/
 
 
     void Start () {
         my_Boss = BossState.Move;
         boss_anim = GetComponent<Animator>();
         attackCheck = new bool[3]; // 3가지 공격..? / 0-> 2combo 몹소환, 1-> 3combo 몹 + 장판 , 2 -> roar.
-        cur_bossHp = bossMaxHp;
+        // cur_bossHp = bossMaxHp;
         InitCheck();
         portal_left.SetActive(false);
         portal_mid.SetActive(false);
@@ -166,10 +165,10 @@ public class WB_BossCtnl : MonoBehaviour {
             case BossState.DealTime:
                 BossDealTime();
                 break;
-            case BossState.Death:
+           /* case BossState.Death:
                
                 BossDeath();
-                break;
+                break;*/
         }
 	}
 
@@ -371,7 +370,6 @@ public class WB_BossCtnl : MonoBehaviour {
         }
 
         currentTime += Time.deltaTime;
-       
         if (currentTime >= boardPatternTime) // 장판 마법 패턴이 끝나면 상태 초기화 -> 딜타임.
         {
             boardSwitch = true;
@@ -379,9 +377,7 @@ public class WB_BossCtnl : MonoBehaviour {
             cur_summonNumber = 0;
             bossAudio.Stop();
             my_Boss = BossState.DealTime;
-
         }
-        
         
     } // 장판마법패턴(소환몹 공격 + 워프해라)
     void BossFire()
@@ -412,8 +408,6 @@ public class WB_BossCtnl : MonoBehaviour {
         WeakPoint.SetActive(true); // 약점활성화
         boss_anim.SetInteger("Boss_State", 8); // 딜타임!.
 
-        
-
         currentTime += Time.deltaTime;
         if(currentTime > dealTime) // 딜타임이 끝나면
         {
@@ -427,21 +421,22 @@ public class WB_BossCtnl : MonoBehaviour {
     public void BossDamaged() // 맞으면?
     {
         boss_anim.SetTrigger("Gethit");
-        cur_bossHp -= 50;
+        /*cur_bossHp -= 50;
         if (cur_bossHp <= 0) // 죽으면?
         {
             bossAudio.Stop();
             my_Boss = BossState.Death;
-        }
+        }*/
     }
 
+    /*
     void BossDeath()
     {
         BossPlay(bossAudioState.death);
         boss_anim.SetInteger("Boss_State", 7); // 보스상태 죽음으로 변경.
         // 몇초후 삭제.
         StartCoroutine("Death");
-    }
+    }*/
 
     IEnumerator Summon() // 부하 소환.
     {

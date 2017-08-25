@@ -33,6 +33,7 @@ public class WB_Fairy_Ctrl : MonoBehaviour {
     {
         Idle, // 대기
         Move, // 움직임
+        Talk, // 말 걸때.
     }
 
     public fairyState m_fairy_state;
@@ -55,6 +56,9 @@ public class WB_Fairy_Ctrl : MonoBehaviour {
             case fairyState.Move:
                 Fairy_Move();
                 break;
+            case fairyState.Talk:
+                Fairy_Talk();
+                break;
         }
     }
 
@@ -69,7 +73,7 @@ public class WB_Fairy_Ctrl : MonoBehaviour {
             originPos = desPos; // 원래 위치도 고정
         }
         startTime = Time.time;
-        Word_Ballon.SetActive(true);
+        Word_Ballon.SetActive(false);
     }
 
     void Fairy_Move()
@@ -93,5 +97,19 @@ public class WB_Fairy_Ctrl : MonoBehaviour {
             }
         }
         Word_Ballon.SetActive(false);
+    }
+
+    void Fairy_Talk()
+    {
+        originPos = transform.position; // 원래위치를 현재위치로 설정합니다.
+        desPos = fairy_position.transform.position;// 지정된 위치로 설정.
+        transform.position = Vector3.Lerp(originPos, desPos, 0.2f); // 원래자리로 돌아감.
+        if (Vector3.Distance(transform.position, desPos) < 0.1f) // 도착하면
+        {
+            transform.position = desPos; // 고정.
+            originPos = desPos; // 원래 위치도 고정
+        }
+        startTime = Time.time;
+        Word_Ballon.SetActive(true);
     }
 }

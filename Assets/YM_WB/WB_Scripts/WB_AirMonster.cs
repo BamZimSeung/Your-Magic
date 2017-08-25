@@ -34,6 +34,7 @@ public class WB_AirMonster : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        WB_DroneAudio.instance.DronePlay(WB_DroneAudio.AudioState.birth);
         transform.position = Spawn.transform.position; // 시작위치 = 처음노드.
         currentTime = 0;
         //my_move = moveState.first;
@@ -47,6 +48,7 @@ public class WB_AirMonster : MonoBehaviour {
         if(currentTime > fireDelay)
         {
             GameObject bullet = Instantiate(bulletPrefab);
+            WB_DroneAudio.instance.DronePlay(WB_DroneAudio.AudioState.fire);
             bullet.GetComponent<JS_EnemyRangeAttack>().SetTarget(Player.transform);
             bullet.transform.position = transform.position;
             currentTime = 0;

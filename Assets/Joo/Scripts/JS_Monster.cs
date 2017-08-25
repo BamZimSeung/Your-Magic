@@ -209,9 +209,8 @@ public class JS_Monster : MonoBehaviour
         {
             isDie = true;
             monsterState = MonsterState.Die;
-
+            
             Instantiate(corpsePrefab, transform.position, Quaternion.identity);
-
             if (isGroundMon)
             {
                 JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Ground);
@@ -220,7 +219,6 @@ public class JS_Monster : MonoBehaviour
             {
                 JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Air);
             }
-
             Destroy(gameObject);
         }
     }
