@@ -9,12 +9,6 @@ public class WB_MagicBaordCtnl : MonoBehaviour {
     public float destroyDelay = 5f;
 	// Use this for initialization
 	void Start () {
-        StartCoroutine("DestroyDealy");
+        Destroy(gameObject, destroyDelay);
 	}
-	
-	IEnumerator DelayDestroy()
-    {
-        yield return new WaitForSeconds(destroyDelay);
-        Destroy(this.gameObject);
-    }
 }

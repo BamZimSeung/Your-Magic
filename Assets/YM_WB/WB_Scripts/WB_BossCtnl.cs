@@ -96,7 +96,8 @@ public class WB_BossCtnl : MonoBehaviour {
 
 
     // 이제 magicboard 관련 변수
-    public GameObject safeboardPrefab, attackboardPrefab;
+    //public GameObject safeboardPrefab;
+    public GameObject attackboardPrefab;
     public GameObject magicBoardPrefab;
 
     public float missTime = 5f;
@@ -165,8 +166,7 @@ public class WB_BossCtnl : MonoBehaviour {
             case BossState.DealTime:
                 BossDealTime();
                 break;
-           /* case BossState.Death:
-               
+            /*case BossState.Death:
                 BossDeath();
                 break;*/
         }
@@ -315,7 +315,7 @@ public class WB_BossCtnl : MonoBehaviour {
             int safezone = Random.Range(0, 3);// 0~2번중 안전한 지역 선택.
             // 보드 생성.
             GameObject attackboard_1st, attackboard_2nd;
-            GameObject safeboard = Instantiate(safeboardPrefab);
+            //GameObject safeboard = Instantiate(safeboardPrefab);
             attackboard_1st = Instantiate(attackboardPrefab);
             attackboard_2nd = Instantiate(attackboardPrefab);
 
@@ -323,19 +323,19 @@ public class WB_BossCtnl : MonoBehaviour {
             {
 
                 case 0: //0자리에 안전배치
-                    safeboard.transform.position = boardPos_1st.position;
+                    //safeboard.transform.position = boardPos_1st.position;
                     attackboard_1st.transform.position = boardPos_2nd.position;
                     attackboard_2nd.transform.position = boardPos_3rd.position;
                     StartCoroutine(SummonMagicBoard(attackboard_1st.transform, attackboard_2nd.transform));
                     break;
                 case 1: // 1자리에 안전배치
-                    safeboard.transform.position = boardPos_2nd.position;
+                    //safeboard.transform.position = boardPos_2nd.position;
                     attackboard_1st.transform.position = boardPos_1st.position;
                     attackboard_2nd.transform.position = boardPos_3rd.position;
                     StartCoroutine(SummonMagicBoard(attackboard_1st.transform, attackboard_2nd.transform));
                     break;
                 case 2: //2자리에 안전배치
-                    safeboard.transform.position = boardPos_3rd.position;
+                    //safeboard.transform.position = boardPos_3rd.position;
                     attackboard_1st.transform.position = boardPos_1st.position;
                     attackboard_2nd.transform.position = boardPos_2nd.position;
                     StartCoroutine(SummonMagicBoard(attackboard_1st.transform, attackboard_2nd.transform));
@@ -356,15 +356,21 @@ public class WB_BossCtnl : MonoBehaviour {
             {
                 case 0: // 왼쪽일때
                     portal_mid.SetActive(true);
+                    portal_mid.transform.GetChild(0).gameObject.SetActive(true);
                     portal_right.SetActive(true);
+                    portal_right.transform.GetChild(0).gameObject.SetActive(true);
                     break;
                 case 1: // 중앙일때
                     portal_left.SetActive(true);
+                    portal_left.transform.GetChild(0).gameObject.SetActive(true);
                     portal_right.SetActive(true);
+                    portal_right.transform.GetChild(0).gameObject.SetActive(true);
                     break;
                 case 2: // 오른쪽일때
                     portal_left.SetActive(true);
+                    portal_left.transform.GetChild(0).gameObject.SetActive(true);
                     portal_mid.SetActive(true);
+                    portal_mid.transform.GetChild(0).gameObject.SetActive(true);
                     break;
             }
         }
@@ -425,18 +431,19 @@ public class WB_BossCtnl : MonoBehaviour {
         if (cur_bossHp <= 0) // 죽으면?
         {
             bossAudio.Stop();
-            my_Boss = BossState.Death;
         }*/
     }
 
-    /*
-    void BossDeath()
+    
+    public void BossDeath()
     {
+        my_Boss = BossState.Death;
         BossPlay(bossAudioState.death);
         boss_anim.SetInteger("Boss_State", 7); // 보스상태 죽음으로 변경.
+        Debug.Log("보스 죽어유~");
         // 몇초후 삭제.
-        StartCoroutine("Death");
-    }*/
+        Destroy(this.gameObject, 3.0f);
+    }
 
     IEnumerator Summon() // 부하 소환.
     {
@@ -461,10 +468,7 @@ public class WB_BossCtnl : MonoBehaviour {
         fireSwitch = true; // 딜레이후 다시 뽑자.
     }
 
-    IEnumerator Death() // 보스 사망
-    {
-        yield return new WaitForSeconds(3f);
-    }
+   
 
     IEnumerator SummonMagicBoard(Transform one, Transform two) // 1,2 지역을 받아서 장판공격을 합니다.
     {

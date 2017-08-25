@@ -11,6 +11,9 @@ public class JS_Monster : MonoBehaviour
     // 원거리 몬스터인지 여부
     public bool isRangeMon = false;
 
+    // 보스인지의 여부
+    public bool isBoss = false;
+
     // 공격 위치
     public Transform attackPos;
 
@@ -24,6 +27,8 @@ public class JS_Monster : MonoBehaviour
 
     // 몬스터 상태
     public MonsterState monsterState = MonsterState.Idle;
+
+    public WB_BossCtnl wb;
 
     Transform monsterTr;
     Transform playerTr;
@@ -48,20 +53,22 @@ public class JS_Monster : MonoBehaviour
 
     void Awake()
     {
-        monsterTr = gameObject.GetComponent<Transform>();
+        if (!isBoss)
+        {
+            monsterTr = gameObject.GetComponent<Transform>();
 
-        monsterRB = gameObject.GetComponent<Rigidbody>();
+            monsterRB = gameObject.GetComponent<Rigidbody>();
 
-        nvAgent = gameObject.GetComponent<NavMeshAgent>();
+            nvAgent = gameObject.GetComponent<NavMeshAgent>();
 
-        animator = gameObject.GetComponent<Animator>();
+            animator = gameObject.GetComponent<Animator>();
+        }
     }
 
     void Start()
     {
         playerTr = GameObject.FindWithTag("Player").GetComponent<Transform>();
-
-        if (isGroundMon)
+        if (isGroundMon && !isBoss)
         {
             nvAgent.enabled = true;
             StartCoroutine(CheckMonsterState());
@@ -170,22 +177,30 @@ public class JS_Monster : MonoBehaviour
     public void MonsterDamage(int damage)
     {
         hp -= damage;
-
-        if (DieCheck())
+        if (!isBoss)
         {
-            MonsterDie();
+            if (DieCheck())
+            {
+                MonsterDie();
+            }
+            else
+            {
+                animator.SetTrigger("Damage");
+                monsterState = MonsterState.Damage;
+            }
         }
         else
         {
-            animator.SetTrigger("Damage");
-            monsterState = MonsterState.Damage;
-            Invoke("ResetRigid", damageDelayTime);
+            if (DieCheck())
+            {
+                MonsterDie();
+            }
+            else
+            {
+                wb.BossDamaged();
+                // 보스 데미지 입는거 구현
+            }
         }
-    }
-
-    void ResetRigid()
-    {
-        monsterRB.velocity = Vector3.zero;
     }
 
     bool DieCheck()
@@ -209,16 +224,31 @@ public class JS_Monster : MonoBehaviour
         {
             isDie = true;
             monsterState = MonsterState.Die;
-            
-            Instantiate(corpsePrefab, transform.position, Quaternion.identity);
-            if (isGroundMon)
+
+            if (!isBoss)
             {
-                JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Ground);
+                Instantiate(corpsePrefab, transform.position, Quaternion.identity);
+
+                monsterState = MonsterState.Die;
+
+                Instantiate(corpsePrefab, transform.position, Quaternion.identity);
+
+                if (isGroundMon)
+                {
+                    JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Ground);
+                }
+                else
+                {
+                    JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Air);
+                }
             }
             else
             {
-                JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Air);
+                wb.BossDeath();
+                Debug.Log("체력 0 이하");
+                JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Ground);
             }
+
             Destroy(gameObject);
         }
     }

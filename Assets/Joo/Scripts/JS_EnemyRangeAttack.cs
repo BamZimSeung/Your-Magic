@@ -32,6 +32,7 @@ public class JS_EnemyRangeAttack : MonoBehaviour {
     float tempDist;
 
 	void Start () {
+        target = GameObject.FindWithTag("Player").transform;
         firstTargetPos = target.position;
         firstDist = Vector3.Distance(firstTargetPos.x*Vector3.right + firstTargetPos.z*Vector3.forward, transform.position.x* Vector3.right + transform.position.z*Vector3.forward);
 	}
