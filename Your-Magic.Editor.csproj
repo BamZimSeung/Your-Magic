@@ -157,6 +157,7 @@
     <None Include="Assets\Joo\EffectsResources\IceSpear\Shaders\ZFS_3D_Free.shader" />
     <None Include="Assets\Joo\EffectsResources\PushMagic\Shaders\FT_Premultiplied_UVscroll_ST_DS.shader" />
     <None Include="Assets\Joo\EffectsResources\PushMagic\Shaders\SF_VFX_ParticleAddHDR.shader" />
+    <None Include="Assets\Joo\Materials\OutLine\Sha_OutLine.shader" />
     <None Include="Assets\Joo\Materials\UI\crosshair.shader" />
     <None Include="Assets\Joo\Monster\Mon_Melee1\AlphaBlendedNoSmooth.shader" />
     <None Include="Assets\Joo\Monster\Mon_Melee1\DistortionParticlesCutout 1.shader" />
