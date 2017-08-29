@@ -39,7 +39,7 @@ public class JS_FireBallExplosion : MonoBehaviour {
                     // 폭발적인 힘을 가함
                     rb.AddExplosionForce(rigidPower, transform.position, dist.magnitude, upperPower);
                 }
-                if (hitInfos[i].transform.CompareTag("Enemy"))
+                if (hitInfos[i].transform.CompareTag("Enemy")|| hitInfos[i].transform.CompareTag("Boss"))
                 {
                     // 데미지 주기
                     hitInfos[i].transform.gameObject.GetComponent<JS_Monster>().MonsterDamage(power);

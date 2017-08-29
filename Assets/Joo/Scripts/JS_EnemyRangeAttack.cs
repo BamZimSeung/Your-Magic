@@ -56,7 +56,7 @@ public class JS_EnemyRangeAttack : MonoBehaviour {
         }
         else
         {
-            dir = (target.position - transform.position).normalized * speed * Time.deltaTime;
+            dir = (firstTargetPos - transform.position).normalized * speed * Time.deltaTime;
         }
 
         transform.position += dir;
@@ -64,6 +64,12 @@ public class JS_EnemyRangeAttack : MonoBehaviour {
         if (isParabola)
         {
             transform.position = new Vector3(transform.position.x, firstTargetPos.y + upPos, transform.position.z);
+        }
+
+        if(Vector3.Distance(transform.position, firstTargetPos) < 0.01f)
+        {
+            Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 
