@@ -16,7 +16,12 @@ public class JS_RuneStateCtrl : MonoBehaviour {
     public GameObject failEffect;
 
     public bool isActive = false;
-	
+    private void Start()
+    {
+        isActive = true;
+        runeMR.material = activeMat;
+        effects.SetActive(true);
+    }
     public void SetRuneActive()
     {
         if (!isActive)

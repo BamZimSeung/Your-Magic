@@ -112,4 +112,5 @@ public class WB_Fairy_Ctrl : MonoBehaviour {
         startTime = Time.time;
         Word_Ballon.SetActive(true);
     }
+
 }

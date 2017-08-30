@@ -16,6 +16,8 @@ using UnityEngine;
 public class WB_BossCtnl : MonoBehaviour {
     private AudioClip[] bossClips = new AudioClip[8];
 
+    public MAR_PlayerStats ps;
+
     public AudioSource bossAudio;
     public enum bossAudioState
     {
@@ -108,6 +110,7 @@ public class WB_BossCtnl : MonoBehaviour {
     public GameObject portal_left, portal_mid, portal_right; // 포탈 위치
     public float portaldelay = 5f;
     public int player_pos; // 플레이어의 현재 위치 파악. (0 = left, 1 = mid, 2 = right)
+    public int moveZoneTemp = 0;
 
     // fire 관련 변수
     public float firPatternTime = 15f;
@@ -177,7 +180,7 @@ public class WB_BossCtnl : MonoBehaviour {
         // 시작지점부터 목적지까지 보스 이동. 일단 앞으로.
         boss_anim.SetInteger("Boss_State", 0);
         BossPlay(bossAudioState.wing);
-        if (transform.position.z > desPos.position.z + radius)
+        if (transform.position.x < desPos.position.x + radius)
         {
             transform.Translate(transform.forward * moveSpeed * Time.deltaTime, Space.World);
         }
@@ -193,7 +196,7 @@ public class WB_BossCtnl : MonoBehaviour {
         BossPlay(bossAudioState.wing);
         boss_anim.SetInteger("Boss_State", 1); // 스테이트 변경.
         transform.LookAt(Player.transform); // 플레이어를 노려보자.
-        if (setha > 120) // 240도면 끝
+        if (setha > 90) // 240도면 끝
         {
             transform.position = Vector3.Lerp(transform.position, desPos.position, 0.05f);
             if(Vector3.Distance(transform.position, desPos.position) < 1f) // 도착
@@ -207,7 +210,7 @@ public class WB_BossCtnl : MonoBehaviour {
         else
         {
             // 보스가 지정된 위치에 도달한 후, 반지름을 가지고 한바퀴 회전한다.(center -> Despos, 반지름 -> Radius)
-            Vector3 NextPosition = desPos.position + new Vector3(radius * Mathf.Cos(setha), transform.position.y, radius * Mathf.Sin(setha));
+            Vector3 NextPosition = desPos.position + new Vector3(radius * Mathf.Cos(setha), transform.position.y-desPos.position.y, radius * Mathf.Sin(setha));
             transform.position = Vector3.Lerp(transform.position, NextPosition, 1.5f * Time.deltaTime);
             if (Vector3.Distance(transform.position, NextPosition) < 10f) // 일정거리 도달하면
             {
@@ -223,6 +226,7 @@ public class WB_BossCtnl : MonoBehaviour {
         BossPlay(bossAudioState.grr);
         boss_anim.SetInteger("Boss_State", 2);
         AttackDelayChoice();
+        transform.LookAt(GameObject.FindWithTag("Player").transform);
     }
 
     void AttackDelayChoice()
@@ -308,11 +312,16 @@ public class WB_BossCtnl : MonoBehaviour {
     {
         boss_anim.SetInteger("Boss_State", 4);
         BossPlay(bossAudioState.board);
-
+         // 꼭 가야할 지점.
         // 안전 보드 배치.
         if (boardSwitch) // 아직 소환안했으면
         {
             int safezone = Random.Range(0, 3);// 0~2번중 안전한 지역 선택.
+            if(safezone == player_pos) // 꼭 가야하는 지점.
+            {
+                safezone = (safezone + 1) % 3;
+            }
+            moveZoneTemp = safezone;
             // 보드 생성.
             GameObject attackboard_1st, attackboard_2nd;
             //GameObject safeboard = Instantiate(safeboardPrefab);
@@ -344,6 +353,7 @@ public class WB_BossCtnl : MonoBehaviour {
             boardSwitch = false; // 스위치 끄기.-> 더이상 장판 소환 x
         }
 
+
         if (currentTime > portaldelay) // 포탈 온액티브.
         {
             portal_left.SetActive(false);
@@ -352,30 +362,30 @@ public class WB_BossCtnl : MonoBehaviour {
         }
         else
         {
-            switch (player_pos)
+            switch (moveZoneTemp)
             {
                 case 0: // 왼쪽일때
-                    portal_mid.SetActive(true);
-                    portal_mid.transform.GetChild(0).gameObject.SetActive(true);
-                    portal_right.SetActive(true);
-                    portal_right.transform.GetChild(0).gameObject.SetActive(true);
+                    portal_left.SetActive(true);
+                    portal_left.transform.GetChild(0).gameObject.SetActive(true);
                     break;
                 case 1: // 중앙일때
-                    portal_left.SetActive(true);
-                    portal_left.transform.GetChild(0).gameObject.SetActive(true);
-                    portal_right.SetActive(true);
-                    portal_right.transform.GetChild(0).gameObject.SetActive(true);
-                    break;
-                case 2: // 오른쪽일때
-                    portal_left.SetActive(true);
-                    portal_left.transform.GetChild(0).gameObject.SetActive(true);
                     portal_mid.SetActive(true);
                     portal_mid.transform.GetChild(0).gameObject.SetActive(true);
+                    break;
+                case 2: // 오른쪽일때
+                    portal_right.SetActive(true);
+                    portal_right.transform.GetChild(0).gameObject.SetActive(true);
                     break;
             }
         }
 
         currentTime += Time.deltaTime;
+        if(currentTime >= missTime && player_pos != moveZoneTemp)
+        {
+            GameObject.FindWithTag("Player").GetComponent<MAR_PlayerStats>().IsboardOver();
+            
+        }
+
         if (currentTime >= boardPatternTime) // 장판 마법 패턴이 끝나면 상태 초기화 -> 딜타임.
         {
             boardSwitch = true;
@@ -437,18 +447,20 @@ public class WB_BossCtnl : MonoBehaviour {
     
     public void BossDeath()
     {
+        MAR_PsCtrl.instance.GameClear();
         my_Boss = BossState.Death;
         BossPlay(bossAudioState.death);
         boss_anim.SetInteger("Boss_State", 7); // 보스상태 죽음으로 변경.
         Debug.Log("보스 죽어유~");
         // 몇초후 삭제.
         Destroy(this.gameObject, 3.0f);
+
     }
 
     IEnumerator Summon() // 부하 소환.
     {
         GameObject buha = Instantiate(buhaPrefab); // 생성.
-        Vector3 sumPos = SummonPos.transform.position + new Vector3(Random.Range(-25,25),0,0); // 뿌리자.
+        Vector3 sumPos = SummonPos.transform.position + new Vector3(0,0, Random.Range(-12, 12)); // 뿌리자.
         buha.transform.position = sumPos; // 생성위치 지정.
         Debug.Log(buha.transform.position);
         cur_summonNumber++; // 소환수 증가

@@ -35,7 +35,6 @@ public class WB_Fairy_Word : MonoBehaviour {
         pages.Add("이제 검지로 누른 트리거 버튼을 떼면 마법을 사용할 수 있습니다. 던지거나 조준해보세요.");
         pages.Add("다양한 마법을 써보세요.");
         pages.Add("마법이 아니라 돌이 잡히면 마나가 부족한 상태입니다.");
-
         //5
         pages.Add("두 손을 가운데로 모으고 컨트롤러가 앞을 향하도록 해보세요.");
         pages.Add("마나가 다차면 자동으로 상태가 풀립니다.");

@@ -140,7 +140,6 @@ public class JS_StageCtrl : MonoBehaviour {
 
                     for (int i = 0; i < stageInfos[stageIndex].airMonGenPoints[ranPointIndex].gameObject.GetComponent<WB_AirMonSpawn>().Nodes.Length; i++)
                     {
-                        Debug.Log(stageInfos[stageIndex].airMonGenPoints[ranPointIndex].gameObject.GetComponent<WB_AirMonSpawn>().Nodes[i]);
                         airMon.nodes.Add(stageInfos[stageIndex].airMonGenPoints[ranPointIndex].gameObject.GetComponent<WB_AirMonSpawn>().Nodes[i]);
                     }
                     airMon.Player = GameObject.FindWithTag("Player");

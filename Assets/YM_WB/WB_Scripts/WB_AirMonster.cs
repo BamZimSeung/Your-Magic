@@ -48,7 +48,7 @@ public class WB_AirMonster : MonoBehaviour {
         if(currentTime > fireDelay)
         {
             GameObject bullet = Instantiate(bulletPrefab);
-            WB_DroneAudio.instance.DronePlay(WB_DroneAudio.AudioState.fire);
+            //WB_DroneAudio.instance.DronePlay(WB_DroneAudio.AudioState.fire);
             bullet.GetComponent<JS_EnemyRangeAttack>().SetTarget(Player.transform);
             bullet.transform.position = transform.position;
             currentTime = 0;
