@@ -51,6 +51,10 @@ public class JS_Monster : MonoBehaviour
     public int hp = 90;
     float currentTime = 0f;
 
+    public enum MonProperty { Normal, Fire, Ice, Electric};
+
+    public MonProperty mProperty = MonProperty.Normal;
+
     void Awake()
     {
         if (!isBoss)
@@ -174,9 +178,17 @@ public class JS_Monster : MonoBehaviour
     }
 
     // 몬스터가 데미지를 입음
-    public void MonsterDamage(int damage)
+    public void MonsterDamage(int damage, MonProperty _mProperty)
     {
-        hp -= damage;
+        if(mProperty != _mProperty && mProperty != MonProperty.Normal)
+        {
+            hp -= damage/4;
+        }
+        else
+        {
+            hp -= damage;
+        }
+
         if (!isBoss)
         {
             if (DieCheck())
@@ -197,8 +209,8 @@ public class JS_Monster : MonoBehaviour
             }
             else
             {
+                // 보스 데미지 입음
                 wb.BossDamaged();
-                // 보스 데미지 입는거 구현
             }
         }
     }
@@ -241,15 +253,14 @@ public class JS_Monster : MonoBehaviour
                 {
                     JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Air);
                 }
+
+                Destroy(gameObject);
             }
             else
             {
                 wb.BossDeath();
-                Debug.Log("체력 0 이하");
                 JS_StageCtrl.Instance.DecreaseMonTempCount(JS_StageCtrl.MonType.Ground);
             }
-
-            Destroy(gameObject);
         }
     }
 

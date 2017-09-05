@@ -42,7 +42,7 @@ public class JS_GravityBall : MonoBehaviour {
 
                 if (targets[i].CompareTag("Enemy"))
                 {
-                    targets[i].GetComponent<JS_Monster>().MonsterDamage(0);
+                    targets[i].GetComponent<JS_Monster>().MonsterDamage(0, JS_Monster.MonProperty.Normal);
                 }
             }
             yield return wfs;

@@ -81,7 +81,7 @@ public class JS_IceSpear : MonoBehaviour {
             if (col.CompareTag("Enemy"))
             {
                 // 적에게 데미지를 준다.
-                col.gameObject.GetComponent<JS_Monster>().MonsterDamage(power);
+                col.gameObject.GetComponent<JS_Monster>().MonsterDamage(power, JS_Monster.MonProperty.Ice);
             }
             if (col.CompareTag("BossBullet"))
             {
