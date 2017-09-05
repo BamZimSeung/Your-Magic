@@ -380,7 +380,7 @@ public class WB_BossCtnl : MonoBehaviour {
         }
 
         currentTime += Time.deltaTime;
-        if(currentTime >= missTime && player_pos != moveZoneTemp)
+        if(currentTime >= missTime && player_pos == moveZoneTemp)
         {
             GameObject.FindWithTag("Player").GetComponent<MAR_PlayerStats>().IsboardOver();
             
@@ -473,7 +473,7 @@ public class WB_BossCtnl : MonoBehaviour {
         GameObject bullet = Instantiate(bulletPrefab); // 생성.
         // 총알 생성 위치 = xpos + 30 (여기서 랜덤 x,y 구해서 더해주자, 왼쪽 오른쪽 번갈아가면서 나오도록)
         fireDeltha = -fireDeltha; // 음수 양수 역전시켜주기.
-        bullet.transform.position = firePos.position + new Vector3(fireDeltha, 0, 0) + new Vector3(Random.Range(-5.0f, 5.0f), Random.Range(-5.0f, 5.0f), 0);
+        bullet.transform.position = firePos.position + new Vector3(0, 0, fireDeltha) + new Vector3(0, Random.Range(-5.0f, 5.0f), Random.Range(-5.0f, 5.0f));
         bullet.GetComponent<JS_BossRangeAttack>().startPos = bullet.transform.position;
         cur_bulletNumber++; // 총알 수 증가
         yield return new WaitForSeconds(fireDelay);

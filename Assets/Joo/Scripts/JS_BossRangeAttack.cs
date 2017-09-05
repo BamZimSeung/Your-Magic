@@ -34,7 +34,7 @@ public class JS_BossRangeAttack : MonoBehaviour {
     // 시작 시 이동하는 위치
     public Vector3 startPos;
 
-    bool isSetting = false;
+    public bool isSetting = false;
 
     Vector3 dir;
 
@@ -43,7 +43,7 @@ public class JS_BossRangeAttack : MonoBehaviour {
     void Start()
     {
         tempHP = hp;
-        target = GameObject.Find("Player").GetComponent<Transform>();
+        target = GameObject.FindWithTag("Player").GetComponent<Transform>();
         StartCoroutine("SetStartPos");
     }
 
@@ -61,7 +61,7 @@ public class JS_BossRangeAttack : MonoBehaviour {
     {
         WaitForSeconds wfs = new WaitForSeconds(moveTimeGap);
 
-        while (Vector3.Distance(transform.position, startPos) < 0.05f)
+        while (Vector3.Distance(transform.position, startPos) > 0.15f)
         {
             transform.position = Vector3.Lerp(transform.position, startPos, moveSpeed);
             yield return wfs;
