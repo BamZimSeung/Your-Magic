@@ -91,6 +91,15 @@ public class JS_IceSpear : MonoBehaviour {
             Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
             MAR_MagicSound.instance.IceSpearPlay(transform.position);
         }
+        else
+        {
+            if (!isHit)
+            {
+                Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+                MAR_MagicSound.instance.IceSpearPlay(transform.position);
+                Destroy(gameObject);
+            }
+        }
     }
 
     IEnumerator FollowEnemies()
