@@ -180,7 +180,7 @@ public class JS_Monster : MonoBehaviour
     // 몬스터가 데미지를 입음
     public void MonsterDamage(int damage, MonProperty _mProperty)
     {
-        if(mProperty != _mProperty && mProperty != MonProperty.Normal)
+        if(mProperty != _mProperty)
         {
             hp -= damage/4;
         }
