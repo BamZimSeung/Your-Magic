@@ -59,9 +59,11 @@ public class JS_BossRangeAttack : MonoBehaviour {
 
     IEnumerator SetStartPos()
     {
+        isSetting = false;
+
         WaitForSeconds wfs = new WaitForSeconds(moveTimeGap);
 
-        while (Vector3.Distance(transform.position, startPos) > 0.15f)
+        while (Vector3.Distance(transform.position, startPos) > 0.3f)
         {
             transform.position = Vector3.Lerp(transform.position, startPos, moveSpeed);
             yield return wfs;
